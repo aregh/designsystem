@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:'Work Sans',sans-serif}a{color:#000;text-decoration:underline}a:hover{text-decoration-thickness:3px}</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1280" height="720" hint-size="100%,100%" data-uneditable="">
+  <section data-label="Tittel" data-speaker-notes="Kontekstarkitektur er informasjonsarkitektur for KI-alderen." style="background:{{ bg }};color:#000;display:flex;flex-direction:column;justify-content:center;padding:0 90px;position:relative;font-family:'Work Sans',sans-serif">
+    <div style="font-size:100px;font-weight:800;line-height:1.02">Kontekst­arkitektur</div>
+    <div style="font-size:26px;font-weight:500;margin-top:24px;opacity:.75">Frå tilfeldig prompting til systematisk KI-arbeid</div>
+    <div style="position:absolute;bottom:28px;right:64px;font-size:15px;font-weight:600;opacity:.7">kontekstarkitektur.no</div>
+  </section>
+  <section data-label="Utfordring" data-speaker-notes="Som å få ein ny vikar kvar morgon." style="background:{{ bg }};color:#000;display:flex;flex-direction:column;justify-content:center;padding:0 90px;position:relative;font-family:'Work Sans',sans-serif">
+    <div style="font-size:26px;font-weight:700;letter-spacing:.06em;opacity:.7;margin-bottom:14px">#1</div>
+    <div style="font-size:72px;font-weight:800;line-height:1.05;margin-bottom:28px">Kontekstamnesi</div>
+    <div style="font-size:28px;font-weight:500;line-height:1.5;max-width:760px">KI-en hugsar ikkje kva den treng for å hjelpe deg godt. Når kvar person promptar på sin måte, blir også resultata ulike.</div>
+    
+  </section>
+  <section data-label="Seksjon" data-speaker-notes="System slår triks. Kontekst slår prompts. Mennesket leiar." style="background:{{ bg }};color:#000;display:flex;align-items:center;padding:0 90px;position:relative;font-family:'Work Sans',sans-serif">
+    <div style="font-size:80px;font-weight:800;line-height:1.05;max-width:900px">Løysinga:<br>kontekst­arkitektur</div>
+    <div style="position:absolute;bottom:28px;left:64px;font-size:15px;font-weight:600;opacity:.7">kontekstarkitektur.no</div>
+  </section>
+  <section data-label="Punktliste" data-speaker-notes="Dei tre delane av kontekstarkitektur." style="background:{{ bg }};color:#000;padding:90px 90px 0;position:relative;font-family:'Work Sans',sans-serif;box-sizing:border-box">
+    <div style="font-size:52px;font-weight:800;margin-bottom:36px">Tre spørsmål</div>
+    <div style="display:flex;flex-direction:column;gap:22px;font-size:30px;line-height:1.5;font-weight:500">
+      <div style="display:flex;gap:18px"><span style="color:#AEEBFB;font-weight:800">●</span><span><strong>Kontekst</strong> — kva skal KI-en alltid vite, og kva må haldast utanfor?</span></div>
+      <div style="display:flex;gap:18px"><span style="color:#FD9F78;font-weight:800">●</span><span><strong>Samarbeid</strong> — korleis vekslar menneske og KI mellom retning, utføring og kontroll?</span></div>
+      <div style="display:flex;gap:18px"><span style="color:#E6B0F9;font-weight:800">●</span><span><strong>Læring</strong> — kvar skal ny innsikt tilbakeførast, slik at systemet blir betre?</span></div>
+    </div>
+    <div style="position:absolute;bottom:28px;right:64px;font-size:15px;font-weight:600;opacity:.7">kontekstarkitektur.no</div>
+  </section>
+  <section data-label="Venn" data-speaker-notes="Kjernemodell-tankegangen overført til KI: start der behova møtest." style="background:{{ bg }};color:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;font-family:'Work Sans',sans-serif">
+    <div style="font-size:40px;font-weight:800;margin-bottom:40px">Riktig informasjon, rett stad, rett tid</div>
+    <div style="position:relative;width:720px;height:340px">
+      <div style="position:absolute;left:60px;top:20px;width:340px;height:300px;border-radius:50%;background:rgba(188,241,125,.85);display:flex;align-items:center;justify-content:flex-start;padding-left:44px;box-sizing:border-box"><span style="font-size:26px;font-weight:700;max-width:150px">Kva treng menneska?</span></div>
+      <div style="position:absolute;right:60px;top:20px;width:340px;height:300px;border-radius:50%;background:rgba(174,235,251,.85);display:flex;align-items:center;justify-content:flex-end;padding-right:44px;box-sizing:border-box;text-align:right"><span style="font-size:26px;font-weight:700;max-width:150px">Kva treng modellane?</span></div>
+      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:30px;font-weight:800;text-align:center">Start<br>her!</div>
+    </div>
+    <div style="position:absolute;bottom:28px;left:64px;font-size:15px;font-weight:600;opacity:.7">kontekstarkitektur.no</div>
+  </section>
+  <section data-label="Nøkkeltal" data-speaker-notes="Erfaringsgrunnlaget." style="background:{{ bg }};color:#000;display:flex;align-items:center;gap:80px;padding:0 90px;position:relative;font-family:'Work Sans',sans-serif;box-sizing:border-box">
+    <div style="flex:1"><div style="font-size:52px;font-weight:800;line-height:1.12">Timar med praktisk KI-arbeid dei siste tre åra</div></div>
+    <div style="width:360px;height:360px;border-radius:50%;background:#AEEBFB;display:flex;align-items:center;justify-content:center;flex-direction:column;flex:none">
+      <div style="font-size:96px;font-weight:800;line-height:1">2000</div>
+      <div style="font-size:22px;font-weight:600;margin-top:8px">3 år med Claude</div>
+    </div>
+    <div style="position:absolute;bottom:28px;left:64px;font-size:15px;font-weight:600;opacity:.7">kontekstarkitektur.no</div>
+  </section>
+  <section data-label="Bio" data-speaker-notes="Kontekstarkitekt. Kjernemodellskapar. Kjernekar." style="background:{{ bg }};color:#000;display:flex;align-items:center;gap:70px;padding:0 90px;position:relative;font-family:'Work Sans',sans-serif;box-sizing:border-box">
+    <img src="./assets/are-portrett.png" alt="Are Halland" style="width:340px;height:400px;object-fit:cover;flex:none">
+    <div>
+      <div style="font-size:40px;font-weight:800;line-height:1.15;margin-bottom:24px">Are Gjertin<br>Urkegjerde Halland</div>
+      <ul style="font-size:23px;line-height:1.55;padding-left:22px;margin:0">
+        <li>Kontekstarkitekt. Kjernemodellskapar. Kjernekar.</li>
+        <li>30 år med informasjonsarkitektur og strategi</li>
+        <li>Kjernemodellen sidan 2006 — brukt over heile verda</li>
+        <li>Kurs, coaching og agentiske arbeidsflytar</li>
+      </ul>
+    </div>
+    <div style="position:absolute;bottom:28px;right:64px;font-size:15px;font-weight:600;opacity:.7">kjernekaren.no</div>
+  </section>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;fargeflate&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Gul&quot;,&quot;Rosa&quot;,&quot;Grønn&quot;,&quot;Blå&quot;,&quot;Lilla&quot;,&quot;Raud&quot;],&quot;default&quot;:&quot;Gul&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Fargeflate&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const flater = { Gul:'#FEF2AE', Rosa:'#FEC4B2', 'Grønn':'#BCF17D', 'Blå':'#AEEBFB', Lilla:'#E6B0F9', 'Raud':'#FD9F78' };
+    return { bg: flater[this.props.fargeflate ?? 'Gul'] ?? '#FEF2AE' };
+  }
+}
+</script>
+</body>
+</html>

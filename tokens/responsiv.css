@@ -1,0 +1,58 @@
+:root {
+  /* == Brekkpunkt ==
+     CSS-variablar verkar ikkje i @media, så desse er dokumentasjon.
+     Bruk tala direkte i media queries.
+       mobil    : <= 599px   (éin kolonne, hamburgermeny)
+       tablet   : 600-899px  (éin kolonne, synleg meny kan bryte til to rader)
+       liten desk: 900-1199px (to kolonner, redusert sidemarg)
+       desktop  : >= 1200px  (full layout)
+  */
+  --bp-mobil: 600px;
+  --bp-tablet: 900px;
+  --bp-desktop: 1200px;
+
+  /* Sidemarg — aldri null på mobil, teksten skal ikkje klistre seg til kanten */
+  --side-marg: clamp(20px, 5vw, 48px);
+
+  /* Minste trykkflate (knappar, menylenker, aksordionrader) */
+  --trykkflate-min: 48px;
+}
+
+/* Universell basis for alle sider i systemet */
+*, *::before, *::after { box-sizing: border-box; }
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+/* Grid/flex-barn skal kunne krympe i staden for å presse sida brei */
+.kk-kol { min-width: 0; }
+
+/* Tekstkolonne: smal på desktop, full breidd minus marg på mobil */
+.kk-tekst { max-width: var(--breidd-tekst); }
+
+/* To-kolonne-oppsett som kollapsar av seg sjølv, utan media query */
+.kk-to-kol {
+  display: grid;
+  gap: var(--rom-7);
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  align-items: start;
+}
+
+/* Seksjonsluft skalerer ned på mobil */
+.kk-seksjon { margin-top: clamp(48px, 9vw, 96px); }
+
+@media (max-width: 599px) {
+  /* Aldri vassrett skroll */
+  html, body { overflow-x: hidden; }
+  /* Knappar går full breidd på mobil — lettare treffbare */
+  .kk-knapp { width: 100%; text-align: center; }
+}
+
+/* Fokusmarkering — brandet er flatt og svart, så fokus må vere eksplisitt */
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 3px solid var(--farge-blaa);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

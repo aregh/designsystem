@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#AEEBFB; font-family:'Work Sans', system-ui, sans-serif; color:#000; }
+  a { color:#000; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover { text-decoration-thickness:3px; }
+</style>
+</helmet>
+
+<div style="width:1440px; background:#AEEBFB; min-height:100vh; display:flex; flex-direction:column; padding-bottom:80px; box-sizing:border-box">
+
+  <header style="width:936px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:34px 0 46px">
+    <span style="font-size:19px; font-weight:700">Kontekstarkitektur</span>
+    <nav style="display:flex; gap:22px; font-size:15px">
+      <span onClick="{{ tilHeim }}" style="{{ stilHeim }}">Heim</span>
+      <span onClick="{{ tilMetode }}" style="{{ stilMetode }}">Metoden</span>
+      <span onClick="{{ tilKurs }}" style="{{ stilKurs }}">Kurs</span>
+      <span style="opacity:0.55; cursor:default">Blogg</span>
+      <span style="opacity:0.55; cursor:default">Om meg</span>
+    </nav>
+  </header>
+
+  <sc-if value="{{ erHeim }}" hint-placeholder-val="{{ true }}">
+  <main style="width:936px; margin:0 auto; display:grid; grid-template-columns:580px 260px; gap:56px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:17px; line-height:1.6">
+      <span style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">Informasjonsarkitektur for KI-alderen</span>
+      <h1 style="margin:8px 0 6px; font-size:41px; font-weight:800; line-height:1.16; letter-spacing:-0.02em">Kontekstarkitektur</h1>
+      <p style="margin:0; font-weight:700">Frå tilfeldig prompting til systematisk KI-arbeid.</p>
+      <p style="margin:0">KI-en hugsar ikkje kva den treng for å hjelpe deg godt. Når kvar person promptar på sin måte, blir også resultata ulike. Eg kallar det kontekstamnesi &ndash; og det er eit arkitekturproblem, ikkje eit promptproblem.</p>
+      <p style="margin:0">Kontekstarkitektur handlar om å byggje systemet rundt modellen: kva den alltid skal vite, korleis menneske og KI vekslar på arbeidet, og kvar ny innsikt blir teken vare på.</p>
+      <span onClick="{{ tilMetode }}" style="background:#FD9F78; padding:12px 24px; margin-top:10px; font-size:16px; font-weight:700; align-self:flex-start; cursor:pointer">Les om metoden</span>
+      <h2 style="margin:26px 0 0; font-size:22px; font-weight:700">Tre spørsmål</h2>
+      <div style="display:flex; flex-direction:column">
+        <div style="display:flex; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#AEEBFB; border:1px solid rgba(0,0,0,.35); border-radius:50%; flex:none; margin-top:3px"></span><span><strong>Kontekst</strong> &ndash; kva skal KI-en alltid vite, og kva må haldast utanfor?</span></div>
+        <div style="display:flex; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#FD9F78; flex:none; margin-top:3px"></span><span><strong>Samarbeid</strong> &ndash; korleis vekslar menneske og KI mellom retning, utføring og kontroll?</span></div>
+        <div style="display:flex; gap:14px; border-top:1px solid rgba(0,0,0,.45); border-bottom:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#E6B0F9; flex:none; margin-top:3px"></span><span><strong>Læring</strong> &ndash; kvar skal ny innsikt tilbakeførast, slik at systemet blir betre?</span></div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px; align-items:center">
+      <div style="width:220px; height:220px; border-radius:50%; background:#FFF; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center">
+        <span style="font-size:52px; font-weight:800; line-height:1">2000</span>
+        <span style="font-size:15px; font-weight:600; margin-top:6px">timar med Claude<br>på tre år</span>
+      </div>
+      <p style="margin:0; font-size:16px; line-height:1.6; text-align:center">Erfaringsgrunnlaget: praktisk KI-arbeid i reelle prosjekt, ikkje demoar.</p>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erMetode }}" hint-placeholder-val="{{ false }}">
+  <main style="width:936px; margin:0 auto; display:grid; grid-template-columns:580px 260px; gap:56px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:17px; line-height:1.6">
+      <h1 style="margin:0 0 6px; font-size:41px; font-weight:800; line-height:1.16; letter-spacing:-0.02em">System slår triks</h1>
+      <p style="margin:0; font-weight:700">Kontekst slår prompts. Mennesket leier.</p>
+      <p style="margin:0">Kontekstarkitektur er kjernemodell-tankegangen overført til KI: start der behova møtest. Kva treng menneska, og kva treng modellane? Svaret ligg i midten &ndash; og det er der du byrjar.</p>
+      <h2 style="margin:20px 0 0; font-size:22px; font-weight:700">Riktig informasjon, rett stad, rett tid</h2>
+      <ul style="margin:0; padding-left:1.3em; line-height:1.75">
+        <li><strong>Kartlegg oppgåvene</strong> folk faktisk brukar KI-en til</li>
+        <li><strong>Skriv ned konteksten</strong> som må vere på plass kvar gong</li>
+        <li><strong>Definer arbeidsdelinga</strong> mellom menneske og modell</li>
+        <li><strong>Bygg tilbakeføringa</strong> slik at systemet lærer av bruken</li>
+      </ul>
+      <p style="margin:0">Resultatet er ikkje ein smart prompt, men ein arbeidsflyt heile teamet kan bruke &ndash; og forbetre.</p>
+      <h2 style="margin:20px 0 0; font-size:22px; font-weight:700">Kva du får ut av det</h2>
+      <ul style="margin:0; padding-left:1.3em; line-height:1.7">
+        <li>Jamnare kvalitet, uavhengig av kven som skriv prompten</li>
+        <li>Mindre dobbeltarbeid og færre &laquo;kva sa vi sist?&raquo;-runder</li>
+        <li>Ein tydeleg stad å leggje ny innsikt</li>
+      </ul>
+    </div>
+    <p style="margin:0; font-size:16px; font-style:italic; line-height:1.6; text-align:center">&laquo;Som å få ein ny vikar kvar morgon.&raquo;<br><span style="font-style:normal">Om kontekstamnesi</span></p>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erKurs }}" hint-placeholder-val="{{ false }}">
+  <main style="width:936px; margin:0 auto; display:grid; grid-template-columns:580px 260px; gap:56px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:17px; line-height:1.6">
+      <span style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">Kurs og coaching</span>
+      <h1 style="margin:8px 0 6px; font-size:41px; font-weight:800; line-height:1.16; letter-spacing:-0.02em">Kontekstarkitektur i praksis</h1>
+      <p style="margin:0; font-weight:700">Ein dag der teamet ditt går frå prompt-triks til eit system som held.</p>
+      <ul style="margin:0; padding-left:1.3em; line-height:1.7">
+        <li>Kartlegging av oppgåvene teamet brukar KI til i dag</li>
+        <li>Kontekstark for dei viktigaste arbeidsflytane</li>
+        <li>Arbeidsdeling mellom menneske og modell</li>
+        <li>Agentiske arbeidsflytar &ndash; kva som løner seg å automatisere</li>
+      </ul>
+      <span style="background:#FD9F78; padding:12px 24px; margin-top:10px; font-size:16px; font-weight:700; align-self:flex-start; cursor:pointer">Gå til påmelding</span>
+      <div style="width:580px; padding:34px 0 0; display:flex; flex-direction:column; border-top:1px solid rgba(0,0,0,.45)">
+        <div onClick="{{ toggle0 }}" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,.45); padding:18px 2px; font-size:17px; font-weight:700; cursor:pointer">Passar for <span style="font-size:14px">{{ chevron0 }}</span></div>
+        <sc-if value="{{ ope0 }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0; padding:14px 2px 20px; font-size:17px; line-height:1.6; border-bottom:1px solid rgba(0,0,0,.45)">Produktteam, kommunikasjonsavdelingar og fagmiljø som allereie brukar KI, men manglar felles struktur.</p>
+        </sc-if>
+        <div onClick="{{ toggle1 }}" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,.45); padding:18px 2px; font-size:17px; font-weight:700; cursor:pointer">Praktisk informasjon <span style="font-size:14px">{{ chevron1 }}</span></div>
+        <sc-if value="{{ ope1 }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0; padding:14px 2px 20px; font-size:17px; line-height:1.6; border-bottom:1px solid rgba(0,0,0,.45)">Heildagskurs, digitalt eller hos dykk. Maks 14 deltakarar. Ta kontakt for internkurs.</p>
+        </sc-if>
+      </div>
+      <h2 style="margin:20px 0 0; font-size:22px; font-weight:700">Har du spørsmål om kurset?</h2>
+      <p style="margin:0">Ring meg på 908 70 026, send epost til <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a> eller <a href="#">book ein kaffiprat</a>.</p>
+      <p style="margin:0">Vi snakkast!</p>
+      <p style="margin:0">Are</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px">
+      <img src="assets/are-portrett-rein.png" alt="Are Halland" style="width:260px; display:block">
+      <p style="margin:0; font-size:16px; line-height:1.6">Are Gjertin Urkegjerde Halland &ndash; kontekstarkitekt, kjernemodellskapar og kjernekar. 30 år med informasjonsarkitektur og strategi.</p>
+    </div>
+  </main>
+  </sc-if>
+
+  <section style="width:936px; margin:96px auto 0; display:flex; flex-direction:column; gap:14px">
+    <hr style="border:none; border-top:1px solid rgba(0,0,0,.45); margin:0 0 26px; width:100%">
+    <div style="width:580px; display:flex; flex-direction:column; gap:14px">
+      <h2 style="margin:0; font-size:22px; font-weight:700">Abonner på nyheitsbrevet</h2>
+      <p style="margin:0; font-size:20px; line-height:1.6">Bli den første til å få oppdateringar om kontekstarkitektur, KI-arbeidsflytar, nye malar, fagartiklar og kurs :-)</p>
+      <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; padding-top:6px">
+        <label style="display:flex; flex-direction:column; gap:6px; font-size:15px; flex:1 1 140px">Fornamn
+          <input type="text" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:15px; width:100%; box-sizing:border-box">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:6px; font-size:15px; flex:1 1 180px">Epost
+          <input type="text" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:15px; width:100%; box-sizing:border-box">
+        </label>
+        <span style="background:#FD9F78; padding:12px 24px; font-size:15px; font-weight:700; cursor:pointer">Hald meg oppdatert!</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="width:936px; margin:96px auto 0; display:flex; flex-direction:column">
+    <hr style="border:none; border-top:1px solid rgba(0,0,0,.45); margin:0 0 40px; width:100%">
+    <div style="width:580px; display:flex; flex-direction:column; gap:34px">
+      <p style="margin:0; font-style:italic; font-size:19px; line-height:1.6">Kontekstarkitektur - kurs, fasilitering og uavhengig rådgjeving frå mannen bak kjernemodellen. Spør meg om KI-arbeidsflytar og kontekst som held!</p>
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:19px">
+        <h2 style="margin:0 0 6px; font-size:22px; font-weight:700">Ta kontakt</h2>
+        <span>+47 908 70 026</span>
+        <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>
+        <a href="#">Følg meg på LinkedIn</a>
+        <a href="#">Book ein kaffiprat</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;startside&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;heim&quot;,&quot;metode&quot;,&quot;kurs&quot;],&quot;default&quot;:&quot;heim&quot;,&quot;tsType&quot;:&quot;'heim'|'metode'|'kurs'&quot;,&quot;section&quot;:&quot;Visning&quot;}}">
+class Component extends DCLogic {
+  state = { side: null, ope: {} };
+  renderVals() {
+    const side = this.state.side ?? this.props.startside ?? 'heim';
+    const gaa = s => e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ side: s }); };
+    const stil = s => 'cursor:pointer;' + (side === s ? 'font-weight:700; opacity:1' : 'opacity:0.55');
+    const vend = i => () => this.setState(st => ({ ope: { ...st.ope, [i]: !st.ope[i] } }));
+    return {
+      erHeim: side === 'heim', erMetode: side === 'metode', erKurs: side === 'kurs',
+      tilHeim: gaa('heim'), tilMetode: gaa('metode'), tilKurs: gaa('kurs'),
+      stilHeim: stil('heim'), stilMetode: stil('metode'), stilKurs: stil('kurs'),
+      toggle0: vend(0), toggle1: vend(1),
+      ope0: !!this.state.ope[0], ope1: !!this.state.ope[1],
+      chevron0: this.state.ope[0] ? '\u2227' : '\u2228',
+      chevron1: this.state.ope[1] ? '\u2227' : '\u2228'
+    };
+  }
+}
+</script>
+</body>
+</html>

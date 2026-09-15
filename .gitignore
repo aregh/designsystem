@@ -1,0 +1,7 @@
+# Råmateriale og arbeidsfiler — ikkje del av designsystemet
+uploads/
+scraps/
+screenshots/
+
+# Systemfiler
+.DS_Store

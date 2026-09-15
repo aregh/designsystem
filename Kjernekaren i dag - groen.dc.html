@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; }
+  body { margin:0; background:#BCF17D; font-family:'Work Sans', system-ui, sans-serif; color:#000; }
+  img { max-width:100%; height:auto; display:block; }
+  @media (max-width:599px) { html, body { overflow-x:hidden; } }
+  .kk-hamburger { display:none; }
+  /* Inline-stilar i malen har høgare spesifisitet, så desse overstyringane
+     må vere !important. Container queries (ikkje media queries) fordi
+     previewen skalerer sida. */
+  @container side (max-width:700px) {
+    .kk-hero { height:400px !important; }
+    .kk-hero-foto { object-position:90% 50% !important; }
+    .kk-hero-boks { left:20px !important; right:20px !important; top:auto !important; bottom:24px !important; width:auto !important; padding:20px 22px !important; }
+    .kk-hero-boks h1 { font-size:24px !important; }
+    .kk-nav-inline { display:none !important; }
+    .kk-hamburger { display:flex !important; }
+  }
+
+  a { color:#000; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover { text-decoration-thickness:3px; }
+</style>
+</helmet>
+
+<div style="max-width:1440px; width:100%; margin:0 auto; background:#BCF17D; min-height:100vh; display:flex; flex-direction:column; padding-bottom:80px; container-type:inline-size; container-name:side">
+
+  <header style="max-width:936px; width:100%; margin:0 auto; padding:24px clamp(20px,5vw,48px) 46px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+    <a href="#" onClick="{{ tilHeim }}" style="font-size:21px; font-weight:800; text-decoration:none">Are Halland</a>
+    <button type="button" class="kk-hamburger" aria-label="Meny" onClick="{{ vendMeny }}" style="background:none; border:none; font-size:26px; width:48px; height:48px; align-items:center; justify-content:center; cursor:pointer">{{ menyIkon }}</button>
+    <nav class="kk-nav-inline" aria-label="Hovudmeny" style="display:flex; gap:20px; flex-wrap:wrap; font-size:17px">
+      <a href="#" onClick="{{ tilHeim }}" style="{{ stilHeim }}">Heim</a>
+      <a href="#" onClick="{{ tilKurs }}" style="{{ stilKurs }}">Kurs</a>
+      <a href="#" style="text-decoration:none; display:flex; align-items:center; min-height:48px">Tenester</a>
+      <a href="#" style="text-decoration:none; display:flex; align-items:center; min-height:48px">Boka</a>
+      <a href="#" style="text-decoration:none; display:flex; align-items:center; min-height:48px">Blogg</a>
+      <a href="#" onClick="{{ tilOm }}" style="{{ stilOm }}">Om meg</a>
+    </nav>
+  </header>
+
+  <sc-if value="{{ menyOpe }}" hint-placeholder-val="{{ false }}">
+    <nav aria-label="Hovudmeny" style="padding:0 clamp(20px,5vw,48px) 32px; display:flex; flex-direction:column; border-top:1px solid #000; font-size:19px">
+      <a href="#" onClick="{{ tilHeim }}" style="display:flex; align-items:center; min-height:52px; border-bottom:1px solid #000; text-decoration:none; font-weight:800">Heim</a>
+      <a href="#" onClick="{{ tilKurs }}" style="display:flex; align-items:center; min-height:52px; border-bottom:1px solid #000; text-decoration:none">Kurs</a>
+      <a href="#" style="display:flex; align-items:center; min-height:52px; border-bottom:1px solid #000; text-decoration:none">Tenester</a>
+      <a href="#" style="display:flex; align-items:center; min-height:52px; border-bottom:1px solid #000; text-decoration:none">Boka</a>
+      <a href="#" style="display:flex; align-items:center; min-height:52px; border-bottom:1px solid #000; text-decoration:none">Blogg</a>
+      <a href="#" onClick="{{ tilOm }}" style="display:flex; align-items:center; min-height:52px; border-bottom:1px solid #000; text-decoration:none">Om meg</a>
+    </nav>
+  </sc-if>
+
+  <sc-if value="{{ erKurs }}" hint-placeholder-val="{{ true }}">
+  <main style="max-width:936px; width:100%; margin:0 auto; padding:0 clamp(20px,5vw,48px); display:flex; flex-direction:column">
+
+    <div style="display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start">
+      <div style="flex:1 1 440px; min-width:0; max-width:620px; display:flex; flex-direction:column; gap:0">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">Digitalt kurs 18. september</span>
+        <h1 style="margin:14px 0 22px; font-size:clamp(32px,5vw,44px); font-weight:800; line-height:1.16; letter-spacing:-0.02em">Strategisk innhaldsdesign med kjernemodellen</h1>
+        <p style="margin:0 0 14px; font-size:clamp(18px,1.4vw,21px); font-weight:800; line-height:1.5">Bli ekspert på den enkle og effektive metoden som hjelper deg å:</p>
+        <ul style="margin:0 0 20px; padding-left:1.3em; font-size:clamp(18px,1.4vw,21px); line-height:1.7">
+          <li>samarbeide på tvers av team og fagområder</li>
+          <li>tenke strategisk og brukarorientert samtidig</li>
+          <li>sjå produktet ditt i eit heilheitsperspektiv</li>
+          <li>starte med det viktigaste</li>
+          <li>gjere det enkelt og konkret</li>
+        </ul>
+        <p style="margin:0 0 26px; font-size:clamp(18px,1.4vw,21px); line-height:1.6">Lær metoden direkte frå opphavsmannen, og få alt av tips, triks og malar du treng for å ta i bruk metoden umiddelbart etter kurset.</p>
+        <a href="#" style="background:#FD9F78; padding:12px 28px; min-height:48px; display:inline-flex; align-items:center; font-size:19px; font-weight:800; text-decoration:none; align-self:flex-start">Gå til påmelding</a>
+      </div>
+      <div style="flex:0 1 260px; min-width:0; display:flex; flex-direction:column; gap:14px; padding-top:52px">
+        <img src="assets/bok-kjernemodellen-rein.png" alt="Boka Kjernemodellen" style="width:100%; max-width:260px; display:block">
+        <p style="margin:0; font-size:17px; font-style:italic; line-height:1.5; text-align:center">Kurset er basert på boka <a href="#">&laquo;Kjernemodellen &ndash; et praktisk verktøy for å lage bedre digitale tjenester&raquo;</a> (Halland og Halland, Kraft forlag, 2021)</p>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:44px; padding:80px 0 76px; text-align:center">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px">
+        <div style="width:96px; height:96px; background:#EAEAEA; display:flex; align-items:center; justify-content:center; font-size:10px; line-height:1.2; text-align:center; color:rgba(0,0,0,.5)">foto</div>
+        <span style="font-size:17px; font-weight:800; line-height:1.4">Hedda Foss Lilleng,<br>Managing Director,<br>Snøhetta Design</span>
+        <span style="display:flex; gap:2px; color:#E8A33D; font-size:19px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span style="font-size:17px; font-weight:800; line-height:1.5">&laquo;Effektiv og god innføring i et solid og praktisk verktøy!&raquo;</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px">
+        <div style="width:96px; height:96px; background:#EAEAEA; display:flex; align-items:center; justify-content:center; font-size:10px; line-height:1.2; text-align:center; color:rgba(0,0,0,.5)">foto</div>
+        <span style="font-size:17px; font-weight:800; line-height:1.4">Ann Key, Lead Content<br>Strategist, Aha Media<br>Group</span>
+        <span style="display:flex; gap:2px; color:#E8A33D; font-size:19px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span style="font-size:17px; font-weight:800; line-height:1.5">&laquo;I walked away excited, motivated, and feeling equipped to do my job better!&raquo;</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:12px">
+        <div style="width:96px; height:96px; background:#EAEAEA; display:flex; align-items:center; justify-content:center; font-size:10px; line-height:1.2; text-align:center; color:rgba(0,0,0,.5)">foto</div>
+        <span style="font-size:17px; font-weight:800; line-height:1.4">Thomas Marriaga Olsen,<br>Senior service designer,<br>Itera</span>
+        <span style="display:flex; gap:2px; color:#E8A33D; font-size:19px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+        <span style="font-size:17px; font-weight:800; line-height:1.5">&laquo;Godt gjennomført og engasjerende kurs &ndash; anbefales!&raquo;</span>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start">
+      <div style="flex:1 1 440px; min-width:0; max-width:620px; display:flex; flex-direction:column; gap:16px; font-size:clamp(18px,1.4vw,21px); line-height:1.6">
+        <p style="margin:0"><a href="#">Kjernemodellen</a> er eit praktisk og intuitivt rammeverk for å samarbeide om å lage brukarvennlege og strategisk forankra produkt og tenester.</p>
+        <p style="margin:0">På overflata er modellen enkel og intuitiv, men med dybdeforståelse av rammeverket kan du få til &laquo;magiske ting&raquo;:</p>
+        <ul style="margin:0; padding-left:1.3em; line-height:1.7">
+          <li>Forenkle, forankre og skape framdrift i prosjekter og prosessar</li>
+          <li>Vere ein sentral del av felles verktøykasse i tverrfaglege team</li>
+          <li>Skape eigarskap og auka digital modenheit i organisasjonen og/eller hos kunden</li>
+        </ul>
+        <h2 style="margin:20px 0 0; font-size:clamp(24px,3vw,30px); font-weight:800">Målgruppe</h2>
+        <ul style="margin:0; padding-left:1.3em; line-height:1.7">
+          <li><strong>Produktteam</strong> som ønsker eit enkelt samarbeidsverktøy for å involvere teamet og nøkkelpersonar i organisasjonen</li>
+          <li><strong>Digitalbyrå</strong> som ønsker ein felles, enkel metodikk for å involvere oppdragsgivar og samarbeide betre internt</li>
+          <li><strong>Små og store bedrifter og organisasjonar</strong> som vil lage prioritert og effektiv kommunikasjon som løyser reelle behov hos kunden</li>
+        </ul>
+        <p style="margin:0">Kurset passar for både offentleg sektor, private verksemder og frivillige organisasjonar.</p>
+      </div>
+      <p style="flex:0 1 260px; min-width:0; margin:0; font-size:19px; font-style:italic; line-height:1.6; text-align:center">&laquo;Utrolig nyttig kurs med masse praktiske eksempler som gjør det enkelt å ta i bruk kjernemodellen med en eneste gang. Gleder meg til å teste det ut på egne prosjekter!&raquo;<br><span style="font-style:normal">Elisabeth Heidenstrøm, CRM &amp; Martech Manager i Sopra Steria</span></p>
+    </div>
+
+    <div style="max-width:620px; padding:56px 0 0; display:flex; flex-direction:column">
+      <div style="border-top:1px solid #000"></div>
+      <sc-for list="{{ rader }}" as="r" hint-placeholder-count="7">
+        <div onClick="{{ r.vend }}" style="display:flex; justify-content:space-between; align-items:center; gap:16px; border-bottom:1px solid #000; padding:14px 2px; min-height:48px; font-size:clamp(18px,1.4vw,21px); font-weight:800; cursor:pointer">{{ r.tittel }} <span style="font-size:17px">{{ r.pil }}</span></div>
+        <sc-if value="{{ r.ope }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0; padding:14px 2px 22px; font-size:clamp(18px,1.4vw,21px); line-height:1.6; border-bottom:1px solid #000">{{ r.tekst }}</p>
+        </sc-if>
+      </sc-for>
+    </div>
+
+    <a href="#" style="background:#FD9F78; padding:12px 28px; margin:44px 0 0; min-height:48px; display:inline-flex; align-items:center; font-size:19px; font-weight:800; text-decoration:none; align-self:flex-start">Gå til påmelding</a>
+
+    <div style="max-width:620px; padding:56px 0 0; display:flex; flex-direction:column; gap:16px; font-size:clamp(18px,1.4vw,21px); line-height:1.6">
+      <h2 style="margin:0; font-size:clamp(24px,3vw,30px); font-weight:800">Har du spørsmål om kurset?</h2>
+      <p style="margin:0">Ring meg på 908 70 026, send epost til <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a> eller <a href="#">book ein kaffiprat</a>.</p>
+      <p style="margin:0">Vi snakkast!</p>
+      <p style="margin:0">Are</p>
+    </div>
+
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erOm }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:936px; width:100%; margin:0 auto; padding:0 clamp(20px,5vw,48px); display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start">
+    <div style="flex:1 1 440px; min-width:0; max-width:620px; display:flex; flex-direction:column; gap:16px; font-size:clamp(18px,1.4vw,21px); line-height:1.6">
+      <h1 style="margin:0 0 6px; font-size:clamp(32px,5vw,44px); font-weight:800; line-height:1.16; letter-spacing:-0.02em">Are Halland - AKA &laquo;Kjernekaren&raquo;</h1>
+      <p style="margin:0; font-weight:700">Hei, Are her!</p>
+      <p style="margin:0">Eg har 25 års erfaring med digital design, kommunikasjon, strategi og produktutvikling. Mellom 2006-2018 jobba eg som rådgjevar i Netlife Design. I 2019 jobba eg som konseptutviklar i UX- og innovasjonsavdelinga i FINN.no, før eg starta for seg sjølv som &laquo;Kjernekaren&raquo; i 2020.</p>
+      <p style="margin:0">No jobbar eg med strategisk rådgjeving og konseptutvikling, og held foredrag, kurs og workshops i brukarsentrert strategi, kommunikasjon og design.</p>
+      <p style="margin:0">Saman med kona mi har eg skrive boka <a href="#">&laquo;Kjernemodellen - et praktisk verktøy for å lage bedre digitale tjenester&raquo;</a> (Kraft forlag, 2021). Boka kjem straks på engelsk med tittelen <a href="#">&laquo;The Core Model - A Common Sense Approach to Digital Strategy and Design&raquo;</a>.</p>
+      <p style="margin:0">Det var eg som lanserte kjernemodellen i 2006, og dei siste 15 åra har eg vore med på å teste ut og vidareutvikla modellen i eit hundretals prosjekter gjennom Netlife Design, FINN.no og Kjernepar AS.</p>
+      <p style="margin:0">Kjernemodellen blir brukt av store og små organisasjonar over heile verda, inkludert DNB, Oslo kommune og gov.uk. Sidan 2006 har den vært ein hjørnesteinsmetodikk i digitalbyrået Netlife Design. Les meir på <a href="#">kjernemodellen.no</a> og <a href="#">thecoremodel.com</a>.</p>
+      <p style="margin:0">Gjennom ei lang karriere som konsulent har eg erfaring frå <a href="#">hundrevis av prosjekter</a> gjennom digitalbyråene Origo, Neo Interaktiv, IconMedialab, WM-data, Netlife Design og inhouse i FINN.no.</p>
+      <p style="margin:0">Eg er ein av landets mest erfarne brukartestmoderatorar, og har kjørt brukartestar med godt over 1000 testpersonar dei siste 20 åra.</p>
+      <p style="margin:0">Eg har også undervist i emner knytta til digital strategi, marknadsføring, UX-design, tenestedesign, informasjonsarkitektur og innhaldsproduksjon ved BI, AHO, Kristiania, OsloMet og Høgskulen i Volda.</p>
+      <h2 style="margin:20px 0 0; font-size:clamp(24px,3vw,30px); font-weight:800">Kontaktinformasjon</h2>
+      <div style="display:flex; flex-direction:column; gap:2px">
+        <span>+47 908 70 026</span>
+        <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>
+        <a href="#">Følg meg på LinkedIn</a>
+        <a href="#">Book ein kaffiprat</a>
+      </div>
+      <a href="#" style="background:#FD9F78; padding:12px 28px; margin-top:10px; min-height:48px; display:inline-flex; align-items:center; font-size:19px; font-weight:800; text-decoration:none; align-self:flex-start">Book ein kaffiprat</a>
+    </div>
+
+    <div style="flex:0 1 260px; min-width:0; display:flex; flex-direction:column; gap:26px">
+      <img src="assets/are-portrett-rein.png" alt="Are Halland" style="width:100%; max-width:260px; display:block">
+      <div style="display:flex; flex-direction:column; gap:8px; font-size:clamp(18px,1.4vw,21px); line-height:1.5">
+        <h2 style="margin:0; font-size:clamp(24px,3vw,30px); font-weight:800">Podcastar</h2>
+        <p style="margin:0">Eit utval av podcastar eg har gjesta i det siste:</p>
+        <p style="margin:12px 0 0"><a href="#">Episode 25 &ndash; Strategic content design for people and machines w/ Are Halland</a><br><em>OmnichannelX podcast, with Noz Urbina</em></p>
+        <p style="margin:12px 0 0"><a href="#">Episode 108: Are Halland - The Core Model</a><br><em>The Content Strategy Insights Podcast, with Larry Swanson</em></p>
+        <p style="margin:12px 0 0"><a href="#">Episode 53: Are Halland - Understanding and using the core model</a><br><em>The Content Strategy Podcast, with Kristina Halvorsen</em></p>
+        <p style="margin:12px 0 0"><a href="#">Fleire podcastar</a></p>
+        <h2 style="margin:20px 0 0; font-size:clamp(24px,3vw,30px); font-weight:800">Sjå også</h2>
+        <a href="#">Kjernekaren - WTF!?! Forretningsstrategi med kjernemodellen</a>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erHeim }}" hint-placeholder-val="{{ false }}">
+  <main style="display:flex; flex-direction:column">
+
+    <div class="kk-hero" style="position:relative; width:100%; height:clamp(420px,42vw,600px); overflow:hidden">
+      <img class="kk-hero-foto" src="assets/forside-hero-original.png" alt="Are Halland held opp boka Kjernemodellen" style="width:100%; height:100%; object-fit:cover; object-position:50% 45%">
+      <div class="kk-hero-boks" style="position:absolute; left:15.9%; top:42%; width:min(82%,440px); background:#BCF17D; padding:26px 28px">
+        <h1 style="margin:0; font-size:clamp(24px,2.4vw,34px); font-weight:800; line-height:1.25; text-wrap:pretty">Kurs, fasilitering og uavhengig rådgjeving frå mannen bak kjernemodellen</h1>
+      </div>
+    </div>
+
+    <div style="max-width:936px; width:100%; margin:0 auto; padding:38px clamp(20px,5vw,48px) 0; display:flex; flex-direction:column; gap:16px">
+      <div style="max-width:620px; display:flex; flex-direction:column; gap:18px; font-size:21px; line-height:1.6">
+        <p style="margin:0; font-weight:700">Hei, Are her!</p>
+        <p style="margin:0">Eg har jobba med digital strategi, design og kommunikasjon i eit kvart århundre, og hjelper deg meir enn gjerne med:</p>
+        <a href="#" style="font-size:clamp(20px,2.2vw,23px); font-weight:800; margin-top:8px">KI for kunnskapsarbeid</a>
+        <p style="margin:0">Eg hjelper deg å bygge kunnskapssystem som gir deg tilbake kontrollen over kunstig intelligens.</p>
+        <a href="#" style="font-size:clamp(20px,2.2vw,23px); font-weight:800; margin-top:8px">Fasilitering og rådgjeving</a>
+        <p style="margin:0">Når du har fått ansvar ein vanskeleg workshop, eller treng hjelp til løyse opp eit flokete problem.</p>
+        <a href="#" style="font-size:clamp(20px,2.2vw,23px); font-weight:800; margin-top:8px">Kjernemodellen</a>
+        <p style="margin:0">Når du ønsker å utnytte krafta i kjernemodellen for å få til forenkling, forankring og framdrift.</p>
+        <a href="#" onClick="{{ tilKurs }}" style="font-size:clamp(20px,2.2vw,23px); font-weight:800; margin-top:8px">Kurs og opplæring</a>
+        <p style="margin:0">Når du har behov for eit kompetanseløft innan KI, digital strategi eller brukarfokusert metodikk.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:40px minmax(0,1fr) 40px; align-items:center; gap:0; padding:56px 0 0">
+        <a href="#" aria-label="Førre sitat" style="font-size:28px; min-height:48px; display:flex; align-items:center; justify-content:center; text-decoration:none">&#8249;</a>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center">
+          <span style="font-size:34px; font-weight:800; line-height:0.5; color:#000">&rdquo;</span>
+          <p style="margin:0; font-size:clamp(21px,2.4vw,26px); font-weight:800; line-height:1.4; max-width:30ch">Om dere trenger en engasjert workshopholder, en som røsker opp i bedriftens etablerte mønstre, bestill et kjerneverksted med Are!</p>
+          <span style="font-size:17px; font-weight:800; line-height:1.5">Hege L. Harreschou, Chief Experience<br>Officer, Schibsted Nordic Marketplaces</span>
+          <span style="display:flex; gap:7px; align-items:center; padding-top:4px">
+            <span style="width:7px; height:7px; border-radius:50%; border:1px solid #000"></span>
+            <span style="width:7px; height:7px; border-radius:50%; background:#000"></span>
+            <span style="width:7px; height:7px; border-radius:50%; background:#000"></span>
+          </span>
+        </div>
+        <a href="#" aria-label="Neste sitat" style="font-size:28px; min-height:48px; display:flex; align-items:center; justify-content:center; text-decoration:none">&#8250;</a>
+      </div>
+
+      <div style="max-width:620px; margin:56px 0 0">
+        <iframe title="Are Halland og kjernemodellen — podkastar på Spotify" src="https://open.spotify.com/embed/playlist/4NswWeC52moDBiekj1t42C?utm_source=generator" loading="lazy" style="width:100%; height:232px; border:none; border-radius:12px; display:block"></iframe>
+        <p style="margin:10px 0 0; font-size:17px; line-height:1.5">Spotify-modulen er ein tredjeparts-embed og kan ikkje stylast. Runde hjørne og Spotify sine fargar er ein godkjent unntak frå malen.</p>
+      </div>
+    </div>
+
+  </main>
+  </sc-if>
+
+  <section style="max-width:936px; width:100%; margin:clamp(48px,9vw,96px) auto 0; padding:0 clamp(20px,5vw,48px); display:flex; flex-direction:column; gap:14px">
+    <hr style="border:none; border-top:1px solid #000; margin:0 0 26px; width:100%">
+    <div style="max-width:620px; display:flex; flex-direction:column; gap:14px">
+    <h2 style="margin:0; font-size:clamp(24px,3vw,30px); font-weight:800">Abonner på nyheitsbrevet</h2>
+    <p style="margin:0; font-size:clamp(18px,1.4vw,21px); line-height:1.6">Bli den første til å få oppdateringar om toppoppgaver, kjernemodellen, nye malar, fagartiklar, kurs og sprell frå Kjernekaren :-)</p>
+    <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; padding-top:6px">
+      <label style="display:flex; flex-direction:column; gap:6px; font-size:17px; flex:1 1 160px">Fornamn
+        <input type="text" style="background:#FFF; border:1px solid #000; padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:17px; width:100%; min-height:48px">
+      </label>
+      <label style="display:flex; flex-direction:column; gap:6px; font-size:17px; flex:1 1 200px">Epost
+        <input type="text" style="background:#FFF; border:1px solid #000; padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:17px; width:100%; min-height:48px">
+      </label>
+      <button type="button" style="background:#FD9F78; border:none; padding:12px 28px; min-height:48px; font-family:'Work Sans', sans-serif; font-size:19px; font-weight:800; cursor:pointer">Hald meg oppdatert!</button>
+    </div>
+    </div>
+  </section>
+
+  <footer style="max-width:936px; width:100%; margin:clamp(48px,9vw,96px) auto 0; padding:0 clamp(20px,5vw,48px); display:flex; flex-direction:column">
+    <hr style="border:none; border-top:1px solid #000; margin:0 0 40px; width:100%">
+    <div style="max-width:620px; display:flex; flex-direction:column; gap:34px">
+      <p style="margin:0; font-style:italic; font-size:clamp(18px,1.4vw,21px); line-height:1.6">Kjernekaren - kurs, fasilitering og uavhengig rådgjeving frå mannen bak kjernemodellen. Spør meg om toppoppgaver og datadriven kundeinnsikt!</p>
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:clamp(18px,1.4vw,21px)">
+        <h2 style="margin:0 0 6px; font-size:clamp(24px,3vw,30px); font-weight:800">Ta kontakt</h2>
+        <span>+47 908 70 026</span>
+        <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>
+        <a href="#">Følg meg på LinkedIn</a>
+        <a href="#">Book ein kaffiprat</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;startside&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;heim&quot;,&quot;kurs&quot;,&quot;om&quot;],&quot;default&quot;:&quot;kurs&quot;,&quot;tsType&quot;:&quot;'heim'|'kurs'|'om'&quot;,&quot;section&quot;:&quot;Visning&quot;}}">
+const RADER = [
+  { tittel: 'Kva er kjernemodellen?', tekst: 'Kjernemodellen er ein arbeidsmetode som koplar brukaroppgåver og forretningsmål, og som endar i eit kjerneark for kvar viktige side eller teneste.' },
+  { tittel: 'Om Are', tekst: 'Are Halland lanserte kjernemodellen i 2006, og har 25 års erfaring med digital design, strategi og produktutvikling.' },
+  { tittel: 'Sagt om kurset', tekst: 'Over 1000 deltakarar har vore gjennom kurset. Dei trekk særleg fram dei praktiske eksempla, og at metoden kan tas i bruk umiddelbart.' },
+  { tittel: 'Sagt om kjernemodellen', tekst: 'Kjernemodellen blir brukt av store og små organisasjonar over heile verda, inkludert DNB, Oslo kommune og gov.uk.' },
+  { tittel: 'Tidlegare kursdeltakarar', tekst: 'Deltakarar frå mellom anna NAV, Schibsted, Sopra Steria, Itera, Snøhetta Design og Aha Media Group.' },
+  { tittel: 'Internkurs', tekst: 'Kurset kan haldast internt hos dykk, tilpassa eigne caser, med mogleg fleksibelt sertifiseringsløp.' },
+  { tittel: 'Praktisk informasjon', tekst: 'Digitalt kurs over ein dag. Påmelding via lenka over. Ta kontakt om du treng faktura eller har spørsmål om gjennomføringa.' }
+];
+
+class Component extends DCLogic {
+  state = { side: null, ope: {}, meny: false };
+  renderVals() {
+    const side = this.state.side ?? this.props.startside ?? 'kurs';
+    const gaa = s => e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ side: s, meny: false }); };
+    const stil = s => 'display:flex; align-items:center; min-height:48px; color:#000; ' +
+      (side === s ? 'font-weight:800; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px' : 'font-weight:400; text-decoration:none');
+    const vend = i => () => this.setState(st => ({ ope: { ...st.ope, [i]: !st.ope[i] } }));
+    return {
+      erHeim: side === 'heim', erKurs: side === 'kurs', erOm: side === 'om',
+      tilHeim: gaa('heim'), tilKurs: gaa('kurs'), tilOm: gaa('om'),
+      stilHeim: stil('heim'), stilKurs: stil('kurs'), stilOm: stil('om'),
+      menyOpe: this.state.meny,
+      menyIkon: this.state.meny ? '\u00d7' : '\u2261',
+      vendMeny: () => this.setState(st => ({ meny: !st.meny })),
+      rader: RADER.map((r, i) => ({
+        tittel: r.tittel, tekst: r.tekst, vend: vend(i),
+        ope: !!this.state.ope[i], pil: this.state.ope[i] ? '\u2227' : '\u2228'
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

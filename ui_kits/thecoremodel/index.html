@@ -1,0 +1,90 @@
+<!-- @dsCard group="Thecoremodel.com" viewport="1000x1400" -->
+<!-- @startingPoint section="The Core Model" subtitle="Book page (pink, English)" viewport="1000x1400" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Book — The Core Model</title>
+<link rel="stylesheet" href="../../styles.css">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+<script type="text/babel" src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--bakgrunn-rosa);font-family:var(--font-sans);color:var(--tekst)}
+  .hero{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;max-width:900px;margin:0 auto;padding:48px 24px 0}
+  h1{font-size:52px;font-weight:800;line-height:1.08;margin:0}
+  h2{font-size:26px;font-weight:800;margin:0 0 18px}
+  h3{font-size:19px;font-weight:800;margin:36px 0 10px}
+  p{font-size:16px;line-height:1.6;margin:0 0 16px}
+  ul{font-size:16px;line-height:1.55;padding-left:20px;margin:0 0 20px}
+  li{margin:5px 0}
+  .twocol{display:grid;grid-template-columns:1fr 320px;gap:56px;max-width:900px;margin:0 auto;padding:40px 24px;align-items:start}
+  .bookcover{width:100%;transform:rotate(2deg)}
+  hr{border:none;border-top:1px solid var(--strek-svak);margin:8px 0 24px}
+  .fineprint{font-size:13px;font-style:italic;line-height:1.6}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+function DS(name){for(const k of Object.keys(window)){const v=window[k];if(v&&typeof v==='object'&&v[name])return v[name];}return function(){return null};}
+const SiteHeader=DS('SiteHeader'), Button=DS('Button'), Quote=DS('Quote'), TextLink=DS('TextLink');
+
+function BookPage(){
+  return (
+    <div>
+      <SiteHeader brand="The Core Model" items={['Home','Method','Book','Training','Resources','About']} active="Book"/>
+      <div className="hero">
+        <h1>A common sense approach to digital strategy and design</h1>
+        <img className="bookcover" src="../../assets/bok-kjernemodellen.png" alt="The Core Model book"/>
+      </div>
+
+      <div className="twocol">
+        <div>
+          <h2>Stop complicating, start collaborating!</h2>
+          <p>The core model is a no-nonsense, practical method to create better digital products and services. This timeless and intuitive approach has been tested in the trenches across industries, sectors and national borders for more than a decade.</p>
+          <p>This book will help you to:</p>
+          <ul>
+            <li>think both strategically and user centered at the same time</li>
+            <li>see your product or service from a holistic perspective</li>
+            <li>collaborate across different departments and disciplines</li>
+            <li>start with what's most important, and make it simple and concrete</li>
+          </ul>
+          <p><TextLink href="#">Read an adaption of the book in Smashing Magazine</TextLink></p>
+          <Button caps href="#" style={{margin:'8px 0 16px'}}>Buy the book now</Button>
+
+          <h3>Who should read this book?</h3>
+          <p>This book is for anyone who wants a common sense approach to creating better digital products and services in cross-competency collaboration. For example:</p>
+          <ul>
+            <li><i>Product managers and agile coaches</i> who want a shared understanding of priorities</li>
+            <li><i>User experience and service designers</i> who want to bring the customer journey down to earth</li>
+            <li><i>Content strategists and designers</i> who want to combine the user's perspective with strategic objectives</li>
+            <li><i>Leaders and business developers</i> who want to create ownership of the strategy</li>
+          </ul>
+          <Button caps href="#">Buy the book now</Button>
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:'56px',paddingTop:'8px'}}>
+          <Quote variant="stor" name="Jim Kalbach" role="author of The Jobs To Be Done Playbook">This should be required reading for everyone who works with design, user experience, or customer experience.</Quote>
+          <Quote variant="stor" name="Stephen P. Anderson" role="author of Figure It Out">The Core Model is brilliant in its simplicity. It will transform how you approach the design of digital products.</Quote>
+        </div>
+      </div>
+
+      <div style={{maxWidth:900,margin:'0 auto',padding:'0 24px 64px'}}>
+        <hr/>
+        <p className="fineprint">The Core Model is developed by <TextLink href="#">Are Halland</TextLink>, and is protected under a <TextLink href="#">Creative Commons CC-BY-SA-4.0 license.</TextLink></p>
+        <h3>Get in touch</h3>
+        <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
+          <TextLink href="#">Are Halland</TextLink>
+          <TextLink href="mailto:are@thecoremodel.com">are@thecoremodel.com</TextLink>
+          <TextLink href="#">Connect on LinkedIn</TextLink>
+          <TextLink href="#">Book a coffee chat</TextLink>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<BookPage/>);
+</script>
+</body>
+</html>

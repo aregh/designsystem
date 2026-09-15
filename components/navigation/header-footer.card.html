@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x420" name="SiteHeader & SiteFooter" subtitle="Toppnav og fot" -->
+<!DOCTYPE html><html><head>
+<link rel="stylesheet" href="../../styles.css">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+<script type="text/babel" src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:24px;background:#FEF2AE;font-family:'Work Sans',sans-serif}.grid{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;opacity:.6;margin:0 0 8px;width:100%}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+function DS(name){for(const k of Object.keys(window)){const v=window[k];if(v&&typeof v==='object'&&v[name])return v[name];}throw new Error('not found: '+name);}
+const H=DS('SiteHeader'), F=DS('SiteFooter');
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div>
+    <H brand="Are Halland" active="Kurs" maxWidth="100%"/>
+    <div style={{height:20}}/>
+    <F maxWidth="100%"/>
+  </div>);
+</script></body></html>

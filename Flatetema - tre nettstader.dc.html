@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; }
+  body { margin:0; background:#F4F4F2; font-family:'Work Sans', system-ui, sans-serif; color:#000; }
+  img { max-width:100%; height:auto; display:block; }
+  a { color:#000; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover { text-decoration-thickness:3px; }
+  :where(a, button):focus-visible { outline:3px solid #AEEBFB; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="display:flex; flex-direction:column; gap:48px; padding:48px 0">
+
+  <section style="display:flex; flex-direction:column; gap:14px">
+    <p style="margin:0; padding:0 clamp(20px,5vw,48px); max-width:760px; font-size:19px; line-height:1.6">Same system, tre flater. Alt utanom flatefargen — typografi, spacing, knappar, streker, badge — er identisk. Badge og hentetekst skiftar farge slik at dei aldri kolliderer med flata.</p>
+  </section>
+
+  <section id="groenn" style="background:#BCF17D; padding:0 0 56px">
+    <header style="max-width:1100px; margin:0 auto; padding:24px clamp(20px,5vw,48px) 40px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+      <a href="#groenn" style="font-size:21px; font-weight:800; text-decoration:none">Are Halland</a>
+      <nav style="display:flex; gap:20px; flex-wrap:wrap; font-size:17px">
+        <a href="#groenn" style="font-weight:800; text-decoration-thickness:2px; text-underline-offset:4px">Heim</a>
+        <a href="#groenn" style="text-decoration:none">Kurs</a>
+        <a href="#groenn" style="text-decoration:none">Tenester</a>
+        <a href="#groenn" style="text-decoration:none">Boka</a>
+        <a href="#groenn" style="text-decoration:none">Om meg</a>
+      </nav>
+    </header>
+    <div style="max-width:1100px; margin:0 auto; padding:0 clamp(20px,5vw,48px); display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start">
+      <div style="flex:1 1 440px; min-width:0; max-width:620px; display:flex; flex-direction:column; gap:18px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">kjernekaren.no &middot; tema-groenn</span>
+        <h2 style="margin:0; font-size:clamp(32px,4vw,44px); font-weight:800; line-height:1.14; letter-spacing:-0.02em">Kurs, fasilitering og uavhengig rådgjeving frå mannen bak kjernemodellen</h2>
+        <p style="margin:0; font-size:clamp(18px,1.4vw,21px); line-height:1.6">Eg har jobba med digital strategi, design og kommunikasjon i eit kvart århundre, og hjelper deg meir enn gjerne.</p>
+        <span style="background:#FFE484; padding:14px 18px; align-self:flex-start; font-size:19px; font-weight:800">Hentetekst direkte på flata: gul</span>
+        <a href="#groenn" style="background:#FD9F78; padding:12px 28px; min-height:48px; display:inline-flex; align-items:center; font-size:19px; font-weight:800; text-decoration:none; align-self:flex-start">Gå til påmelding</a>
+        <a href="#groenn" style="font-size:21px; font-weight:800; min-height:48px; display:inline-flex; align-items:center; align-self:flex-start">Bli sertifisert fasilitator</a>
+      </div>
+      <div style="flex:0 1 260px; min-width:0; display:flex; flex-direction:column; gap:20px; align-items:center">
+        <span style="width:200px; height:200px; border-radius:50%; background:#AEEBFB; display:grid; place-items:center; text-align:center; padding:24px; font-size:19px; font-weight:800; line-height:1.25">OSLO<br>23.&ndash;24. oktober</span>
+        <span style="display:flex; gap:4px; color:#E8A33D; font-size:21px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin:0 auto; padding:48px clamp(20px,5vw,48px) 0">
+      <hr style="border:none; border-top:1px solid #000; margin:0 0 24px">
+      <p style="margin:0; max-width:620px; font-size:clamp(18px,1.4vw,21px); font-style:italic; line-height:1.6">Kjernekaren &ndash; kurs, fasilitering og uavhengig rådgjeving frå mannen bak kjernemodellen.</p>
+    </div>
+  </section>
+
+  <section id="gul" style="background:#FFE484; padding:0 0 56px">
+    <header style="max-width:1100px; margin:0 auto; padding:24px clamp(20px,5vw,48px) 40px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+      <a href="#gul" style="font-size:21px; font-weight:800; text-decoration:none">The Core Model</a>
+      <nav style="display:flex; gap:20px; flex-wrap:wrap; font-size:17px">
+        <a href="#gul" style="font-weight:800; text-decoration-thickness:2px; text-underline-offset:4px">Home</a>
+        <a href="#gul" style="text-decoration:none">Training</a>
+        <a href="#gul" style="text-decoration:none">Resources</a>
+        <a href="#gul" style="text-decoration:none">Book</a>
+        <a href="#gul" style="text-decoration:none">About</a>
+      </nav>
+    </header>
+    <div style="max-width:1100px; margin:0 auto; padding:0 clamp(20px,5vw,48px); display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start">
+      <div style="flex:1 1 440px; min-width:0; max-width:620px; display:flex; flex-direction:column; gap:18px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">thecoremodel.com &middot; tema-gul</span>
+        <h2 style="margin:0; font-size:clamp(32px,4vw,44px); font-weight:800; line-height:1.14; letter-spacing:-0.02em">Stop complicating &ndash; start collaborating!</h2>
+        <p style="margin:0; font-size:clamp(18px,1.4vw,21px); line-height:1.6">A common sense approach to digital strategy and design, from the originator of the core model.</p>
+        <span style="background:#BCF17D; padding:14px 18px; align-self:flex-start; font-size:19px; font-weight:800">Pull quote box is green on yellow</span>
+        <a href="#gul" style="background:#FD9F78; padding:12px 28px; min-height:48px; display:inline-flex; align-items:center; font-size:19px; font-weight:800; text-decoration:none; align-self:flex-start">Buy the book now</a>
+        <a href="#gul" style="font-size:21px; font-weight:800; min-height:48px; display:inline-flex; align-items:center; align-self:flex-start">Read a free extract</a>
+      </div>
+      <div style="flex:0 1 260px; min-width:0; display:flex; flex-direction:column; gap:20px; align-items:center">
+        <span style="width:200px; height:200px; border-radius:50%; background:#AEEBFB; display:grid; place-items:center; text-align:center; padding:24px; font-size:19px; font-weight:800; line-height:1.25">Become a certified facilitator</span>
+        <span style="display:flex; gap:4px; color:#E8A33D; font-size:21px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin:0 auto; padding:48px clamp(20px,5vw,48px) 0">
+      <hr style="border:none; border-top:1px solid #000; margin:0 0 24px">
+      <p style="margin:0; max-width:620px; font-size:clamp(18px,1.4vw,21px); font-style:italic; line-height:1.6">The Core Model &ndash; training, facilitation and independent advice from the originator of the method.</p>
+    </div>
+  </section>
+
+  <section id="blaa" style="background:#AEEBFB; padding:0 0 56px">
+    <header style="max-width:1100px; margin:0 auto; padding:24px clamp(20px,5vw,48px) 40px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap">
+      <a href="#blaa" style="font-size:21px; font-weight:800; text-decoration:none">Kontekstarkitektur</a>
+      <nav style="display:flex; gap:20px; flex-wrap:wrap; font-size:17px">
+        <a href="#blaa" style="font-weight:800; text-decoration-thickness:2px; text-underline-offset:4px">Heim</a>
+        <a href="#blaa" style="text-decoration:none">Manifest</a>
+        <a href="#blaa" style="text-decoration:none">Metode</a>
+        <a href="#blaa" style="text-decoration:none">Kurs</a>
+        <a href="#blaa" style="text-decoration:none">Om</a>
+      </nav>
+    </header>
+    <div style="max-width:1100px; margin:0 auto; padding:0 clamp(20px,5vw,48px); display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start">
+      <div style="flex:1 1 440px; min-width:0; max-width:620px; display:flex; flex-direction:column; gap:18px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">kontekstarkitektur.no &middot; tema-blaa</span>
+        <h2 style="margin:0; font-size:clamp(32px,4vw,44px); font-weight:800; line-height:1.14; letter-spacing:-0.02em">Ta tilbake kontrollen over kunstig intelligens</h2>
+        <p style="margin:0; font-size:clamp(18px,1.4vw,21px); line-height:1.6">Kunnskapssystem for kunnskapsarbeidarar. Eg hjelper deg å bygge konteksten KI-en din manglar.</p>
+        <span style="background:#BCF17D; padding:14px 18px; align-self:flex-start; font-size:19px; font-weight:800">Hentetekst er grøn på blå flate</span>
+        <a href="#blaa" style="background:#FD9F78; padding:12px 28px; min-height:48px; display:inline-flex; align-items:center; font-size:19px; font-weight:800; text-decoration:none; align-self:flex-start">Book ein kaffiprat</a>
+        <a href="#blaa" style="font-size:21px; font-weight:800; min-height:48px; display:inline-flex; align-items:center; align-self:flex-start">Les manifestet</a>
+      </div>
+      <div style="flex:0 1 260px; min-width:0; display:flex; flex-direction:column; gap:20px; align-items:center">
+        <span style="width:200px; height:200px; border-radius:50%; background:#FFE484; display:grid; place-items:center; text-align:center; padding:24px; font-size:19px; font-weight:800; line-height:1.25">Badgen blir gul på blå flate</span>
+        <span style="display:flex; gap:4px; color:#E8A33D; font-size:21px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin:0 auto; padding:48px clamp(20px,5vw,48px) 0">
+      <hr style="border:none; border-top:1px solid #000; margin:0 0 24px">
+      <p style="margin:0; max-width:620px; font-size:clamp(18px,1.4vw,21px); font-style:italic; line-height:1.6">Kontekstarkitektur &ndash; eit prinsipprogram for kunnskapsarbeidarar som vil ta tilbake kontrollen over KI.</p>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+</body>
+</html>

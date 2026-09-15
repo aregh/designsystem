@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#FEF2AE; font-family:'Work Sans', system-ui, sans-serif; color:#000; }
+  a { color:#000; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover { text-decoration-thickness:3px; }
+</style>
+</helmet>
+
+<div style="width:1440px; background:#FEF2AE; min-height:100vh; display:flex; flex-direction:column; padding-bottom:80px; box-sizing:border-box">
+
+  <header style="width:936px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:34px 0 46px">
+    <span style="font-size:19px; font-weight:700">Kjernemodellen</span>
+    <nav style="display:flex; gap:22px; font-size:15px">
+      <span onClick="{{ tilHeim }}" style="{{ stilHeim }}">Heim</span>
+      <span onClick="{{ tilMetode }}" style="{{ stilMetode }}">Metoden</span>
+      <span onClick="{{ tilArk }}" style="{{ stilArk }}">Kjernearket</span>
+      <span style="opacity:0.55; cursor:default">Boka</span>
+      <span style="opacity:0.55; cursor:default">Kurs</span>
+      <span style="opacity:0.55; cursor:default">Om</span>
+    </nav>
+  </header>
+
+  <sc-if value="{{ erHeim }}" hint-placeholder-val="{{ true }}">
+  <main style="width:936px; margin:0 auto; display:grid; grid-template-columns:580px 260px; gap:56px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:17px; line-height:1.6">
+      <span style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase">Metode sidan 2006</span>
+      <h1 style="margin:8px 0 6px; font-size:41px; font-weight:800; line-height:1.16; letter-spacing:-0.02em">Kjernemodellen</h1>
+      <p style="margin:0; font-weight:700">Eit praktisk verktøy for å lage betre digitale tenester.</p>
+      <p style="margin:0">Kjernemodellen koplar brukaroppgåver og forretningsmål, og gir teamet eitt felles ark å bli einige om. Metoden er testa med over 1000 testpersonar og brukt i over 40 land.</p>
+      <p style="margin:0">Metoden er fritt tilgjengeleg under <a href="#">Creative Commons BY-SA 4.0</a>. Bruk han som du vil &ndash; berre vis til kjelda.</p>
+      <span onClick="{{ tilArk }}" style="background:#FD9F78; padding:12px 24px; margin-top:10px; font-size:16px; font-weight:700; align-self:flex-start; cursor:pointer">Last ned kjernearket</span>
+      <h2 style="margin:26px 0 0; font-size:22px; font-weight:700">Seks element</h2>
+      <div style="display:flex; flex-direction:column">
+        <div style="display:flex; align-items:center; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#FFD2E7; clip-path:polygon(50% 0,100% 100%,0 100%); flex:none"></span><strong style="width:150px">Målgruppe</strong><span>Kven lagar vi løysinga for?</span></div>
+        <div style="display:flex; align-items:center; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#BCF17D; flex:none"></span><strong style="width:150px">Brukaroppgåver</strong><span>Kva skal dei få gjort?</span></div>
+        <div style="display:flex; align-items:center; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#AEEBFB; border-radius:50%; flex:none"></span><strong style="width:150px">Mål</strong><span>Kva vil verksemda oppnå?</span></div>
+        <div style="display:flex; align-items:center; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#FD9F78; clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%); flex:none"></span><strong style="width:150px">Vegar inn</strong><span>Korleis kjem dei hit?</span></div>
+        <div style="display:flex; align-items:center; gap:14px; border-top:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#FFE484; flex:none"></span><strong style="width:150px">Kjerneinnhald</strong><span>Kva må stå her?</span></div>
+        <div style="display:flex; align-items:center; gap:14px; border-top:1px solid rgba(0,0,0,.45); border-bottom:1px solid rgba(0,0,0,.45); padding:14px 2px"><span style="width:18px; height:18px; background:#E6B0F9; clip-path:polygon(0 0,100% 0,78% 50%,100% 100%,0 100%); flex:none"></span><strong style="width:150px">Vegar vidare</strong><span>Kvar skal dei så?</span></div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px">
+      <img src="assets/bok-kjernemodellen-rein.png" alt="Boka Kjernemodellen" style="width:243px; display:block">
+      <p style="margin:0; font-size:13px; font-style:italic; line-height:1.5; text-align:center">Boka <a href="#">&laquo;Kjernemodellen &ndash; et praktisk verktøy for å lage bedre digitale tjenester&raquo;</a> (Halland og Halland, Kraft forlag, 2021)</p>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erMetode }}" hint-placeholder-val="{{ false }}">
+  <main style="width:936px; margin:0 auto; display:grid; grid-template-columns:580px 260px; gap:56px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:17px; line-height:1.6">
+      <h1 style="margin:0 0 6px; font-size:41px; font-weight:800; line-height:1.16; letter-spacing:-0.02em">Slik fungerer metoden</h1>
+      <p style="margin:0; font-weight:700">Ein kjerneverkstad tek éin dag, og endar i eit ferdig kjerneark.</p>
+      <p style="margin:0">Kjernemodellen snur den vanlege prosessen: i staden for å byrje med menyen og strukturen, byrjar du med kjernen &ndash; der brukaroppgåva og forretningsmålet møtest.</p>
+      <ol style="margin:0; padding-left:1.3em; line-height:1.75">
+        <li>Bli einige om målgruppa de lagar løysinga for</li>
+        <li>Skriv ned brukaroppgåvene, ei per lapp</li>
+        <li>Skriv ned måla verksemda har med sida</li>
+        <li>Kartlegg vegane inn &ndash; søk, kampanjar, lenker</li>
+        <li>Formuler kjerneinnhaldet: kva må faktisk stå her?</li>
+        <li>Sett opp vegane vidare &ndash; kva er neste steg for brukaren?</li>
+      </ol>
+      <h2 style="margin:20px 0 0; font-size:22px; font-weight:700">Kva du får ut av det</h2>
+      <ul style="margin:0; padding-left:1.3em; line-height:1.7">
+        <li>Eit felles språk på tvers av avdelingar</li>
+        <li>Prioritert innhald i staden for lange ønskelister</li>
+        <li>Sporbare avgjerder du kan vise til seinare</li>
+      </ul>
+      <p style="margin:0">Vil du lære metoden direkte frå opphavsmannen? <a href="#">Sjå kursa hos Kjernekaren</a>.</p>
+    </div>
+    <p style="margin:0; font-size:16px; font-style:italic; line-height:1.6; text-align:center">&laquo;Vi slutta å diskutere menyen og byrja å diskutere oppgåvene.&raquo;<br><span style="font-style:normal">Deltakar, masterclass 2025</span></p>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erArk }}" hint-placeholder-val="{{ false }}">
+  <main style="width:936px; margin:0 auto; display:grid; grid-template-columns:580px 260px; gap:56px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:17px; line-height:1.6">
+      <h1 style="margin:0 0 6px; font-size:41px; font-weight:800; line-height:1.16; letter-spacing:-0.02em">Kjernearket</h1>
+      <p style="margin:0; font-weight:700">Skriv ut arket i A3, eller køyr verkstaden digitalt.</p>
+      <p style="margin:0">For ein fysisk kjerneverkstad treng du først og fremst eit kjerneark. Eg tilrår å skrive ut svart-kvitt-versjonen i A3.</p>
+      <img src="assets/core-sheet-farger.png" alt="Kjernearket i fargar" style="width:580px; display:block; margin:8px 0">
+      <h2 style="margin:12px 0 0; font-size:22px; font-weight:700">Last ned PDF</h2>
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <a href="#">Kjernearket i svart-kvitt</a>
+        <a href="#">Kjernearket i fargar</a>
+      </div>
+      <h2 style="margin:20px 0 0; font-size:22px; font-weight:700">Digitale malar</h2>
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <a href="#">Miro-mal</a>
+        <a href="#">Mural-mal</a>
+        <a href="#">FigJam-mal</a>
+      </div>
+      <h2 style="margin:20px 0 0; font-size:22px; font-weight:700">Lisens</h2>
+      <p style="margin:0">Kjernemodellen kjem med ein <a href="#">Creative Commons Attribution-ShareAlike 4.0-lisens</a>. Du kan bruke han fritt så lenge du viser til kjelda, og endringar må delast på same vilkår.</p>
+      <p style="margin:0">Happy core modeling!</p>
+      <p style="margin:0">Are</p>
+    </div>
+    <p style="margin:0; font-size:16px; line-height:1.6">Send kommentarar og innspel til <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>.</p>
+  </main>
+  </sc-if>
+
+  <section style="width:936px; margin:96px auto 0; display:flex; flex-direction:column; gap:14px">
+    <hr style="border:none; border-top:1px solid rgba(0,0,0,.45); margin:0 0 26px; width:100%">
+    <div style="width:580px; display:flex; flex-direction:column; gap:14px">
+      <h2 style="margin:0; font-size:22px; font-weight:700">Abonner på nyheitsbrevet</h2>
+      <p style="margin:0; font-size:20px; line-height:1.6">Bli den første til å få oppdateringar om toppoppgaver, kjernemodellen, nye malar, fagartiklar, kurs og sprell frå Kjernekaren :-)</p>
+      <div style="display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; padding-top:6px">
+        <label style="display:flex; flex-direction:column; gap:6px; font-size:15px; flex:1 1 140px">Fornamn
+          <input type="text" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:15px; width:100%; box-sizing:border-box">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:6px; font-size:15px; flex:1 1 180px">Epost
+          <input type="text" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:10px 12px; font-family:'Work Sans', sans-serif; font-size:15px; width:100%; box-sizing:border-box">
+        </label>
+        <span style="background:#FD9F78; padding:12px 24px; font-size:15px; font-weight:700; cursor:pointer">Hald meg oppdatert!</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="width:936px; margin:96px auto 0; display:flex; flex-direction:column">
+    <hr style="border:none; border-top:1px solid rgba(0,0,0,.45); margin:0 0 40px; width:100%">
+    <div style="width:580px; display:flex; flex-direction:column; gap:34px">
+      <p style="margin:0; font-style:italic; font-size:19px; line-height:1.6">Kjernemodellen er utvikla av <a href="#">Are Halland</a>, og er verna under ein <a href="#">Creative Commons CC-BY-SA-4.0-lisens</a>.</p>
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:19px">
+        <h2 style="margin:0 0 6px; font-size:22px; font-weight:700">Ta kontakt</h2>
+        <span>+47 908 70 026</span>
+        <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>
+        <a href="#">Følg meg på LinkedIn</a>
+        <a href="#">Book ein kaffiprat</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;startside&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;heim&quot;,&quot;metode&quot;,&quot;ark&quot;],&quot;default&quot;:&quot;heim&quot;,&quot;tsType&quot;:&quot;'heim'|'metode'|'ark'&quot;,&quot;section&quot;:&quot;Visning&quot;}}">
+class Component extends DCLogic {
+  state = { side: null };
+  renderVals() {
+    const side = this.state.side ?? this.props.startside ?? 'heim';
+    const gaa = s => e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ side: s }); };
+    const stil = s => 'cursor:pointer;' + (side === s ? 'font-weight:700; opacity:1' : 'opacity:0.55');
+    return {
+      erHeim: side === 'heim', erMetode: side === 'metode', erArk: side === 'ark',
+      tilHeim: gaa('heim'), tilMetode: gaa('metode'), tilArk: gaa('ark'),
+      stilHeim: stil('heim'), stilMetode: stil('metode'), stilArk: stil('ark')
+    };
+  }
+}
+</script>
+</body>
+</html>

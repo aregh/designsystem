@@ -1,0 +1,69 @@
+/* == Flatetema ==
+   Kvar nettstad i universet har éin flatefarge. Legg temaklassa på <body>
+   (eller på ein seksjon for ei enkeltside som avvik, t.d. bok-sida).
+
+   Når ein kjernemodell-farge blir brukt som HEIL sideflate, er
+   element-tydinga suspendert for den flata: fargekodinga gjeld då berre
+   inne i sjølve kjernemodell-grafikken. Utanfor grafikken er flata
+   nøytral bakgrunn.
+
+   Regel for kombinasjonar:
+   - Knappen er alltid laks #FD9F78 med svart tekst — unntatt når flata
+     sjølv er laks/rosa, då er knappen svart med kvit tekst.
+   - Sirkel-badgen skal ALDRI ha same farge som flata.
+   - Hentetekst-boksen på FOTO kan godt ha same farge som flata — den ligg
+     oppå biletet og har kontrast der. Ligg boksen derimot direkte på
+     sideflata, må han skifte farge (--hentetekst-paa-flate).
+   - Maks to flatefargar per side (flata + eventuell hentetekst/badge).
+*/
+
+/* kjernekaren.no */
+.tema-groenn {
+  --flate-side: #BCF17D;
+  --badge-flate: #AEEBFB;       /* blå */
+  --hentetekst-flate: #BCF17D;       /* grøn — ligg oppå foto, som i dag */
+  --hentetekst-paa-flate: #FFE484;   /* gul — når boksen ligg direkte på grøn flate */
+  --knapp-flate: #FD9F78;
+  --knapp-tekst: #000000;
+}
+
+/* thecoremodel.com */
+.tema-gul {
+  --flate-side: #FFE484;
+  --badge-flate: #AEEBFB;       /* blå */
+  --hentetekst-flate: #BCF17D;       /* grøn */
+  --hentetekst-paa-flate: #BCF17D;   /* grøn funkar òg direkte på gul flate */
+  --knapp-flate: #FD9F78;
+  --knapp-tekst: #000000;
+}
+
+/* kontekstarkitektur.no */
+.tema-blaa {
+  --flate-side: #AEEBFB;
+  --badge-flate: #FFE484;       /* gul — blå badge på blå flate er usynleg */
+  --hentetekst-flate: #BCF17D;       /* grøn */
+  --hentetekst-paa-flate: #BCF17D;   /* grøn funkar òg direkte på blå flate */
+  --knapp-flate: #FD9F78;
+  --knapp-tekst: #000000;
+}
+
+/* Enkeltsider: boka (kjernekaren.no/bok, thecoremodel.com/book) */
+.tema-rosa {
+  --flate-side: #FEC4B2;
+  --badge-flate: #AEEBFB;
+  --hentetekst-flate: #BCF17D;
+  --knapp-flate: #000000;       /* laks på laks funkar ikkje */
+  --knapp-tekst: #FFFFFF;
+}
+
+/* Lys gul tint — den opphavlege standardflata, framleis gyldig for
+   innhaldstunge sider (blogg, artiklar) der full metning blir mykje. */
+.tema-gul-lys {
+  --flate-side: #FEF2AE;
+  --badge-flate: #AEEBFB;
+  --hentetekst-flate: #BCF17D;
+  --knapp-flate: #FD9F78;
+  --knapp-tekst: #000000;
+}
+
+body[class*="tema-"], [class*="tema-"] { background: var(--flate-side); color: #000; }

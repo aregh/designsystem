@@ -1,0 +1,112 @@
+<!-- @dsCard group="Kjernemodellen.no" viewport="1000x1400" -->
+<!-- @startingPoint section="Kjernekaren" subtitle="Kurs-landingsside (gul, nynorsk)" viewport="1000x1400" -->
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<title>Kurs — Kjernemodellen.no</title>
+<link rel="stylesheet" href="../../styles.css">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+<script type="text/babel" src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--bakgrunn-gul);font-family:var(--font-sans);color:var(--tekst)}
+  .wrap{max-width:640px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:56px 0 12px}
+  h1{font-size:44px;font-weight:800;line-height:1.12;margin:0 0 28px}
+  p{font-size:17px;line-height:1.65;margin:0 0 18px}
+  ul{font-size:17px;line-height:1.6;padding-left:20px;margin:0 0 22px}
+  li{margin:4px 0}
+  .hero{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;max-width:900px;margin:0 auto;padding:0 24px}
+  .figcap{font-size:13px;font-style:italic;line-height:1.5;text-align:center;margin-top:14px;opacity:.85}
+  h2{font-size:19px;font-weight:700;margin:36px 0 10px}
+  hr{border:none;border-top:1px solid var(--strek-svak);margin:56px 0}
+  .rail{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;margin:64px 0}
+  .twocol{display:grid;grid-template-columns:1fr 300px;gap:48px;max-width:900px;margin:0 auto;padding:0 24px;align-items:start}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+function DS(name){for(const k of Object.keys(window)){const v=window[k];if(v&&typeof v==='object'&&v[name])return v[name];}return function(){return null};}
+const SiteHeader=DS('SiteHeader'), SiteFooter=DS('SiteFooter'), Button=DS('Button'),
+      TestimonialCard=DS('TestimonialCard'), Quote=DS('Quote'),
+      Accordion=DS('Accordion'), AccordionItem=DS('AccordionItem'), NewsletterForm=DS('NewsletterForm'), TextLink=DS('TextLink');
+
+function KursSide(){
+  return (
+    <div>
+      <SiteHeader brand="Are Halland" active="Kurs"/>
+      <div className="hero">
+        <div>
+          <div className="eyebrow">Digitalt kurs 18. september</div>
+          <h1>Strategisk innhaldsdesign med kjernemodellen</h1>
+          <p><b>Bli ekspert på den enkle og effektive metoden som hjelper deg å:</b></p>
+          <ul>
+            <li>samarbeide på tvers av team og fagområde</li>
+            <li>tenke strategisk og brukarorientert samtidig</li>
+            <li>sjå produktet ditt i eit heilheitsperspektiv</li>
+            <li>starte med det viktigaste</li>
+            <li>gjere det enkelt og konkret</li>
+          </ul>
+          <p>Lær metoden direkte frå opphavsmannen, og få alt av tips, triks og malar du treng for å ta i bruk metoden umiddelbart etter kurset.</p>
+          <Button href="#pamelding" style={{marginTop:'8px'}}>Gå til påmelding</Button>
+        </div>
+        <div>
+          <img src="../../assets/bok-kjernemodellen.png" alt="Boka Kjernemodellen" style={{width:'100%',display:'block'}}/>
+          <div className="figcap">Kurset er basert på boka <u>«Kjernemodellen – eit praktisk verktøy for å lage bedre digitale tenester»</u> (Halland og Halland, Kraft forlag, 2021)</div>
+        </div>
+      </div>
+
+      <hr/>
+      <div className="rail">
+        <TestimonialCard image="../../assets/are-portrett.png" name="Hedda Foss Lilleng" role="Managing Director, Snøhetta Design" quote="Effektiv og god innføring i eit solid og praktisk verktøy!"/>
+        <TestimonialCard name="Ann Key" role="Lead Content Strategist, Aha Media Group" quote="I walked away excited, motivated, and feeling equipped to do my job better!"/>
+        <TestimonialCard name="Thomas Marriaga Olsen" role="Senior service designer, Itera" quote="Godt gjennomført og engasjerande kurs – anbefales!"/>
+      </div>
+
+      <div className="twocol">
+        <div>
+          <p><u>Kjernemodellen</u> er eit praktisk og intuitivt rammeverk for å samarbeide om å lage brukarvennlege og strategisk forankra produkter og tenester.</p>
+          <p>På overflata er modellen enkel og intuitiv, men med dybdeforståelse av rammeverket kan du få til «magiske ting»:</p>
+          <ul>
+            <li>Forenkle, forankre og skape framdrift i prosjekt og prosessar</li>
+            <li>Vere ein sentral del av eit felles verktøykasse i tverrfaglege team</li>
+            <li>Skape eigarskap og auka digital modenheit i organisasjonen</li>
+          </ul>
+          <h2>Målgruppe</h2>
+          <ul>
+            <li><b>Produktteam</b> som ønsker eit enkelt samarbeidsverktøy for å involvere teamet og nøkkelpersonar i organisasjonen</li>
+            <li><b>Digitalbyrå</b> som ønsker ein felles, enkel metodikk for å involvere oppdragsgivar og samarbeide betre internt</li>
+            <li><b>Små og store bedrifter og organisasjonar</b> som vil lage prioritert og effektiv kommunikasjon</li>
+          </ul>
+        </div>
+        <Quote variant="sidestilt" name="Elisabeth Heidenstrøm" role="CRM & Martech Manager i Sopra Steria">Utrolig nyttig kurs med masse praktiske eksempler som gjer det enkelt å ta i bruk kjernemodellen med ein gong. Gleder meg til å teste det ut på egne prosjekter!</Quote>
+      </div>
+
+      <div className="wrap" style={{marginTop:'56px'}}>
+        <Accordion>
+          <AccordionItem title="Kva er kjernemodellen?">Eit rammeverk for å prioritere innhald og funksjonalitet ut frå både brukarbehov og forretningsmål.</AccordionItem>
+          <AccordionItem title="Om Are">Are Halland er opphavsmannen bak kjernemodellen, med 25 års erfaring med digital strategi og design.</AccordionItem>
+          <AccordionItem title="Sagt om kurset">«Effektiv og god innføring i eit solid og praktisk verktøy!»</AccordionItem>
+          <AccordionItem title="Praktisk informasjon">Digitalt kurs 18. september. Påmelding via lenka over.</AccordionItem>
+        </Accordion>
+        <div style={{marginTop:'40px'}}>
+          <Button href="#pamelding">Gå til påmelding</Button>
+        </div>
+        <h2 style={{marginTop:'56px'}}>Har du spørsmål om kurset?</h2>
+        <p>Ring meg på 908 70 026, send epost til <TextLink href="mailto:are@kjernekaren.no">are@kjernekaren.no</TextLink> eller <TextLink href="#">book ein kaffiprat</TextLink>.</p>
+        <p>Vi snakkast!</p>
+        <p>Are</p>
+        <hr/>
+        <NewsletterForm/>
+      </div>
+      <SiteFooter/>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<KursSide/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; }
+  body { margin:0; background:#F4F4F2; font-family:'Work Sans', system-ui, sans-serif; color:#000; }
+  img { max-width:100%; height:auto; display:block; }
+</style>
+</helmet>
+
+<section style="padding:40px; display:flex; flex-direction:column; gap:28px">
+  <div style="max-width:760px; display:flex; flex-direction:column; gap:10px">
+    <h1 style="margin:0; font-size:28px; font-weight:800">Hentetekst på grøn flate — fire alternativ</h1>
+    <p style="margin:0; font-size:19px; line-height:1.6">Problemet er at grøn hentetekst på grøn flate forsvinn. Her er fire måtar å løyse det, alle innanfor malen: flate fargar, skarpe hjørne, svart tekst der det er mogleg.</p>
+  </div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:32px">
+
+    <div id="1a" style="flex:1 1 420px; min-width:0; max-width:520px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <span style="background:#000; color:#fff; font-size:13px; font-weight:800; padding:4px 10px">1a</span>
+        <span style="font-size:17px; font-weight:800">Kvit boks, svart tekst</span>
+      </div>
+      <div style="position:relative; background:#BCF17D; padding:28px; container-type:inline-size">
+        <img src="assets/forside-hero-rein.png" alt="" style="width:100%">
+        <div style="position:absolute; left:46%; top:30%; width:44%; background:#FFF; padding:4% 4.5%">
+          <span style="font-size:2.1cqw; font-weight:800; line-height:1.2">Kurs, fasilitering og uavhengig rådgjeving</span>
+        </div>
+      </div>
+      <p style="margin:0; font-size:17px; line-height:1.6">Reinaste kontrasten og heilt nøytral — kvit er ikkje ein kjernemodell-farge, så boksen konkurrerer ikkje med fargekodinga. Kan bli litt anonym; ser mest ut som ein sitatplate.</p>
+    </div>
+
+    <div id="1b" style="flex:1 1 420px; min-width:0; max-width:520px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <span style="background:#000; color:#fff; font-size:13px; font-weight:800; padding:4px 10px">1b</span>
+        <span style="font-size:17px; font-weight:800">Svart boks, kvit tekst</span>
+      </div>
+      <div style="position:relative; background:#BCF17D; padding:28px; container-type:inline-size">
+        <img src="assets/forside-hero-rein.png" alt="" style="width:100%">
+        <div style="position:absolute; left:46%; top:30%; width:44%; background:#000; padding:4% 4.5%">
+          <span style="color:#FFF; font-size:2.1cqw; font-weight:800; line-height:1.2">Kurs, fasilitering og uavhengig rådgjeving</span>
+        </div>
+      </div>
+      <p style="margin:0; font-size:17px; line-height:1.6">Sterkast og mest særpreget. Svart er allereie brandet sin einaste «farge» ved sida av pastellane, så dette les som ein bevisst typografisk plate. Kvit tekst er eit brot med «alltid svart tekst», men på ei svart flate er det uunngåeleg. <strong>Mitt førsteval.</strong></p>
+    </div>
+
+    <div id="1c" style="flex:1 1 420px; min-width:0; max-width:520px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <span style="background:#000; color:#fff; font-size:13px; font-weight:800; padding:4px 10px">1c</span>
+        <span style="font-size:17px; font-weight:800">Gul boks, svart tekst</span>
+      </div>
+      <div style="position:relative; background:#BCF17D; padding:28px; container-type:inline-size">
+        <img src="assets/forside-hero-rein.png" alt="" style="width:100%">
+        <div style="position:absolute; left:46%; top:30%; width:44%; background:#FFE484; padding:4% 4.5%">
+          <span style="font-size:2.1cqw; font-weight:800; line-height:1.2">Kurs, fasilitering og uavhengig rådgjeving</span>
+        </div>
+      </div>
+      <p style="margin:0; font-size:17px; line-height:1.6">Varmast, og held seg heilt innanfor paletten. Men gul er kjerneinnhald-fargen, og då seier hentetekst-boksen «dette er kjerneinnhald» kvar gong. Fungerer om du er komfortabel med at forsida les som ei kjerne.</p>
+    </div>
+
+    <div id="1d" style="flex:1 1 420px; min-width:0; max-width:520px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <span style="background:#000; color:#fff; font-size:13px; font-weight:800; padding:4px 10px">1d</span>
+        <span style="font-size:17px; font-weight:800">Grøn boks med svart ramme</span>
+      </div>
+      <div style="position:relative; background:#BCF17D; padding:28px; container-type:inline-size">
+        <img src="assets/forside-hero-rein.png" alt="" style="width:100%">
+        <div style="position:absolute; left:46%; top:30%; width:44%; background:#BCF17D; border:3px solid #000; padding:4% 4.5%">
+          <span style="font-size:2.1cqw; font-weight:800; line-height:1.2">Kurs, fasilitering og uavhengig rådgjeving</span>
+        </div>
+      </div>
+      <p style="margin:0; font-size:17px; line-height:1.6">Behaldar grønfargen frå dagens forside og løyser lesbarheita med ein tjukk svart strek. Streken er òg eit element malen alt brukar. Ulempa: mot flata rundt ser boksen ut som eit hol i biletet, og systemet får eit nytt ramme-mønster å halde orden på.</p>
+    </div>
+
+  </div>
+</section>
+
+</x-dc>
+</body>
+</html>

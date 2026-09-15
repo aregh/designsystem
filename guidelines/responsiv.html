@@ -1,0 +1,47 @@
+<!-- @dsCard group="Spacing" viewport="820x560" name="Responsiv" subtitle="Brekkpunkt, flytande type, mobilreglar" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+body{margin:0;padding:28px;background:#fff;font-family:'Work Sans',sans-serif;color:#000;font-size:15px}
+h2{font-size:19px;font-weight:800;margin:0 0 14px}
+h3{font-size:15px;font-weight:800;margin:24px 0 8px;letter-spacing:.06em;text-transform:uppercase}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid rgba(0,0,0,.18);vertical-align:top}
+th{font-weight:800}
+code{font-family:ui-monospace,monospace;font-size:13px;background:#FFE484;padding:1px 4px}
+ul{margin:0;padding-left:1.2em;line-height:1.7}
+</style></head><body>
+<h2>Responsiv oppf&oslash;rsel</h2>
+
+<h3>Brekkpunkt</h3>
+<table>
+<tr><th>Namn</th><th>Breidd</th><th>Layout</th></tr>
+<tr><td>mobil</td><td>&lt;= 599px</td><td>&Eacute;in kolonne, hamburgermeny, knappar i full breidd</td></tr>
+<tr><td>tablet</td><td>600&ndash;899px</td><td>&Eacute;in kolonne, synleg meny</td></tr>
+<tr><td>liten desktop</td><td>900&ndash;1199px</td><td>To kolonner, redusert sidemarg</td></tr>
+<tr><td>desktop</td><td>&gt;= 1200px</td><td>Full layout, 560px tekstkolonne</td></tr>
+</table>
+
+<h3>Flytande typografi</h3>
+<table>
+<tr><th>Rolle</th><th>Mobil &rarr; desktop</th></tr>
+<tr><td>display</td><td>40 &rarr; 64px</td></tr>
+<tr><td>h1</td><td>32 &rarr; 44px</td></tr>
+<tr><td>h2</td><td>24 &rarr; 30px</td></tr>
+<tr><td>h3</td><td>20 &rarr; 23px</td></tr>
+<tr><td>br&oslash;dtekst</td><td>18 &rarr; 21px</td></tr>
+<tr><td>liten / etikett</td><td>17px / 15px (fast)</td></tr>
+</table>
+<p style="margin:10px 0 0">Ingenting under <strong>15px</strong>, og br&oslash;dtekst aldri under <strong>18px</strong>. Manualen krev romsleg skrift.</p>
+
+<h3>Reglar</h3>
+<ul>
+<li><code>box-sizing:border-box</code> globalt; <code>img{max-width:100%;height:auto}</code>.</li>
+<li>Ingen faste pikselbreidder p&aring; innhaldsboksar &mdash; bruk <code>max-width</code>.</li>
+<li>To-kolonne-seksjonar kollapsar med <code>auto-fit / minmax(min(320px,100%),1fr)</code>, ikkje media query.</li>
+<li>Grid- og flex-barn f&aring;r <code>min-width:0</code> s&aring; lange lenker ikkje pressar sida brei.</li>
+<li>Trykkflater minst <strong>48px</strong> h&oslash;ge (menylenker, knappar, aksordionrader).</li>
+<li>Sidemarg <code>clamp(20px,5vw,48px)</code> &mdash; aldri null.</li>
+<li>Aldri vassrett skroll. Sjekk 320px breidd.</li>
+<li>Ingen animasjon i brandet; <code>prefers-reduced-motion</code> uansett respektert.</li>
+</ul>
+</body></html>

@@ -1,0 +1,42 @@
+:root {
+  /* == Kjernemodell-fargane (basis) ==
+     Fargane er knytte til element i kjernemodellen og skal berre
+     brukast der ei slik fargekoding passar. */
+  --farge-rosa:   #FFD2E7; /* Målgruppe (trekant, farga kjerneark) */
+  --farge-groenn: #BCF17D; /* Brukeroppgaver (grøne kvadrat) */
+  --farge-blaa:   #AEEBFB; /* Mål (blå sirkel) */
+  --farge-roed:   #FD9F78; /* Veier inn (oransje piler) — òg kalla oransje */
+  --farge-gul:    #FFE484; /* Kjerneinnhold (stort gult rektangel) */
+  --farge-lilla:  #E6B0F9; /* Veier videre (fiolette piler) */
+  --farge-svart:  #000000; /* Tekst */
+  --farge-kvit:   #FFFFFF;
+
+  /* == Ikkje brandfargar ==
+     Grå er ingen kjernemodell-farge og har ingen fargekoding. Bruk berre til
+     nøytrale flater som IKKJE skal lesast som eit modell-element:
+     plassholdarar, disabla felt, s-kv-versjonen av kjernearket.
+     (Designmanualen kallar denne "Målgruppe" — det er feil; målgruppa er rosa trekant.) */
+  --farge-graa:   #EAEAEA;
+
+  /* == Bakgrunnstintar (sampla frå kjernemodellen.no / thecoremodel.com) == */
+  --bakgrunn-gul:   #FEF2AE; /* standard sideflate */
+  --bakgrunn-rosa:  #FEC4B2; /* alternativ sideflate (bok-sida) */
+  --bakgrunn-groenn: var(--farge-groenn); /* alternativ sideflate (training-sida) */
+
+  /* == Semantiske alias == */
+  --flate-side:      var(--bakgrunn-gul);
+  --tekst:           var(--farge-svart);
+  --tekst-invers:    var(--farge-kvit);
+  --lenke:           var(--farge-svart);   /* lenker er alltid svarte + underline */
+  --knapp-flate:     var(--farge-roed);
+  --knapp-tekst:     var(--farge-svart);
+  --badge-flate:     var(--farge-blaa);    /* sirkel-badge */
+  --hentetekst-flate: var(--farge-groenn); /* utheva boks på foto/heroar */
+  --felt-flate:      var(--farge-kvit);
+  --strek:           var(--farge-svart);
+  /* Brandet er flatt og heilsvart. Halvgjennomsiktig svart gir ulik farge på
+     gul, grøn og rosa flate, så --strek-svak er no heilsvart som --strek.
+     Behald aliaset for bakoverkompatibilitet, men bruk --strek i ny kode. */
+  --strek-svak:      var(--strek);
+  --stjerne:         #E8A33D;
+}

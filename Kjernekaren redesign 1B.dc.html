@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#FEF2AE; font-family:'Work Sans', system-ui, sans-serif; color:#000; }
+  a { color:#000; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:3px; }
+  a:hover { text-decoration-thickness:5px; }
+</style>
+</helmet>
+
+<div style="width:1440px; background:#FEF2AE; min-height:100vh; display:flex; flex-direction:column">
+
+  <header style="display:flex; justify-content:space-between; align-items:center; gap:40px; padding:26px 100px; background:#FEF2AE">
+    <span style="font-size:25px; font-weight:800; letter-spacing:-0.02em">Kjernekaren</span>
+    <nav style="display:flex; align-items:center; gap:26px; font-size:17px; font-weight:500">
+      <span onClick="{{ tilHeim }}" style="{{ stilHeim }}">Heim</span>
+      <span onClick="{{ tilKurs }}" style="{{ stilKurs }}">Kurs</span>
+      <span style="cursor:default">Tenester</span>
+      <span style="cursor:default">Boka</span>
+      <span style="cursor:default">Blogg</span>
+      <span onClick="{{ tilOm }}" style="{{ stilOm }}">Om meg</span>
+      <span onClick="{{ tilKurs }}" style="background:#FD9F78; padding:12px 22px; font-size:13px; font-weight:600; letter-spacing:0.12em; cursor:pointer">BOOK EIN KAFFIPRAT</span>
+    </nav>
+  </header>
+
+  <sc-if value="{{ erHeim }}" hint-placeholder-val="{{ true }}">
+  <main style="display:flex; flex-direction:column">
+
+    <section style="padding:64px 100px 88px; background:#FEF2AE; display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:64px; align-items:center">
+      <div style="display:flex; flex-direction:column; gap:26px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.16em">KURS · FASILITERING · RÅDGJEVING</span>
+        <h1 style="margin:0; font-size:88px; font-weight:800; line-height:0.97; letter-spacing:-0.04em; text-wrap:pretty">Slutt å komplisere. Start å samarbeide.</h1>
+        <p style="margin:0; font-size:21px; line-height:1.55; max-width:46ch">Eg er Are Halland — mannen bak kjernemodellen. Eg hjelper team med å kople brukarbehov til forretningsmål, og gjer det til innhald folk faktisk får noko gjort med.</p>
+        <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap">
+          <span onClick="{{ tilKurs }}" style="background:#FD9F78; padding:17px 32px; font-size:15px; font-weight:600; letter-spacing:0.12em; cursor:pointer">SJÅ KURSA MINE</span>
+          <a href="#" onClick="{{ tilOm }}" style="font-size:18px; font-weight:700">Bli kjend med meg</a>
+        </div>
+      </div>
+      <div style="width:320px; height:320px; border-radius:50%; background:#AEEBFB; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:44px; box-sizing:border-box; gap:10px">
+        <span style="font-size:31px; font-weight:800; line-height:1.08">Bli sertifisert fasilitator</span>
+        <span style="font-size:17px; font-weight:500">Oslo 12.–13. mars</span>
+      </div>
+    </section>
+
+    <section style="background:#BCF17D; padding:0; display:grid; grid-template-columns:minmax(0,1fr) 560px; align-items:stretch">
+      <div style="padding:64px 60px 64px 100px; display:flex; flex-direction:column; gap:20px; justify-content:center">
+        <span style="font-size:72px; font-weight:800; line-height:0.6">&rdquo;</span>
+        <p style="margin:0; font-size:29px; font-weight:700; line-height:1.32; text-wrap:pretty">Kjernemodellen gjorde at heile organisasjonen snakka same språk om innhald for første gong.</p>
+        <span style="font-size:17px">Marit Nyhus · innhaldsansvarleg, Statens vegvesen</span>
+        <div style="display:flex; gap:10px; align-items:center; padding-top:6px">
+          <span style="display:flex; gap:2px; color:#E8A33D; font-size:22px; line-height:1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+          <span style="font-size:16px">4,9 av 5 frå 214 kursdeltakarar</span>
+        </div>
+      </div>
+      <img src="assets/are-portrett.png" alt="Are Halland" style="width:560px; height:100%; object-fit:cover; display:block">
+    </section>
+
+    <section style="padding:88px 100px; background:#FEF2AE; display:flex; flex-direction:column; gap:44px">
+      <h2 style="margin:0; font-size:56px; font-weight:800; letter-spacing:-0.03em; line-height:1.05">Dette kan eg hjelpe deg med</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px">
+        <div style="background:#FFF; padding:36px; display:flex; flex-direction:column; gap:16px">
+          <div style="width:52px; height:52px; background:#BCF17D"></div>
+          <h3 style="margin:0; font-size:29px; font-weight:800; line-height:1.15">Kurs og masterclass</h3>
+          <p style="margin:0; font-size:17px; line-height:1.55">Frå halvdags innføring til to dagars sertifisering. Du går frå kurset med eit ferdig kjerneark for di eiga teneste.</p>
+          <a href="#" onClick="{{ tilKurs }}" style="font-size:17px; font-weight:700; margin-top:auto">Sjå kursa</a>
+        </div>
+        <div style="background:#FFF; padding:36px; display:flex; flex-direction:column; gap:16px">
+          <div style="width:52px; height:52px; background:#AEEBFB; border-radius:50%"></div>
+          <h3 style="margin:0; font-size:29px; font-weight:800; line-height:1.15">Fasilitering</h3>
+          <p style="margin:0; font-size:17px; line-height:1.55">Eg leier kjerneverkstaden for teamet ditt — og syter for at alle avdelingane faktisk blir einige om oppgåvene.</p>
+          <a href="#" style="font-size:17px; font-weight:700; margin-top:auto">Book ein verkstad</a>
+        </div>
+        <div style="background:#FFF; padding:36px; display:flex; flex-direction:column; gap:16px">
+          <div style="width:52px; height:52px; background:#FD9F78; clip-path:polygon(0 25%, 60% 25%, 60% 0, 100% 50%, 60% 100%, 60% 75%, 0 75%)"></div>
+          <h3 style="margin:0; font-size:29px; font-weight:800; line-height:1.15">Ekspertevaluering</h3>
+          <p style="margin:0; font-size:17px; line-height:1.55">Eg går gjennom tenesta di og peikar konkret på kva som stoppar toppoppgåvene til brukarane dine.</p>
+          <a href="#" style="font-size:17px; font-weight:700; margin-top:auto">Les meir</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:0 100px 88px; background:#FEF2AE; display:flex; flex-direction:column; gap:0">
+      <h2 style="margin:0 0 24px; font-size:56px; font-weight:800; letter-spacing:-0.03em">Neste kurs</h2>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; border-top:2px solid #000; padding:26px 0">
+        <div style="display:flex; flex-direction:column; gap:6px">
+          <span style="font-size:14px; font-weight:600; letter-spacing:0.16em">DIGITALT KURS</span>
+          <span style="font-size:31px; font-weight:800">Kjernemodellen på ein dag</span>
+        </div>
+        <span style="font-size:20px; font-weight:500">18. september</span>
+        <span onClick="{{ tilKurs }}" style="background:#FD9F78; padding:14px 26px; font-size:14px; font-weight:600; letter-spacing:0.12em; cursor:pointer">GÅ TIL PÅMELDING</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; border-top:1px solid #000; padding:26px 0">
+        <div style="display:flex; flex-direction:column; gap:6px">
+          <span style="font-size:14px; font-weight:600; letter-spacing:0.16em">MASTERCLASS, OSLO</span>
+          <span style="font-size:31px; font-weight:800">Strategisk innhaldsdesign</span>
+        </div>
+        <span style="font-size:20px; font-weight:500">12.–13. mars</span>
+        <span onClick="{{ tilKurs }}" style="background:#FD9F78; padding:14px 26px; font-size:14px; font-weight:600; letter-spacing:0.12em; cursor:pointer">GÅ TIL PÅMELDING</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:32px; border-top:1px solid #000; border-bottom:1px solid #000; padding:26px 0">
+        <div style="display:flex; flex-direction:column; gap:6px">
+          <span style="font-size:14px; font-weight:600; letter-spacing:0.16em">SERTIFISERING</span>
+          <span style="font-size:31px; font-weight:800">Fasilitator-sertifisering</span>
+        </div>
+        <span style="font-size:20px; font-weight:500">19.–20. juni</span>
+        <span onClick="{{ tilKurs }}" style="background:#FD9F78; padding:14px 26px; font-size:14px; font-weight:600; letter-spacing:0.12em; cursor:pointer">GÅ TIL PÅMELDING</span>
+      </div>
+    </section>
+
+    <section style="background:#FEC4B2; padding:80px 100px; display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:72px; align-items:center">
+      <div style="display:flex; flex-direction:column; gap:20px">
+        <h2 style="margin:0; font-size:52px; font-weight:800; line-height:1.05; letter-spacing:-0.03em">Boka: Kjernemodellen</h2>
+        <p style="margin:0; font-size:19px; line-height:1.6; max-width:48ch">Eit praktisk verktøy for å lage betre digitale tenester, skrive saman med kona mi. Kraft forlag, 2021 — og snart på engelsk som <em>The Core Model</em>.</p>
+        <span style="background:#FD9F78; padding:16px 30px; align-self:flex-start; font-size:15px; font-weight:600; letter-spacing:0.12em">KJØP BOKA</span>
+      </div>
+      <img src="assets/bok-kjernemodellen.png" alt="Boka Kjernemodellen" style="width:380px; display:block">
+    </section>
+
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erKurs }}" hint-placeholder-val="{{ false }}">
+  <main style="display:flex; flex-direction:column">
+
+    <section style="padding:56px 100px 72px; background:#FEF2AE; display:flex; flex-direction:column; gap:24px">
+      <span style="font-size:15px; font-weight:600; letter-spacing:0.16em">KURS OG KOMPETANSEHEVING</span>
+      <h1 style="margin:0; font-size:92px; font-weight:800; line-height:0.96; letter-spacing:-0.04em; max-width:22ch">Kursa mine gjer teamet ditt einige om oppgåvene</h1>
+      <p style="margin:0; font-size:21px; line-height:1.55; max-width:52ch">Alle kurs blir arrangerte både i Oslo og digitalt. Eg kan òg køyre kurset hos deg eller i andre byar ved behov.</p>
+    </section>
+
+    <section style="background:#BCF17D; padding:64px 100px; display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:72px; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:22px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.16em">MASTERCLASS · OSLO 12.–13. MARS</span>
+        <h2 style="margin:0; font-size:58px; font-weight:800; line-height:1.02; letter-spacing:-0.03em">Strategisk innhaldsdesign</h2>
+        <p style="margin:0; font-size:19px; line-height:1.6; max-width:50ch">Lær å kople brukarbehov og forretningsmål gjennom strategisk innhaldsdesign og kjernemodellen. To dagar intensivt, med personleg sertifisering.</p>
+        <div style="display:flex; flex-direction:column; gap:0; font-size:20px; font-weight:600">
+          <div style="display:flex; justify-content:space-between; border-top:1px solid rgba(0,0,0,.45); padding:18px 0">Passar for <span style="font-size:20px">&#9662;</span></div>
+          <div style="display:flex; justify-content:space-between; border-top:1px solid rgba(0,0,0,.45); padding:18px 0">Innhald i kurset <span style="font-size:20px">&#9662;</span></div>
+          <div style="display:flex; justify-content:space-between; border-top:1px solid rgba(0,0,0,.45); padding:18px 0">Sagt om kurset <span style="font-size:20px">&#9662;</span></div>
+          <div style="display:flex; flex-direction:column; gap:16px; border-top:1px solid rgba(0,0,0,.45); border-bottom:1px solid rgba(0,0,0,.45); padding:18px 0">
+            <div style="display:flex; justify-content:space-between">Pris: 16 000 kr per deltakar, inkl. sertifisering <span style="font-size:20px; transform:rotate(180deg)">&#9662;</span></div>
+            <ul style="margin:0; padding-left:1.2em; font-size:18px; font-weight:400; line-height:1.6; display:flex; flex-direction:column; gap:8px">
+              <li>To dagar intensivt kurs</li>
+              <li>Personleg sertifisering i kjernemodellen</li>
+              <li>Éin time coaching etter kurset</li>
+              <li>Malar og ressursar for vidare bruk</li>
+            </ul>
+          </div>
+        </div>
+        <span style="background:#FD9F78; padding:17px 32px; align-self:flex-start; font-size:15px; font-weight:600; letter-spacing:0.12em">GÅ TIL PÅMELDING</span>
+      </div>
+      <div style="width:340px; height:340px; border-radius:50%; background:#AEEBFB; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:46px; box-sizing:border-box; gap:10px">
+        <span style="font-size:33px; font-weight:800; line-height:1.08">Bli sertifisert fasilitator</span>
+        <span style="font-size:17px; font-weight:500">Berre 14 plassar</span>
+      </div>
+    </section>
+
+    <section style="padding:76px 100px; background:#FEF2AE; display:grid; grid-template-columns:repeat(2,1fr); gap:56px">
+      <div style="display:flex; flex-direction:column; gap:18px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.16em">DIGITALT KURS · 18. SEPTEMBER</span>
+        <h2 style="margin:0; font-size:46px; font-weight:800; line-height:1.05; letter-spacing:-0.03em">Kjernemodellen på ein dag</h2>
+        <p style="margin:0; font-size:18px; line-height:1.6">Ein halvdags praktisk kurs der du får innføring i metoden og jobbar med di eiga teneste undervegs.</p>
+        <span style="font-size:18px; font-weight:700">6 500 kr per deltakar</span>
+        <a href="#" style="font-size:17px; font-weight:700">Sjå programmet</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.16em">INTERNKURS</span>
+        <h2 style="margin:0; font-size:46px; font-weight:800; line-height:1.05; letter-spacing:-0.03em">Skreddarsydd for teamet</h2>
+        <p style="margin:0; font-size:18px; line-height:1.6">Eg tilpassar kurset til behova og utfordringane dykkar, og køyrer det hos dykk.</p>
+        <div style="font-size:18px; line-height:1.7">
+          Dagskurs: 55 000 kr for inntil 10 deltakarar<br>
+          Halvdagskurs: 40 000 kr for inntil 10 deltakarar<br>
+          Ekstra deltakar: 1 500 kr per person
+        </div>
+        <a href="#" style="font-size:17px; font-weight:700">Ta kontakt</a>
+      </div>
+    </section>
+
+    <section style="background:#FEC4B2; padding:76px 100px; display:grid; grid-template-columns:minmax(0,1fr) 460px; gap:72px; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:22px">
+        <h2 style="margin:0; font-size:52px; font-weight:800; line-height:1.04; letter-spacing:-0.03em">Klar for å kome i gang?</h2>
+        <p style="margin:0; font-size:19px; line-height:1.6; max-width:44ch">Skriv kort kva du treng — eg svarar kjapt. Eller ring meg på <a href="tel:+4790870026">908 70 026</a>. Vi snakkast!</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px">
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:16px; font-weight:600">Namn
+          <input type="text" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:14px; font-family:'Work Sans', sans-serif; font-size:17px">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:16px; font-weight:600">Epost
+          <input type="text" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:14px; font-family:'Work Sans', sans-serif; font-size:17px">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:16px; font-weight:600">Melding
+          <textarea rows="4" style="background:#FFF; border:1px solid rgba(0,0,0,.35); padding:14px; font-family:'Work Sans', sans-serif; font-size:17px"></textarea>
+        </label>
+        <span style="background:#FD9F78; padding:16px 30px; align-self:flex-start; font-size:15px; font-weight:600; letter-spacing:0.12em">SEND MELDING</span>
+      </div>
+    </section>
+
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ erOm }}" hint-placeholder-val="{{ false }}">
+  <main style="display:flex; flex-direction:column">
+
+    <section style="padding:56px 100px 72px; background:#FEF2AE; display:grid; grid-template-columns:minmax(0,1fr) 400px; gap:72px; align-items:start">
+      <div style="display:flex; flex-direction:column; gap:24px">
+        <span style="font-size:15px; font-weight:600; letter-spacing:0.16em">HEI, ARE HER!</span>
+        <h1 style="margin:0; font-size:88px; font-weight:800; line-height:0.96; letter-spacing:-0.04em">Are Halland — aka &laquo;Kjernekaren&raquo;</h1>
+        <p style="margin:0; font-size:21px; line-height:1.6; max-width:52ch; font-weight:500">Eg har 25 års erfaring med digital design, kommunikasjon, strategi og produktutvikling — og eg lanserte kjernemodellen i 2006.</p>
+        <div style="display:flex; flex-direction:column; gap:18px; font-size:18px; line-height:1.65; max-width:58ch">
+          <p style="margin:0">Mellom 2006 og 2018 jobba eg som rådgjevar i Netlife Design. I 2019 var eg konseptutviklar i UX- og innovasjonsavdelinga i FINN.no, før eg starta for meg sjølv som &laquo;Kjernekaren&raquo; i 2020.</p>
+          <p style="margin:0">No jobbar eg med strategisk rådgjeving og konseptutvikling, og held foredrag, kurs og workshops i brukarsentrert strategi, kommunikasjon og design.</p>
+          <p style="margin:0">Saman med kona mi har eg skrive boka <a href="#">Kjernemodellen &ndash; et praktisk verktøy for å lage bedre digitale tjenester</a> (Kraft forlag, 2021). Ho kjem straks på engelsk med tittelen <a href="#">The Core Model</a>.</p>
+          <p style="margin:0">Eg er ein av dei mest erfarne brukartestmoderatorane i landet, og har kjørt brukartestar med godt over 1000 testpersonar dei siste 20 åra. Eg har òg undervist ved BI, AHO, Kristiania, OsloMet og Høgskulen i Volda.</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:28px">
+        <img src="assets/are-portrett.png" alt="Are Halland" style="width:400px; display:block">
+        <div style="background:#AEEBFB; padding:28px; display:flex; flex-direction:column; gap:14px">
+          <h2 style="margin:0; font-size:26px; font-weight:800">Kontakt</h2>
+          <div style="font-size:18px; line-height:1.8">
+            +47 908 70 026<br>
+            <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a><br>
+            <a href="#">Følg meg på LinkedIn</a><br>
+            <a href="#">Book ein kaffiprat</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#BCF17D; padding:64px 100px; display:grid; grid-template-columns:repeat(3,1fr); gap:36px; align-items:start">
+      <h2 style="margin:0; font-size:46px; font-weight:800; line-height:1.05; letter-spacing:-0.03em; grid-column:1 / -1">Podcastar eg har gjesta</h2>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #000; padding-top:18px">
+        <a href="#" style="font-size:23px; font-weight:700; line-height:1.25">Strategic content design for people and machines</a>
+        <span style="font-size:17px; font-style:italic">OmnichannelX, med Noz Urbina</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #000; padding-top:18px">
+        <a href="#" style="font-size:23px; font-weight:700; line-height:1.25">Episode 108: Are Halland &ndash; The Core Model</a>
+        <span style="font-size:17px; font-style:italic">Content Strategy Insights, med Larry Swanson</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #000; padding-top:18px">
+        <a href="#" style="font-size:23px; font-weight:700; line-height:1.25">Episode 53: Understanding and using the core model</a>
+        <span style="font-size:17px; font-style:italic">Content Strategy Podcast, med Kristina Halvorsen</span>
+      </div>
+    </section>
+
+    <section style="padding:76px 100px; background:#FEF2AE; display:grid; grid-template-columns:minmax(0,1fr) 460px; gap:72px; align-items:center">
+      <div style="display:flex; flex-direction:column; gap:18px">
+        <h2 style="margin:0; font-size:52px; font-weight:800; line-height:1.04; letter-spacing:-0.03em">Abonner på nyheitsbrevet</h2>
+        <p style="margin:0; font-size:19px; line-height:1.6; max-width:46ch">Bli den første til å få oppdateringar om toppoppgåver, kjernemodellen, nye malar, fagartiklar, kurs og sprell frå Kjernekaren :-)</p>
+      </div>
+      <div style="display:flex; gap:0; align-items:stretch">
+        <input type="text" placeholder="Epostadressa di" style="flex:1; background:#FFF; border:1px solid rgba(0,0,0,.35); border-right:0; padding:18px; font-family:'Work Sans', sans-serif; font-size:17px">
+        <span style="background:#FD9F78; padding:18px 26px; font-size:14px; font-weight:600; letter-spacing:0.12em; display:flex; align-items:center">HALD MEG OPPDATERT!</span>
+      </div>
+    </section>
+
+  </main>
+  </sc-if>
+
+  <footer style="margin-top:auto; background:#FEC4B2; padding:56px 100px; display:grid; grid-template-columns:repeat(3,1fr) auto; gap:48px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:12px">
+      <span style="font-size:20px; font-weight:800">Kjernekaren</span>
+      <p style="margin:0; font-size:16px; font-style:italic; line-height:1.6; max-width:30ch">Kurs, fasilitering og uavhengig rådgjeving frå mannen bak kjernemodellen. Spør meg om toppoppgåver og datadriven kundeinnsikt!</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; font-size:17px">
+      <span style="font-weight:700">Innhald</span>
+      <a href="#" onClick="{{ tilKurs }}">Kurs</a>
+      <a href="#">Tenester</a>
+      <a href="#">Boka</a>
+      <a href="#" onClick="{{ tilOm }}">Om meg</a>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; font-size:17px">
+      <span style="font-weight:700">Kontakt</span>
+      <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>
+      <span>+47 908 70 026</span>
+      <a href="#">LinkedIn</a>
+      <a href="#">In English, please!</a>
+    </div>
+    <span style="font-size:22px; font-weight:800; white-space:nowrap">Vi snakkast!</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;startside&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;heim&quot;,&quot;kurs&quot;,&quot;om&quot;],&quot;default&quot;:&quot;heim&quot;,&quot;tsType&quot;:&quot;'heim'|'kurs'|'om'&quot;,&quot;section&quot;:&quot;Visning&quot;}}">
+class Component extends DCLogic {
+  state = { side: null };
+  renderVals() {
+    const side = this.state.side ?? this.props.startside ?? 'heim';
+    const gaa = s => e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ side: s }); };
+    const stil = s => 'cursor:pointer;' + (side === s
+      ? 'font-weight:700; opacity:1; text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:5px'
+      : 'font-weight:400; opacity:0.75');
+    return {
+      erHeim: side === 'heim', erKurs: side === 'kurs', erOm: side === 'om',
+      tilHeim: gaa('heim'), tilKurs: gaa('kurs'), tilOm: gaa('om'),
+      stilHeim: stil('heim'), stilKurs: stil('kurs'), stilOm: stil('om')
+    };
+  }
+}
+</script>
+</body>
+</html>

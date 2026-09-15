@@ -1,0 +1,20 @@
+:root {
+  /* Romsleg, luftig layout. Smal tekstkolonne, store seksjonsavstandar. */
+  --rom-1: 4px;
+  --rom-2: 8px;
+  --rom-3: 12px;
+  --rom-4: 16px;
+  --rom-5: 24px;
+  --rom-6: 32px;
+  --rom-7: 48px;
+  --rom-8: 64px;
+  --rom-9: 96px;
+
+  --breidd-tekst: 620px;    /* smal brødtekst-kolonne (romsleg skrift krev litt meir) */
+  --breidd-innhald: 900px;  /* to-kolonne-oppsett */
+  --breidd-side: 1100px;    /* header/footer */
+
+  /* Hjørne: brandet er skarpt. Berre sirklar er runde. */
+  --radius-null: 0px;
+  --radius-sirkel: 50%;
+}

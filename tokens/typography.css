@@ -1,0 +1,41 @@
+:root {
+  /* Éi skrift, kontrast gjennom vekt — jf. designmanualen:
+     "kontrast mellom titler og mengdetekst oppnås først og fremst med variasjon i fontvekt" */
+  --font-sans: 'Work Sans', 'Noto Sans', 'Open Sans', sans-serif;
+
+  /* Storleikar. Manualen: unngå liten skrift, "romslig" skriftstørrelse, få variantar. */
+     Flytande skala: minimum = mobil, maksimum = desktop. Ingenting under 15px. */
+  --tekst-display: clamp(40px, 7vw, 64px);  /* MASTERCLASS-oppslag, SoMe-bilete */
+  --tekst-h1: clamp(32px, 5vw, 44px);
+  --tekst-h2: clamp(24px, 3vw, 30px);
+  --tekst-h3: var(--tekst-broedtekst); /* same storleik som brødtekst — kontrasten kjem frå vekt 800 */
+  --tekst-broedtekst: clamp(18px, 1.4vw, 21px);
+  --tekst-liten: 17px;
+  --tekst-etikett: 15px;  /* eyebrow, versalar — absolutt minstemål */
+
+  /* Berre to reelle vekter: 400 mengdetekst, 800 titlar.
+     600 er unntaket, og berre til sperra versal-etikettar. */
+  --vekt-normal: 400;
+  --vekt-halvfeit: 600;     /* KUN eyebrow/versal-etikettar */
+  --vekt-ekstrafeit: 800;   /* alle titlar og utheva tekst */
+  --vekt-feit: var(--vekt-ekstrafeit); /* forelda alias — ikkje bruk i ny kode */
+
+  --linjehoegd-tett: 1.15;  /* store titlar */
+  --linjehoegd-tittel: 1.3;
+  --linjehoegd-broedtekst: 1.65;
+
+  --sperring-etikett: 0.08em; /* letter-spacing på eyebrow/versalar */
+  --sperring-broedtekst: 0.01em;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--tekst);
+  background: var(--flate-side);
+  font-size: var(--tekst-broedtekst);
+  line-height: var(--linjehoegd-broedtekst);
+  letter-spacing: var(--sperring-broedtekst);
+}
+
+a { color: var(--lenke); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
