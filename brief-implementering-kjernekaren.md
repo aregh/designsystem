@@ -9,6 +9,11 @@ Lest frå repoet 15.09.2026: `README.md`, `AI_CONTEXT.md`, `package.json`,
 `src/styles/global.css`, `src/data/navigation.ts`, `src/components/Header.astro`,
 `src/pages/index.astro`, filtreet under `src/`.
 
+> **Status 15.09.2026: implementert** på greina `designsystem` i `aregh/kjernekaren-no`
+> (commit `cf18cc1` punkt 1-4 og 6, commit `78689ad` heilgrøn flate). Ikkje merga til `main`.
+> Are vedtok heilgrøn flate (punkt 5) same dag. Akseptkriteria i punkt 6 er verifiserte med
+> bygg og Playwright på 8 sider × 320/375/768/1440px. Attståande: punkt 7.2 og 7.3.
+
 ---
 
 ## 0. Slik ligg kodebasen
@@ -164,36 +169,43 @@ systemet no dokumenterer. Endringar:
 - Bruk `KursKort`, `BloggKort`, `Paginering`, `Innhaldsliste` frå designsystemet som mal når du lagar tilsvarande `.astro`-komponentar.
 - Nyheitsbrev-seksjonen og footeren er alt éin komponent (`Footer.astro` + `NewsletterForm.astro`) — bra, behald.
 
-## 5. Flatefarge — må avklarast før arbeidet startar
+## 5. Flatefarge — vedteke: heilgrøn
 
-Repoet er **lys gul** (`--color-yellow: #FEF2AE`) i dag. Designsystemet har utforska
-**heilgrøn** `#BCF17D` for kjernekaren.no. Dette er eit val Are må ta:
+**Are vedtok 15.09.2026: heilgrøn** `#BCF17D` (`<body class="tema-groenn">`).
 
-- **Behald lys gul** → sett `<body class="tema-gul-lys">`, ingen visuell endring av flata.
-- **Gå til grøn** → `<body class="tema-groenn">`, og då må hentetekst-boksen på forsida
-  skifte til gul `#FFE484` når den ligg direkte på flata (på foto kan den vere grøn).
-
-Ikkje gjer dette valet på eige initiativ.
+Slik er det gjort i koden:
+- Header, footer og `.section--yellow` bruker `var(--flate-side)`, ikkje `--color-yellow`,
+  så heile sida følgjer temaet. (`--color-yellow` er framleis alias for `#FEF2AE` til
+  eventuelle innhaldsflater som skal vere lys gule.)
+- Hentetekst-boksar **oppå foto** bruker `var(--hentetekst-flate)` (grøn).
+- Hentetekst-boksar **direkte på flata** skal bruke `var(--hentetekst-paa-flate)` (gul
+  `#FFE484`). Ingen slike finst per 15.09.2026, men regelen gjeld for nye sider.
 
 ## 6. Akseptkriterium
 
-- [ ] `src/styles/tokens.css` importert i `global.css`, alias på plass
-- [ ] Ingen hex-verdiar utanfor tokens-fila (grep etter `#` i `src/`)
-- [ ] Ingen `opacity` brukt til å dempe tekst eller lenker
-- [ ] Ingen `transition`, ingen `scroll-behavior: smooth`, ingen `box-shadow`
-- [ ] Work Sans lastar 400/600/800; ingen `font-weight: 700` eller `900` i `src/`
-- [ ] `.btn` er laks med svart tekst; `.btn--outline` sletta
-- [ ] `navigation.ts` peikar på `/blogg`
-- [ ] `aria-current="page"` på aktiv menylenke
-- [ ] `:focus-visible` synleg på alle interaktive element
-- [ ] Trykkflater ≥ 48px
-- [ ] Ingen tekst under 17px (etikettar 15px)
-- [ ] Ingen vassrett skroll ved 320px på nokon av dei sju malane
-- [ ] `npm run build` går grønt, og Netlify-førehandsvisinga er sjekka mot `PUBLISERING.md`
+- [x] `src/styles/tokens.css` importert i `global.css`, alias på plass
+- [x] Ingen hex-verdiar utanfor tokens-fila (grep etter `#` i `src/`)
+- [x] Ingen `opacity` brukt til å dempe tekst eller lenker
+- [x] Ingen `transition`, ingen `scroll-behavior: smooth`, ingen `box-shadow`
+- [x] Work Sans lastar 400/600/800; ingen `font-weight: 700` eller `900` i `src/`
+- [x] `.btn` er laks med svart tekst; `.btn--outline` sletta
+- [x] `navigation.ts` peikar på `/blogg`
+- [x] `aria-current="page"` på aktiv menylenke
+- [x] `:focus-visible` synleg på alle interaktive element
+- [x] Trykkflater ≥ 48px (Playwright-verifisert)
+- [x] Ingen tekst under 17px (Playwright-verifisert; `.hero-label`/etikettar unntatt)
+- [x] Ingen vassrett skroll ved 320/375/768/1440px på 8 sider (Playwright-verifisert)
+- [x] `npm run build` går grønt (71 sider)
+- [ ] Netlify-førehandsvisinga sjekka mot `PUBLISERING.md` (ventar på merge)
 
 ## 7. Uavklart
 
-1. **Flatefarge** (punkt 5) — grøn eller lys gul?
+1. ~~**Flatefarge** (punkt 5)~~ — **avklara 15.09.2026: heilgrøn.**
 2. **`/kurs-og-foredrag`**: sida finst som `.astro` i repoet, men live-versjonen ser framleis ut som Wix. Er deployen etter, eller er det ein redirect i `URL_Redirects_Export.csv` som sender trafikken til Wix?
-3. **thecoremodel.com og kontekstarkitektur.no** har eigne repo (`aregh/thecoremodel-com`, `aregh/kontekstarkitektur-no`). Skal tokens-fila delast som ein npm-pakke / git submodule, eller kopierast inn i kvart repo?
-4. **`--color-gray`** blir i dag brukt til brødtekst-liknande føremål fleire stader. Skal eg fjerne alle, eller er nokre av dei bevisste?
+3. **thecoremodel.com og kontekstarkitektur.no** har eigne repo (`aregh/thecoremodel-com`, `aregh/kontekstarkitektur-no`). Skal tokens-fila delast som ein npm-pakke / git submodule, eller kopierast inn i kvart repo? (kjernekaren-no har kopi i `src/styles/tokens.css` med kjeldemerking.)
+4. ~~**`--color-gray`**~~ — **avklara 15.09.2026:** alias peikar no til svart; ingen grå tekst att. `--farge-graa` `#EAEAEA` er berre for nøytrale flater.
+
+## Historikk
+
+- **15.09.2026:** Status-blokk øvst, punkt 5 vedteke (heilgrøn), akseptkriterium kryssa av, punkt 7.1 og 7.4 avklara. `tokens/fonts.css` stramma inn til 400/600/800 + kursiv 400. **Forfattar:** Claude Fable 5.1 (Nimbalyst). **Vedtak frå Are:** «det skal være grønt», 15.09.2026.
+- **15.09.2026:** Briefen skriven etter lesing av `aregh/kjernekaren-no`. **Forfattar:** Claude Design-eksport.

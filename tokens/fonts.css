@@ -1,3 +1,5 @@
 /* Work Sans — brandskrift (jf. designmanualen: "Som hovedskrift bruker vi Work Sans").
-   Lasta frå Google Fonts. Alternative skrifter i manualen: Noto Sans, Open Sans, Proxima Nova. */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+   Lasta frå Google Fonts. Alternative skrifter i manualen: Noto Sans, Open Sans, Proxima Nova.
+   Berre vektene systemet bruker: 400 (normal), 600 (versal-etikett), 800 (feit) + kursiv 400.
+   500/700/900 skal aldri brukast (jf. design.md). Stramma inn 15.09.2026 etter implementering på kjernekaren.no. */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap');
