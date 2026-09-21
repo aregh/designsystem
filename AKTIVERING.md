@@ -17,19 +17,19 @@ Skrive til Are. Fem minutt, alt skjer i nettlesaren på claude.ai/design.
    laga som fil-prosjekt (den gamle mekanismen, og den einaste API-et kan lage). Dei er
    ikkje publiserte og har inga «Usable by», så ingen av dei kan vere standard slik dei er.
 
-2. **Klikk «+ New design system»** og sjå kva kjelder valet tilbyr. Vel det pusha
-   «Designsystem Kjernekaren» om «frå eksisterande prosjekt» finst, elles GitHub-repoet
-   `aregh/designsystem` (grein `main`). Du skal sjå kort for Type, Colors, Spacing, Brand,
-   Komponentar, Merkevare, og startpunkta for kjernemodellen.no og thecoremodel.com.
-   Manglar korta, sjå steg 7.
+2. **Klikk «+ New design system» → «Create here» → GitHub**, og vel repoet
+   `aregh/designsystem`, grein `main`. (Alternativet «Create using Claude Code» er den
+   same mekanismen API-et brukte, og gav Legacy-varianten.) Gi appen tilgang til repoet om
+   ho spør. Du skal sjå kort for Type, Colors, Spacing, Brand, Komponentar, Merkevare, og
+   startpunkta for kjernemodellen.no og thecoremodel.com. Manglar korta, sjå steg 7.
 
-3. **Publiser det og set «Usable by»** til organisasjonen. Då er det standard for alle
-   nye prosjekt.
+3. **Publiser det og set «Usable by»** til organisasjonen. I designsystem-veljaren i eit
+   nytt prosjekt står i dag ein tom «Design System» som «Org default»; byt til det nye.
 
 4. **Slett dei fire Legacy-radene** frå ⋮-menyen når det nye er publisert:
-   - to «Design System» er heilt tomme (april 2026)
-   - den tredje har berre den gamle «retningar»-mappa frå mai 2026
-   - «Designsystem Kjernekaren» (Legacy) er kjelda du nettopp brukte; slett henne sist
+  - to «Design System» er heilt tomme (april 2026)
+  - den tredje har berre den gamle «retningar»-mappa frå mai 2026
+  - «Designsystem Kjernekaren» (Legacy) er kjelda du nettopp brukte; slett henne sist
    Dette kan ikkje gjerast via API-et.
 
 5. **Verifiser:** opne eit nytt, tomt prosjekt i Claude Design. Systemet skal vere valt
@@ -42,10 +42,10 @@ Skrive til Are. Fem minutt, alt skjer i nettlesaren på claude.ai/design.
    pusha prosjektet fungerer utan.
 
 7. **Om systemet ikkje dukkar opp, eller korta manglar:**
-   - Last sida på nytt og sjekk at du er i rett organisasjon (Kjernepar AS).
-   - Be meg køyre synkroniseringa på nytt frå denne mappa; det er ein trygg operasjon
+  - Last sida på nytt og sjekk at du er i rett organisasjon (Kjernepar AS).
+  - Be meg køyre synkroniseringa på nytt frå denne mappa; det er ein trygg operasjon
      som skriv fil for fil, ikkje ein full erstatning.
-   - Om prosjektet finst, men ikkje kan veljast som standard: det er feil prosjekttype.
+  - Om prosjektet finst, men ikkje kan veljast som standard: det er feil prosjekttype.
      Då må det opprettast på nytt som designsystem (eg gjer det) og du slettar det gamle.
 
 ## Vedlikehald
