@@ -12,22 +12,25 @@ Skrive til Are. Fem minutt, alt skjer i nettlesaren på claude.ai/design.
 
 ## Steg du gjer sjølv
 
-1. **Opne claude.ai/design** og gå til oversikta over designsystem (der du vel
-   designsystem når du startar eit nytt prosjekt).
+1. **Opne Settings → Design systems** i Claude-appen. Der ligg fire rader merkte
+   «Legacy»: tre «Design System» og «Designsystem Kjernekaren». Legacy tyder at dei er
+   laga som fil-prosjekt (den gamle mekanismen, og den einaste API-et kan lage). Dei er
+   ikkje publiserte og har inga «Usable by», så ingen av dei kan vere standard slik dei er.
 
-2. **Sjekk at «Designsystem Kjernekaren» ligg i lista** som designsystem, og opne det.
-   Du skal sjå kort for Type, Colors, Spacing, Brand, Komponentar, Merkevare, og
-   startpunkta for kjernemodellen.no og thecoremodel.com. Manglar korta, sjå steg 7.
+2. **Klikk «+ New design system»** og sjå kva kjelder valet tilbyr. Vel det pusha
+   «Designsystem Kjernekaren» om «frå eksisterande prosjekt» finst, elles GitHub-repoet
+   `aregh/designsystem` (grein `main`). Du skal sjå kort for Type, Colors, Spacing, Brand,
+   Komponentar, Merkevare, og startpunkta for kjernemodellen.no og thecoremodel.com.
+   Manglar korta, sjå steg 7.
 
-3. **Set det som standard.** Finn innstillinga for standard designsystem for
-   organisasjonen (ligg under organisasjons- eller arbeidsområde-innstillingane, ikkje
-   inne i prosjektet). Vel «Designsystem Kjernekaren».
+3. **Publiser det og set «Usable by»** til organisasjonen. Då er det standard for alle
+   nye prosjekt.
 
-4. **Slett dei tre gamle oppføringane** som heiter berre «Design System»:
-   - to av dei er heilt tomme (april 2026)
-   - den tredje har berre den gamle «retningar»-mappa frå mai 2026, som er erstatta av
-     dette systemet
-   Slett dei frå prosjektlista i appen. Dette kan ikkje gjerast via API-et.
+4. **Slett dei fire Legacy-radene** frå ⋮-menyen når det nye er publisert:
+   - to «Design System» er heilt tomme (april 2026)
+   - den tredje har berre den gamle «retningar»-mappa frå mai 2026
+   - «Designsystem Kjernekaren» (Legacy) er kjelda du nettopp brukte; slett henne sist
+   Dette kan ikkje gjerast via API-et.
 
 5. **Verifiser:** opne eit nytt, tomt prosjekt i Claude Design. Systemet skal vere valt
    automatisk, og eit enkelt oppdrag som «lag ein hero for kjernekaren.no» skal kome ut
