@@ -8,8 +8,8 @@ path: .
 - aregh/kontekstarkitektur-no — ikkje gjennomgått
 
 ## Last sync
-date: __DATE__
-commit: __SHA__
+date: 2026-09-21T18:33:23Z
+commit: 120312cee254d44f02ed18c5d1519cb385efece5
 
 ### Updated in this project
 - Konsistensrydding: forelda alias bytta, opacity på tekst fjerna, transition fjerna, tokens/typography.css retta
