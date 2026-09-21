@@ -1,0 +1,77 @@
+{
+  "name": "Designsystem Kjernekaren",
+  "owner": "Are Halland",
+  "version": "1.0.0",
+  "language": {
+    "default": "nn-NO",
+    "sites": {
+      "kjernekaren.no": "nn-NO",
+      "kjernemodellen.no": "nn-NO",
+      "thecoremodel.com": "en",
+      "kontekstarkitektur.no": "nn-NO",
+      "modellelement": "nb-NO"
+    }
+  },
+  "entry": {
+    "skill": "SKILL.md",
+    "spec": "design.md",
+    "css": "styles.css",
+    "bundle": "_ds_bundle.js"
+  },
+  "tokens": [
+    "tokens/colors.css",
+    "tokens/flater.css",
+    "tokens/fonts.css",
+    "tokens/responsiv.css",
+    "tokens/spacing.css",
+    "tokens/typography.css"
+  ],
+  "surfaceThemes": {
+    "kjernekaren.no": "#BCF17D",
+    "thecoremodel.com": "#FFE484",
+    "kontekstarkitektur.no": "#AEEBFB",
+    "bok": "#FEC4B2"
+  },
+  "typography": {
+    "family": "Work Sans",
+    "weights": [400, 600, 800],
+    "note": "600 berre til sperra versal-etikettar"
+  },
+  "components": [
+    { "name": "Accordion", "path": "components/core/Accordion.jsx", "docs": "components/core/Accordion.prompt.md", "types": "components/core/Accordion.d.ts" },
+    { "name": "BloggKort", "path": "components/core/BloggKort.jsx", "docs": "components/core/BloggKort.prompt.md", "types": "components/core/BloggKort.d.ts" },
+    { "name": "Button", "path": "components/core/Button.jsx", "docs": "components/core/Button.prompt.md", "types": "components/core/Button.d.ts" },
+    { "name": "CircleBadge", "path": "components/core/CircleBadge.jsx", "docs": "components/core/CircleBadge.prompt.md", "types": "components/core/CircleBadge.d.ts" },
+    { "name": "Innhaldsliste", "path": "components/core/Innhaldsliste.jsx", "docs": "components/core/Innhaldsliste.prompt.md", "types": "components/core/Innhaldsliste.d.ts" },
+    { "name": "KursKort", "path": "components/core/KursKort.jsx", "docs": "components/core/KursKort.prompt.md", "types": "components/core/KursKort.d.ts" },
+    { "name": "NewsletterForm", "path": "components/core/NewsletterForm.jsx", "docs": "components/core/NewsletterForm.prompt.md", "types": "components/core/NewsletterForm.d.ts" },
+    { "name": "Paginering", "path": "components/core/Paginering.jsx", "docs": "components/core/Paginering.prompt.md", "types": "components/core/Paginering.d.ts" },
+    { "name": "Quote", "path": "components/core/Quote.jsx", "docs": "components/core/Quote.prompt.md", "types": "components/core/Quote.d.ts" },
+    { "name": "SiteFooter", "path": "components/navigation/SiteFooter.jsx", "docs": "components/navigation/SiteFooter.prompt.md", "types": "components/navigation/SiteFooter.d.ts" },
+    { "name": "SiteHeader", "path": "components/navigation/SiteHeader.jsx", "docs": "components/navigation/SiteHeader.prompt.md", "types": "components/navigation/SiteHeader.d.ts" },
+    { "name": "StarRating", "path": "components/core/StarRating.jsx", "docs": "components/core/StarRating.prompt.md", "types": "components/core/StarRating.d.ts" },
+    { "name": "TestimonialCard", "path": "components/core/TestimonialCard.jsx", "docs": "components/core/TestimonialCard.prompt.md", "types": "components/core/TestimonialCard.d.ts" },
+    { "name": "TextField", "path": "components/core/TextField.jsx", "docs": "components/core/TextField.prompt.md", "types": "components/core/TextField.d.ts" },
+    { "name": "TextLink", "path": "components/core/TextLink.jsx", "docs": "components/core/TextLink.prompt.md", "types": "components/core/TextLink.d.ts" }
+  ],
+  "guidelines": [
+    "guidelines/brand-badge.html",
+    "guidelines/brand-former.html",
+    "guidelines/brand-knapp-lenke.html",
+    "guidelines/breidder.html",
+    "guidelines/farger-kjernemodell.html",
+    "guidelines/farger-noeytral.html",
+    "guidelines/flate-tema.html",
+    "guidelines/flater.html",
+    "guidelines/knapphierarki.html",
+    "guidelines/responsiv.html",
+    "guidelines/sidemalar.html",
+    "guidelines/spacing.html",
+    "guidelines/type-broedtekst.html",
+    "guidelines/type-display.html",
+    "guidelines/type-vekter.html"
+  ],
+  "templates": ["ui_kits/kjernemodellen", "ui_kits/thecoremodel", "slides"],
+  "assets": "assets/",
+  "rules": ["radius 0", "ingen skugge", "ingen animasjon", "ingen emoji", "maks to flatefargar per side", "éin nivå-1-handling per seksjon"]
+}
