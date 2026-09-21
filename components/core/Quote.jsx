@@ -16,7 +16,7 @@ export function Quote({ children, name, role, variant = 'stor', style }) {
   return (
     <figure style={{ margin: 0, fontFamily: 'var(--font-sans)', maxWidth: 420, ...style }}>
       <div aria-hidden="true" style={{ fontSize: '64px', fontWeight: 'var(--vekt-ekstrafeit)', lineHeight: 0.5, marginBottom: '20px' }}>”</div>
-      <blockquote style={{ margin: 0, fontWeight: 'var(--vekt-feit)', fontSize: '20px', lineHeight: 1.45, textAlign: 'center' }}>
+      <blockquote style={{ margin: 0, fontWeight: 'var(--vekt-ekstrafeit)', fontSize: '20px', lineHeight: 1.45, textAlign: 'center' }}>
         “{children}”
       </blockquote>
       {name && (

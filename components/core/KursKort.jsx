@@ -1,7 +1,7 @@
 /* Kort i kurs-oversikta: dato-etikett, tittel, tekst, CTA-lenke, valfri sirkel-badge. */
 export function KursKort({ tittel, naar, tekst, ctaTekst, href, badge, sitat, style }) {
   return (
-    <article style={{ display: 'grid', gridTemplateColumns: badge ? 'minmax(0,1fr) auto' : 'minmax(0,1fr)', gap: 'var(--rom-6)', alignItems: 'start', padding: 'var(--rom-7) 0', borderBottom: '1px solid var(--strek-svak)', ...style }}>
+    <article style={{ display: 'grid', gridTemplateColumns: badge ? 'minmax(0,1fr) auto' : 'minmax(0,1fr)', gap: 'var(--rom-6)', alignItems: 'start', padding: 'var(--rom-7) 0', borderBottom: '1px solid var(--strek)', ...style }}>
       <div style={{ minWidth: 0, display: 'flex', flexDirection: 'column', gap: 'var(--rom-3)' }}>
         <span style={{ fontSize: 'var(--tekst-etikett)', fontWeight: 'var(--vekt-halvfeit)', letterSpacing: 'var(--sperring-etikett)', textTransform: 'uppercase' }}>{naar}</span>
         <h3 style={{ margin: 0, fontSize: 'var(--tekst-h2)', fontWeight: 'var(--vekt-ekstrafeit)', lineHeight: 'var(--linjehoegd-tittel)' }}>{tittel}</h3>

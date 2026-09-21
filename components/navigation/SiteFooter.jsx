@@ -15,9 +15,9 @@ export function SiteFooter({
   return (
     <footer style={{ fontFamily: 'var(--font-sans)', padding: '40px 24px 64px', ...style }}>
       <div style={{ maxWidth, margin: '0 auto' }}>
-        <hr style={{ border: 'none', borderTop: '1px solid var(--strek-svak)', margin: '0 0 40px' }} />
+        <hr style={{ border: 'none', borderTop: '1px solid var(--strek)', margin: '0 0 40px' }} />
         <p style={{ fontStyle: 'italic', fontSize: '19px', lineHeight: 1.6, margin: '0 0 36px' }}>{tagline}</p>
-        <h2 style={{ fontSize: 'var(--tekst-h3)', fontWeight: 'var(--vekt-feit)', margin: '0 0 16px' }}>{heading}</h2>
+        <h2 style={{ fontSize: 'var(--tekst-h3)', fontWeight: 'var(--vekt-ekstrafeit)', margin: '0 0 16px' }}>{heading}</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '19px' }}>
           {lines.map((l) => <span key={l}>{l}</span>)}
           {links.map((l) => <TextLink key={l.label} href={l.href}>{l.label}</TextLink>)}

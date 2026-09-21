@@ -69,7 +69,7 @@ export function SiteHeader({
       {ope && (
         <nav aria-label="Hovudmeny" style={{ padding: '0 var(--side-marg) var(--rom-6)', display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--strek)' }} data-kk-mobilmeny>
           {items.map((it) => (
-            <div key={it.href} style={{ display: 'flex', flexDirection: 'column', borderBottom: '1px solid var(--strek-svak)' }}>
+            <div key={it.href} style={{ display: 'flex', flexDirection: 'column', borderBottom: '1px solid var(--strek)' }}>
               {lenke(it)}
               {it.children && it.children.map((c) => lenke(c, 1))}
             </div>

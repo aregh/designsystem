@@ -6,10 +6,10 @@ export function NewsletterForm({ heading = 'Abonner på nyheitsbrevet', blurb = 
   const [sent, setSent] = React.useState(false);
   return (
     <section style={{ fontFamily: 'var(--font-sans)', maxWidth: 560, ...style }}>
-      <h2 style={{ fontSize: 'var(--tekst-h3)', fontWeight: 'var(--vekt-feit)', margin: '0 0 12px' }}>{heading}</h2>
+      <h2 style={{ fontSize: 'var(--tekst-h3)', fontWeight: 'var(--vekt-ekstrafeit)', margin: '0 0 12px' }}>{heading}</h2>
       <p style={{ margin: '0 0 20px', fontSize: '20px', lineHeight: 1.6 }}>{blurb}</p>
       {sent ? (
-        <p style={{ fontWeight: 'var(--vekt-feit)' }}>Takk! Vi snakkast :-)</p>
+        <p style={{ fontWeight: 'var(--vekt-ekstrafeit)' }}>Takk! Vi snakkast :-)</p>
       ) : (
         <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
           <TextField placeholder="Fornamn" style={{ flex: '1 1 140px' }} />

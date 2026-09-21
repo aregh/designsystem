@@ -12,7 +12,7 @@ export function CircleBadge({ children, size = 150, color = 'var(--badge-flate)'
         justifyContent: 'center',
         textAlign: 'center',
         fontFamily: 'var(--font-sans)',
-        fontWeight: 'var(--vekt-feit)',
+        fontWeight: 'var(--vekt-ekstrafeit)',
         fontSize: size / 8.5,
         lineHeight: 1.35,
         padding: size / 10,

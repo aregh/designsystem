@@ -3,7 +3,7 @@
      "kontrast mellom titler og mengdetekst oppnås først og fremst med variasjon i fontvekt" */
   --font-sans: 'Work Sans', 'Noto Sans', 'Open Sans', sans-serif;
 
-  /* Storleikar. Manualen: unngå liten skrift, "romslig" skriftstørrelse, få variantar. */
+  /* Storleikar. Manualen: unngå liten skrift, "romslig" skriftstørrelse, få variantar.
      Flytande skala: minimum = mobil, maksimum = desktop. Ingenting under 15px. */
   --tekst-display: clamp(40px, 7vw, 64px);  /* MASTERCLASS-oppslag, SoMe-bilete */
   --tekst-h1: clamp(32px, 5vw, 44px);

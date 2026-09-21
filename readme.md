@@ -56,18 +56,20 @@ samanhengar der ein snakkar om forretningsmål.
 - **Flatt og skarpt:** ingen skuggar, ingen gradientar, ingen runde hjørne (unntak: sirklar).
   Reint flate pastellflater med svart tekst.
 - **Sideflater (flatetema):** éin flatefarge per nettstad, resten av systemet er identisk.
-  kjernekaren.no = grønn #BCF17D (`.tema-groenn`, hentetekst gul), thecoremodel.com = gul #FFE484
+  kjernekaren.no = grønn #BCF17D (`.tema-groenn`, hentetekst grøn på foto / gul direkte på flata), thecoremodel.com = gul #FFE484
   (`.tema-gul`), kontekstarkitektur.no = blå #AEEBFB (`.tema-blaa`), bok-sider = rosa
   #FEC4B2 (`.tema-rosa`). Lys gul #FEF2AE (`.tema-gul-lys`) er framleis gyldig for
-  innhaldstunge sider. Maks to flatefargar per side. Badge og hentetekst-boks har aldri
-  same farge som flata. Når ein kjernemodell-farge er heil sideflate, er element-tydinga
+  innhaldstunge sider. Maks to flatefargar per side. Badgen har aldri same farge som
+  flata; hentetekst-boksen kan ha det når han ligg oppå eit foto, men må skifte farge
+  (`--hentetekst-paa-flate`) når han ligg direkte på sideflata. Når ein kjernemodell-farge er heil sideflate, er element-tydinga
   suspendert for flata — fargekodinga gjeld då berre inne i kjernemodell-grafikken.
   Sjå `tokens/flater.css` og `guidelines/flate-tema.html`.
 - **Typografi:** éi skrift — **Work Sans** (open source, Google Fonts). Kontrast gjennom vekt,
   ikkje storleik: ExtraBold 800 for titlar, Regular 400 for mengdetekst. Unngå liten skrift
   ("romslig skriftstørrelse"). Alternativ: Noto Sans, Open Sans, Proxima Nova.
   Berre **to vekter** er i bruk (400/800); 600 er unntaket og berre til sperra
-  versal-etikettar. `--vekt-feit` (700) er forelda alias for 800.
+  versal-etikettar. Tokens: `--vekt-normal`, `--vekt-halvfeit`, `--vekt-ekstrafeit`.
+  `--vekt-feit` er forelda alias for `--vekt-ekstrafeit` - bruk ikkje i ny kode.
   **h3 har same storleik som brødtekst** — skilnaden er vekta, ikkje storleiken.
 - **Lenker:** alltid svarte med underline — også i footer og brødtekst. Hover: tjukkare underline.
 - **Handlingshierarki (tre nivå, éin knapp):** Nivå 1 hovudhandling = laks-knapp #FD9F78
@@ -78,7 +80,7 @@ samanhengar der ein snakkar om forretningsmål.
   funkar ikkje). Sjå `guidelines/knapphierarki.html`.
 - **Sirkel-badge:** blå sirkel med feit svart tekst, brukt til dato/USP
   ("Bli sertifisert fasilitator", "OSLO 19.–20. juni"). Signaturelement på SoMe-oppslag.
-- **Layout:** smal tekstkolonne (~560px), tosplitta seksjonar (tekst venstre, bilete/sitat høgre),
+- **Layout:** smal tekstkolonne (`--breidd-tekst` 620px), tosplitta seksjonar (tekst venstre, bilete/sitat høgre),
   store luftrom mellom seksjonar, tynne svarte horisontale delelinjer.
 - **Aksordion:** rader med tittel + chevron/pluss, skilde med tynne strekar.
 - **Sitat:** store " -glyfar i svart, feit sitattekst, namn + tittel under; eller kursivt
@@ -88,7 +90,7 @@ samanhengar der ein snakkar om forretningsmål.
 - **Animasjon:** ingen — statiske sider.
 - **Tredjeparts-embeds** (Spotify, YouTube, skjema) kan ikkje stylast og er eit godkjent
   unntak: dei behaldar eigne fargar og runde hjørne. Bygg aldri falske kopiar i brandfargar.
-- **Mobilmeny:** under 700px kollapsar menyen til hamburger (≡ / ×) med full-breidd rader.
+- **Mobilmeny:** under 600px kollapsar menyen til hamburger (≡ / ×) med full-breidd rader.
   Bruk **container queries** (`container-type:inline-size`) og ikkje media queries i
   designfilene — previewen skalerer sida, så media queries ser feil breidd.
 - **Responsivt:** brekkpunkt 600/900/1200px, flytande type med `clamp()`, sidemarg

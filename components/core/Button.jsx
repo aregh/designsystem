@@ -10,7 +10,7 @@ export function Button({ children, href, caps = false, onClick, style }) {
         color: 'var(--knapp-tekst)',
         fontFamily: 'var(--font-sans)',
         fontSize: caps ? '14px' : 'var(--tekst-liten)',
-        fontWeight: 'var(--vekt-feit)',
+        fontWeight: 'var(--vekt-ekstrafeit)',
         letterSpacing: caps ? '0.12em' : '0.01em',
         textTransform: caps ? 'uppercase' : 'none',
         textDecoration: 'none',

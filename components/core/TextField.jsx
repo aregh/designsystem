@@ -3,7 +3,7 @@ export function TextField({ label, placeholder, multiline = false, value, onChan
     fontFamily: 'var(--font-sans)',
     fontSize: 'var(--tekst-liten)',
     background: 'var(--felt-flate)',
-    border: '1px solid rgba(0,0,0,.35)',
+    border: '1px solid var(--strek)',
     borderRadius: 'var(--radius-null)',
     padding: '10px 12px',
     width: '100%',
