@@ -6,6 +6,10 @@ Designsystem for universet rundt **kjernemodellen**: metoderammeverket utvikla a
 *"Kjernemodellen – et praktisk verktøy for å lage bedre digitale tjenester"* (Kraft forlag, 2021).
 
 ## Kjelder
+- GitHub: **https://github.com/aregh/designsystem** (hovudkjelda for dette prosjektet — utforsk repoet
+  direkte for meir kontekst). Implementasjonsrepo: https://github.com/aregh/kjernekaren-no,
+  https://github.com/aregh/thecoremodel-com, https://github.com/aregh/kontekstarkitektur-no
+- Google Drive-mappe med presentasjon (MAL 2025) og 51 referansebilete (berre lenkja, ikkje kopiert inn): https://drive.google.com/drive/folders/1Ip7OOytKBsNrhMOd7IV50IykFTws8eqF
 - Skjermbilete av kjernemodellen.no (heim, kurs, masterclass, tenester/ekspertevaluering, om meg)
 - Skjermbilete av thecoremodel.com (resources, training, book)
 - Utdrag frå designmanualen (typografi, farger, elementer, konsept) — sjå `uploads/`
@@ -123,10 +127,22 @@ Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
   kurs- og tenestebilete (kurs-masterclass, kurs-digitalt, teneste-ekspertevaluering),
   SoMe-malar (`some-*.png`)
 - `referanse/` — skjermbilete av dagens nettstader, berre som referanse (ikkje assets)
+  [`referanse/Referansekatalog.dc.html`](referanse/Referansekatalog.dc.html) — Referansekatalog – presentasjon (MAL 2025) og 51 referansebilete frå Google Drive, gruppert etter tema.
 - `brief-nettstad-oppdatering.md` — feilliste og akseptkriterium for kjernekaren.no
 - `brief-implementering-kjernekaren.md` — implementeringsbrief (rekkefølge, reglar, leveranse)
 - `ui_kits/kjernemodellen/` — kursside (gul flate, nynorsk)
 - `ui_kits/thecoremodel/` — bokside (rosa flate, engelsk)
+- `templates/kursside/` — startpunkt: kurs-landingsside (gul flate, nynorsk)
+- `templates/bokside/` — startpunkt: bok-landingsside (rosa flate, engelsk)
+- `templates/bloggartikkel/` — startpunkt: fagartikkel (lys gul flate, innhaldsliste + nyheitsbrev)
+- `templates/some-oppslag/` — startpunkt: SoMe-oppslag 1200×628 med sirkel-badge
+- `templates/presentasjon/` — startpunkt: 16:9-presentasjon (7 slide-typar)
+- `ui_kits/kontekstarkitektur/` — kontekstarkitektur.no (blå flate): heim, metoden, kurs
+- `*.dc.html` (rot) — arbeidsfiler frå kjelderepoet: flatetema-utforsking, rekonstruksjonar av
+  dagens nettstader, hentetekst-alternativ, slidevariantar. Referanse, ikkje systemfiler.
+- `thumbnail.html` — prosjektmerke (grøn flate + ordmerke + fargestripe)
+- `SKILL.md` — inngang når systemet blir brukt som Agent Skill
+- `github.md` — kjeldekopling og synk-logg mot aregh/designsystem
 
 ## Ryddingar i systemet (gjorde etter gjennomgang av kjernekaren.no)
 - `--strek-svak` var `rgba(0,0,0,.45)`, som gir ulik strekfarge på kvar flate og bryt

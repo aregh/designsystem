@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Bloggartikkel" description="Artikkel på lys gul flate — smal tekstkolonne, innhaldsliste, sitat og nyheitsbrev." -->
+<helmet><script src="./ds-base.js"></script><style>html,body{margin:0}</style></helmet>
+<div class="tema-gul-lys" style="background:#FEF2AE;color:#000;font-family:'Work Sans','Noto Sans',sans-serif;min-height:100vh;padding-bottom:80px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.SiteHeader" brand="Are Halland" items="{{ nav }}" active-href="/blogg" hint-size="100%,72px"></x-import>
+<article style="max-width:900px;margin:0 auto;padding:0 24px">
+<div style="font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 14px">12. mars 2026 · Fagartikkel</div>
+<h1 style="font-size:clamp(32px,5vw,44px);font-weight:800;line-height:1.14;margin:0 0 28px;max-width:620px">Kva gjer du når alle vil ha forsida?</h1>
+<img src="../../assets/foto-are-presenterer-kjerneark.jpg" alt="Are presenterer kjernearket" style="width:100%;display:block;margin-bottom:12px">
+<div style="font-size:15px;font-style:italic;margin-bottom:40px">Kjerneverkstad hos ein kunde: alle avdelingane rundt same bord.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:56px;align-items:start">
+<div style="min-width:0;max-width:620px">
+<p style="font-size:18px;line-height:1.65;margin:0 0 20px;font-weight:800">Forsida er det enklaste svaret på eit vanskeleg spørsmål: kven skal eigentleg prioriterast?</p>
+<p style="font-size:18px;line-height:1.65;margin:0 0 20px">Når alle avdelingar melder inn behov, blir forsida ei forhandling om plass. Kjernemodellen flyttar samtalen: i staden for å spørje kvar innhaldet skal stå, spør vi kva oppgåve brukaren kom for å løyse, og kva verksemda vil oppnå når det skjer.</p>
+<h2 style="font-size:24px;font-weight:800;margin:36px 0 12px">Start med kjernesida, ikkje forsida</h2>
+<p style="font-size:18px;line-height:1.65;margin:0 0 20px">Ei kjerneside er staden der brukarbehovet og forretningsmålet møtest. Når den er definert, veit du kva forsida skal gjere: føre folk dit. Forsida blir ein veg inn, ikkje eit utstillingsvindauge.</p>
+<h2 style="font-size:24px;font-weight:800;margin:36px 0 12px">Slik gjer du det i praksis</h2>
+<ul style="font-size:18px;line-height:1.65;padding-left:20px;margin:0 0 20px">
+<li style="margin:6px 0">Samle dei som eig måla og dei som kjenner brukarane i same rom</li>
+<li style="margin:6px 0">Vel éi oppgåve, fyll ut eitt kjerneark</li>
+<li style="margin:6px 0">Bli einige om kva som er kjerneinnhaldet før de snakkar om design</li>
+<li style="margin:6px 0">Gjenta for dei fem–ti viktigaste oppgåvene</li>
+</ul>
+<p style="font-size:18px;line-height:1.65;margin:0 0 20px">Det tek ein dag. Resultatet er ei prioritering heile organisasjonen har vore med på, og som held når nokon spør «kvifor ligg ikkje vår sak på forsida?».</p>
+<p style="font-size:18px;line-height:1.65;margin:0 0 20px">Vi snakkast!<br>Are</p>
+</div>
+<aside style="min-width:0;display:flex;flex-direction:column;gap:40px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Innhaldsliste" punkt="{{ innhald }}" hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Quote" variant="sidestilt" name="Elisabeth Heidenstrøm" role="CRM &amp; Martech Manager, Sopra Steria" hint-size="100%,200px">Utrolig nyttig — vi slutta å krangle om forsida same dagen.</x-import>
+</aside>
+</div>
+<hr style="border:none;border-top:1px solid #000;margin:56px 0 0">
+<h2 style="font-size:24px;font-weight:800;margin:40px 0 0">Les meir</h2>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.BloggKort" dato="4. februar 2026" tittel="Toppoppgaver: kva folk faktisk kom for å gjere" utdrag="Ein enkel undersøking som gir deg ei prioritert liste over oppgåvene brukarane dine kjem for å løyse." href="#" hint-size="100%,160px"></x-import>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.BloggKort" dato="18. januar 2026" tittel="Kontekstamnesi — KI-en hugsar ikkje kva du treng" utdrag="Når kvar person promptar på sin måte, blir resultata ulike. Det er eit arkitekturproblem." href="#" hint-size="100%,160px"></x-import>
+<div style="margin:48px 0 0"><x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Paginering" sider="{{ sider }}" aktiv="{{ side }}" hint-size="100%,48px"></x-import></div>
+<hr style="border:none;border-top:1px solid #000;margin:56px 0 40px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.NewsletterForm" hint-size="100%,200px"></x-import>
+</article>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      side: 1,
+      sider: [1, 2, 3, 4, 5, 6].map((nr) => ({ nr, href: '#side-' + nr })),
+      nav: [
+        { href: '/', label: 'Heim' },
+        { href: '/kurs', label: 'Kurs' },
+        { href: '/blogg', label: 'Blogg' },
+        { href: '/om', label: 'Om meg' },
+      ],
+      innhald: [
+        { label: 'Start med kjernesida, ikkje forsida', href: '#kjerneside' },
+        { label: 'Slik gjer du det i praksis', href: '#praksis' },
+        { label: 'Les meir', href: '#les-meir' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

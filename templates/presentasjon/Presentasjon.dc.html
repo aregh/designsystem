@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Presentasjon" description="16:9-presentasjon i Kjernekaren-stil — tittel, seksjon, punktliste, nøkkeltal, foto og bio." -->
+<helmet><script src="./ds-base.js"></script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style>html,body{margin:0;background:#111}</style></helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1280" height="720" hint-size="100%,100%">
+<section data-label="Tittel" data-screen-label="01" style="width:1280px;height:720px;background:#FEF2AE;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:0 90px">
+<div style="font-size:110px;font-weight:800;line-height:1.02">Kjernemodellen</div>
+<div style="font-size:26px;font-weight:400;margin-top:24px">Are Gjertin Urkegjerde Halland · kjernekaren.no</div>
+<div style="position:absolute;bottom:28px;right:64px;font-size:15px;font-weight:600;letter-spacing:.08em">kjernemodellen.no</div>
+</section>
+<section data-label="Seksjon" data-screen-label="02" style="width:1280px;height:720px;background:#BCF17D;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden;display:flex;align-items:center;padding:0 90px">
+<div style="font-size:88px;font-weight:800;line-height:1.06">Kva er<br>kjernemodellen?</div>
+<div style="position:absolute;bottom:28px;right:64px;font-size:15px;font-weight:600;letter-spacing:.08em">01</div>
+</section>
+<section data-label="Punktliste" data-screen-label="03" style="width:1280px;height:720px;background:#FEF2AE;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden;padding:90px 90px 0">
+<div style="font-size:52px;font-weight:800;margin-bottom:40px">Kurskatalog</div>
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:20px;font-size:32px;line-height:1.45;font-weight:400">
+<li style="display:flex;gap:22px;align-items:flex-start"><span style="width:16px;height:16px;background:#000;flex:none;margin-top:14px"></span><span>Masterclass i strategisk innhaldsdesign</span></li>
+<li style="display:flex;gap:22px;align-items:flex-start;padding-left:38px"><span style="width:16px;height:3px;background:#000;flex:none;margin-top:21px"></span><span style="font-size:26px">To dagar i Oslo, med sertifisering</span></li>
+<li style="display:flex;gap:22px;align-items:flex-start;padding-left:38px"><span style="width:16px;height:3px;background:#000;flex:none;margin-top:21px"></span><span style="font-size:26px">Neste kull 23.–24. oktober</span></li>
+<li style="display:flex;gap:22px;align-items:flex-start"><span style="width:16px;height:16px;background:#000;flex:none;margin-top:14px"></span><span>Skriv med KI, for KI og menneske</span></li>
+<li style="display:flex;gap:22px;align-items:flex-start"><span style="width:16px;height:16px;background:#000;flex:none;margin-top:14px"></span><span>Smidig brukertesting for produktteam</span></li>
+</ul>
+<div style="position:absolute;bottom:28px;right:64px;font-size:15px;font-weight:600;letter-spacing:.08em">kjernekaren.no/kurs</div>
+</section>
+<section data-label="Nøkkeltal" data-screen-label="04" style="width:1280px;height:720px;background:#FEF2AE;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:0 90px;gap:56px">
+<div style="font-size:52px;font-weight:800">Erfaringsgrunnlaget</div>
+<div style="display:flex;gap:64px;align-items:flex-start">
+<div style="flex:1"><div style="font-size:96px;font-weight:800;line-height:1">25 år</div><div style="font-size:26px;margin-top:10px">med digital strategi og design</div></div>
+<div style="flex:1"><div style="font-size:96px;font-weight:800;line-height:1">1000+</div><div style="font-size:26px;margin-top:10px">testpersonar i reelle prosjekt</div></div>
+<div style="flex:1"><div style="font-size:96px;font-weight:800;line-height:1">2021</div><div style="font-size:26px;margin-top:10px">boka kom ut på Kraft forlag</div></div>
+</div>
+</section>
+<section data-label="Foto heildekkande" data-screen-label="05" style="width:1280px;height:720px;background:#000;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden">
+<img src="../../assets/foto-kursdeltakarar-ved-bord.png" alt="Kursdeltakarar ved bord" style="width:100%;height:100%;object-fit:cover;display:block">
+<div style="position:absolute;left:0;bottom:80px;background:#FFE484;padding:28px 44px;max-width:760px"><div style="font-size:44px;font-weight:800;line-height:1.15">Kjerneverkstad med heile teamet</div></div>
+</section>
+<section data-label="Foto delt" data-screen-label="06" style="width:1280px;height:720px;background:#BCF17D;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr">
+<div style="display:flex;flex-direction:column;justify-content:center;padding:0 72px;gap:24px">
+<div style="font-size:52px;font-weight:800;line-height:1.1">Start med det viktigaste</div>
+<div style="font-size:28px;line-height:1.5">Kjernemodellen gjer prioritering til ein felles øving, ikkje ein diskusjon om smak.</div>
+</div>
+<img src="../../assets/foto-are-presenterer-kjerneark.jpg" alt="Are presenterer kjernearket" style="width:100%;height:100%;object-fit:cover;display:block">
+</section>
+<section data-label="Bio" data-screen-label="07" style="width:1280px;height:720px;background:#FEF2AE;font-family:'Work Sans',sans-serif;color:#000;box-sizing:border-box;position:relative;overflow:hidden;display:grid;grid-template-columns:420px 1fr;align-items:center;gap:72px;padding:0 90px">
+<img src="../../assets/are-portrett-rein.png" alt="Are Halland" style="width:100%;display:block">
+<div style="display:flex;flex-direction:column;gap:22px">
+<div style="font-size:58px;font-weight:800;line-height:1.08">Are Gjertin<br>Urkegjerde Halland</div>
+<div style="font-size:28px;line-height:1.5">Opphavsmannen bak kjernemodellen. Kurshaldar, fasilitator og uavhengig rådgjevar.</div>
+<div style="font-size:24px">908 70 026 · are@kjernekaren.no</div>
+</div>
+</section>
+</x-import>
+
+</x-dc>
+</body>
+</html>

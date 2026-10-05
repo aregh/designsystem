@@ -1,6 +1,5 @@
 /**
  * Flat laksefarga knapp med skarpe hjørne — einaste knappestilen i brandet.
- * @startingPoint section="Komponentar" subtitle="Flat rød knapp, skarpe hjørne" viewport="360x120"
  */
 export interface ButtonProps {
   children: React.ReactNode;

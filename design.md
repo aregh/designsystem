@@ -170,8 +170,11 @@ Lenker er alltid svarte med underline — også i footer. Hover: tjukkare underl
 | `components/core/` | Button, TextLink, CircleBadge, StarRating, Accordion, Quote, TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort, Paginering, Innhaldsliste |
 | `components/navigation/` | SiteHeader, SiteFooter |
 | `slides/` | presentasjonsmalar |
+| `referanse/Referansekatalog.dc.html` | Referansekatalog – presentasjon (MAL 2025) og 51 referansebilete frå Google Drive, gruppert etter tema. |
 | `brief-nettstad-oppdatering.md` | feilliste + akseptkriterium for kjernekaren.no |
 | `brief-implementering-kjernekaren.md` | implementeringsbrief |
+
+Kjelde for referansekatalogen: https://drive.google.com/drive/folders/1Ip7OOytKBsNrhMOd7IV50IykFTws8eqF
 
 ## 11. Opne spørsmål
 

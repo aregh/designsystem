@@ -1,0 +1,296 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/navigation/**",
+              "ui_kits/kontekstarkitektur/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Work Sans))/i]",
+        "message": "Font not provided by the design system. Available: Work Sans."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AccordionItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|defaultOpen|key|ref|className|style|children)$/]",
+        "message": "<AccordionItem> doesn't accept that prop. Declared props: title, children, defaultOpen."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BloggKort'] > JSXAttribute > JSXIdentifier[name!=/^(?:dato|tittel|utdrag|href|bilete|alt|style|key|ref|className|style|children)$/]",
+        "message": "<BloggKort> doesn't accept that prop. Declared props: dato, tittel, utdrag, href, bilete, alt, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|href|caps|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, href, caps, onClick, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CircleBadge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|color|style|key|ref|className|style|children)$/]",
+        "message": "<CircleBadge> doesn't accept that prop. Declared props: children, size, color, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Innhaldsliste'] > JSXAttribute > JSXIdentifier[name!=/^(?:tittel|punkt|lesetid|style|key|ref|className|style|children)$/]",
+        "message": "<Innhaldsliste> doesn't accept that prop. Declared props: tittel, punkt, lesetid, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='KursKort'] > JSXAttribute > JSXIdentifier[name!=/^(?:tittel|naar|tekst|ctaTekst|href|badge|sitat|style|key|ref|className|style|children)$/]",
+        "message": "<KursKort> doesn't accept that prop. Declared props: tittel, naar, tekst, ctaTekst, href, badge, sitat, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NewsletterForm'] > JSXAttribute > JSXIdentifier[name!=/^(?:heading|blurb|style|key|ref|className|style|children)$/]",
+        "message": "<NewsletterForm> doesn't accept that prop. Declared props: heading, blurb, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Paginering'] > JSXAttribute > JSXIdentifier[name!=/^(?:sider|aktiv|style|key|ref|className|style|children)$/]",
+        "message": "<Paginering> doesn't accept that prop. Declared props: sider, aktiv, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Quote'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|name|role|variant|style|key|ref|className|style|children)$/]",
+        "message": "<Quote> doesn't accept that prop. Declared props: children, name, role, variant, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Quote'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:stor|sidestilt)$/]",
+        "message": "<Quote> variant must be one of 'stor' | 'sidestilt'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SiteFooter'] > JSXAttribute > JSXIdentifier[name!=/^(?:tagline|heading|lines|links|maxWidth|style|key|ref|className|style|children)$/]",
+        "message": "<SiteFooter> doesn't accept that prop. Declared props: tagline, heading, lines, links, maxWidth, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NavItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|children|key|ref|className|style|children)$/]",
+        "message": "<NavItem> doesn't accept that prop. Declared props: label, href, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StarRating'] > JSXAttribute > JSXIdentifier[name!=/^(?:count|size|style|key|ref|className|style|children)$/]",
+        "message": "<StarRating> doesn't accept that prop. Declared props: count, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TestimonialCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|name|role|quote|stars|style|key|ref|className|style|children)$/]",
+        "message": "<TestimonialCard> doesn't accept that prop. Declared props: image, name, role, quote, stars, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|placeholder|multiline|value|onChange|style|key|ref|className|style|children)$/]",
+        "message": "<TextField> doesn't accept that prop. Declared props: label, placeholder, multiline, value, onChange, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|href|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<TextLink> doesn't accept that prop. Declared props: children, href, onClick, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "AccordionItem": {
+        "replaces": []
+      },
+      "BloggKort": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "CircleBadge": {
+        "replaces": []
+      },
+      "Innhaldsliste": {
+        "replaces": []
+      },
+      "KursKort": {
+        "replaces": []
+      },
+      "NewsletterForm": {
+        "replaces": []
+      },
+      "Paginering": {
+        "replaces": []
+      },
+      "Quote": {
+        "replaces": []
+      },
+      "SiteFooter": {
+        "replaces": []
+      },
+      "NavItem": {
+        "replaces": []
+      },
+      "StarRating": {
+        "replaces": []
+      },
+      "TestimonialCard": {
+        "replaces": []
+      },
+      "TextField": {
+        "replaces": []
+      },
+      "TextLink": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--badge-flate",
+      "--bakgrunn-groenn",
+      "--bakgrunn-gul",
+      "--bakgrunn-rosa",
+      "--bp-desktop",
+      "--bp-mobil",
+      "--bp-tablet",
+      "--breidd-innhald",
+      "--breidd-side",
+      "--breidd-tekst",
+      "--farge-blaa",
+      "--farge-graa",
+      "--farge-groenn",
+      "--farge-gul",
+      "--farge-kvit",
+      "--farge-lilla",
+      "--farge-roed",
+      "--farge-rosa",
+      "--farge-svart",
+      "--felt-flate",
+      "--flate-side",
+      "--font-sans",
+      "--hentetekst-flate",
+      "--hentetekst-paa-flate",
+      "--knapp-flate",
+      "--knapp-tekst",
+      "--lenke",
+      "--linjehoegd-broedtekst",
+      "--linjehoegd-tett",
+      "--linjehoegd-tittel",
+      "--radius-null",
+      "--radius-sirkel",
+      "--rom-1",
+      "--rom-2",
+      "--rom-3",
+      "--rom-4",
+      "--rom-5",
+      "--rom-6",
+      "--rom-7",
+      "--rom-8",
+      "--rom-9",
+      "--side-marg",
+      "--sperring-broedtekst",
+      "--sperring-etikett",
+      "--stjerne",
+      "--strek",
+      "--strek-svak",
+      "--tekst",
+      "--tekst-broedtekst",
+      "--tekst-display",
+      "--tekst-etikett",
+      "--tekst-h1",
+      "--tekst-h2",
+      "--tekst-h3",
+      "--tekst-invers",
+      "--tekst-liten",
+      "--trykkflate-min",
+      "--vekt-ekstrafeit",
+      "--vekt-feit",
+      "--vekt-halvfeit",
+      "--vekt-normal"
+    ],
+    "tokenKinds": {
+      "--farge-rosa": "color",
+      "--farge-groenn": "color",
+      "--farge-blaa": "color",
+      "--farge-roed": "color",
+      "--farge-gul": "color",
+      "--farge-lilla": "color",
+      "--farge-svart": "color",
+      "--farge-kvit": "color",
+      "--farge-graa": "color",
+      "--bakgrunn-gul": "color",
+      "--bakgrunn-rosa": "color",
+      "--bakgrunn-groenn": "color",
+      "--flate-side": "color",
+      "--tekst": "color",
+      "--tekst-invers": "color",
+      "--lenke": "color",
+      "--knapp-flate": "color",
+      "--knapp-tekst": "color",
+      "--badge-flate": "color",
+      "--hentetekst-flate": "color",
+      "--felt-flate": "color",
+      "--strek": "color",
+      "--strek-svak": "color",
+      "--stjerne": "color",
+      "--font-sans": "font",
+      "--tekst-display": "font",
+      "--tekst-h1": "font",
+      "--tekst-h2": "font",
+      "--tekst-h3": "font",
+      "--tekst-broedtekst": "font",
+      "--tekst-liten": "font",
+      "--tekst-etikett": "font",
+      "--vekt-normal": "font",
+      "--vekt-halvfeit": "font",
+      "--vekt-ekstrafeit": "font",
+      "--vekt-feit": "font",
+      "--linjehoegd-tett": "font",
+      "--linjehoegd-tittel": "font",
+      "--linjehoegd-broedtekst": "font",
+      "--sperring-etikett": "font",
+      "--sperring-broedtekst": "font",
+      "--rom-1": "spacing",
+      "--rom-2": "spacing",
+      "--rom-3": "spacing",
+      "--rom-4": "spacing",
+      "--rom-5": "spacing",
+      "--rom-6": "spacing",
+      "--rom-7": "spacing",
+      "--rom-8": "spacing",
+      "--rom-9": "spacing",
+      "--breidd-tekst": "spacing",
+      "--breidd-innhald": "spacing",
+      "--breidd-side": "spacing",
+      "--radius-null": "radius",
+      "--radius-sirkel": "radius",
+      "--hentetekst-paa-flate": "color",
+      "--bp-mobil": "spacing",
+      "--bp-tablet": "spacing",
+      "--bp-desktop": "spacing",
+      "--side-marg": "spacing",
+      "--trykkflate-min": "spacing"
+    },
+    "fontFamilies": [
+      "Work Sans"
+    ]
+  }
+}

@@ -12,7 +12,7 @@
   --bp-desktop: 1200px;
 
   /* Sidemarg — aldri null på mobil, teksten skal ikkje klistre seg til kanten */
-  --side-marg: clamp(20px, 5vw, 48px);
+  --side-marg: clamp(20px, 5vw, 48px); /* @kind spacing */
 
   /* Minste trykkflate (knappar, menylenker, aksordionrader) */
   --trykkflate-min: 48px;

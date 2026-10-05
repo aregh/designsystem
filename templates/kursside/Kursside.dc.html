@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Kursside" description="Kurs-landingsside på gul flate, nynorsk — hero, sitat, aksordion, nyheitsbrev." -->
+<helmet><script src="./ds-base.js"></script><style>html,body{margin:0}</style></helmet>
+<div style="background:#FFE484;color:#000;font-family:'Work Sans','Noto Sans',sans-serif;min-height:100vh;padding-bottom:64px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.SiteHeader" brand="Are Halland" items="{{ nav }}" active-href="/kurs" hint-size="100%,72px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:40px;align-items:start;max-width:900px;margin:0 auto;padding:0 24px">
+<div style="min-width:0">
+<div style="font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:48px 0 12px">Digitalt kurs 18. september</div>
+<h1 style="font-size:clamp(32px,5vw,44px);font-weight:800;line-height:1.12;margin:0 0 28px">Strategisk innhaldsdesign med kjernemodellen</h1>
+<p style="font-size:18px;line-height:1.65;margin:0 0 18px;font-weight:800">Bli ekspert på den enkle og effektive metoden som hjelper deg å:</p>
+<ul style="font-size:18px;line-height:1.6;padding-left:20px;margin:0 0 22px">
+<li style="margin:4px 0">samarbeide på tvers av team og fagområde</li>
+<li style="margin:4px 0">tenke strategisk og brukarorientert samtidig</li>
+<li style="margin:4px 0">sjå produktet ditt i eit heilheitsperspektiv</li>
+<li style="margin:4px 0">starte med det viktigaste</li>
+</ul>
+<p style="font-size:18px;line-height:1.65;margin:0 0 24px">Lær metoden direkte frå opphavsmannen, og få alt av tips, triks og malar du treng for å ta i bruk metoden umiddelbart etter kurset.</p>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Button" href="#pamelding" hint-size="190px,46px">Gå til påmelding</x-import>
+</div>
+<div style="min-width:0;padding-top:48px">
+<img src="../../assets/bok-kjernemodellen.png" alt="Boka Kjernemodellen" style="width:100%;display:block">
+<div style="font-size:15px;font-style:italic;line-height:1.5;text-align:center;margin-top:14px">Kurset er basert på boka «Kjernemodellen – eit praktisk verktøy for å lage bedre digitale tenester» (Halland og Halland, Kraft forlag, 2021)</div>
+</div>
+</div>
+<hr style="border:none;border-top:1px solid #000;margin:56px auto;max-width:900px">
+<div style="display:flex;justify-content:center;gap:56px;flex-wrap:wrap;margin:0 auto 64px;padding:0 24px;max-width:900px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.TestimonialCard" image="../../assets/are-portrett.png" name="Hedda Foss Lilleng" role="Managing Director, Snøhetta Design" quote="Effektiv og god innføring i eit solid og praktisk verktøy!" hint-size="250px,260px"></x-import>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.TestimonialCard" name="Ann Key" role="Lead Content Strategist, Aha Media Group" quote="I walked away excited, motivated, and feeling equipped to do my job better!" hint-size="250px,180px"></x-import>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.TestimonialCard" name="Thomas Marriaga Olsen" role="Senior service designer, Itera" quote="Godt gjennomført og engasjerande kurs – anbefales!" hint-size="250px,180px"></x-import>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:48px;max-width:900px;margin:0 auto;padding:0 24px;align-items:start">
+<div style="min-width:0">
+<p style="font-size:18px;line-height:1.65;margin:0 0 18px">Kjernemodellen er eit praktisk og intuitivt rammeverk for å samarbeide om å lage brukarvennlege og strategisk forankra produkt og tenester.</p>
+<h2 style="font-size:24px;font-weight:800;margin:36px 0 10px">Målgruppe</h2>
+<ul style="font-size:18px;line-height:1.6;padding-left:20px;margin:0">
+<li style="margin:6px 0"><b>Produktteam</b> som ønsker eit enkelt samarbeidsverktøy for å involvere teamet og nøkkelpersonar</li>
+<li style="margin:6px 0"><b>Digitalbyrå</b> som ønsker ein felles metodikk for å involvere oppdragsgivar</li>
+<li style="margin:6px 0"><b>Bedrifter og organisasjonar</b> som vil lage prioritert og effektiv kommunikasjon</li>
+</ul>
+</div>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Quote" variant="sidestilt" name="Elisabeth Heidenstrøm" role="CRM &amp; Martech Manager i Sopra Steria" hint-size="320px,200px">Utrolig nyttig kurs med masse praktiske eksempler som gjer det enkelt å ta i bruk kjernemodellen med ein gong.</x-import>
+</div>
+<div style="max-width:640px;margin:56px auto 0;padding:0 24px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Accordion" hint-size="100%,240px">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.AccordionItem" title="Kva er kjernemodellen?" hint-size="100%,60px">Eit rammeverk for å prioritere innhald og funksjonalitet ut frå både brukarbehov og forretningsmål.</x-import>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.AccordionItem" title="Om Are" hint-size="100%,60px">Are Halland er opphavsmannen bak kjernemodellen, med 25 års erfaring med digital strategi og design.</x-import>
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.AccordionItem" title="Praktisk informasjon" hint-size="100%,60px">Digitalt kurs 18. september. Påmelding via lenka over.</x-import>
+</x-import>
+<div style="margin-top:40px"><x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.Button" href="#pamelding" hint-size="190px,46px">Gå til påmelding</x-import></div>
+<h2 style="font-size:24px;font-weight:800;margin:56px 0 10px">Har du spørsmål om kurset?</h2>
+<p style="font-size:18px;line-height:1.65;margin:0 0 18px">Ring meg på 908 70 026, send epost til <a href="mailto:are@kjernekaren.no" style="color:#000">are@kjernekaren.no</a> eller book ein kaffiprat.</p>
+<p style="font-size:18px;line-height:1.65;margin:0 0 18px">Vi snakkast!<br>Are</p>
+<hr style="border:none;border-top:1px solid #000;margin:40px 0">
+<x-import component-from-global-scope="KjernekarenDesignsystem_8e6518.NewsletterForm" hint-size="100%,160px"></x-import>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { nav: [
+      { href: '/', label: 'Heim' },
+      { href: '/kurs', label: 'Kurs' },
+      { href: '/bok', label: 'Boka' },
+      { href: '/om', label: 'Om meg' },
+    ] };
+  }
+}
+</script>
+</body>
+</html>

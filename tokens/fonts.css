@@ -1,5 +1,8 @@
 /* Work Sans — brandskrift (jf. designmanualen: "Som hovedskrift bruker vi Work Sans").
-   Lasta frå Google Fonts. Alternative skrifter i manualen: Noto Sans, Open Sans, Proxima Nova.
+   Sjølvhosta woff2 (latin-subset, dekkjer æøå) i ../fonts/, lisens SIL OFL 1.1 (fonts/OFL-Work-Sans.txt).
    Berre vektene systemet bruker: 400 (normal), 600 (versal-etikett), 800 (feit) + kursiv 400.
-   500/700/900 skal aldri brukast (jf. design.md). Stramma inn 15.09.2026 etter implementering på kjernekaren.no. */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+   500/700/900 skal aldri brukast (jf. design.md). Sjølvhosting innført 05.10.2026 (@font-face i staden for Google Fonts-@import). */
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/work-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/work-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 800; font-display: swap; src: url('../fonts/work-sans-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url('../fonts/work-sans-latin-400-italic.woff2') format('woff2'); }

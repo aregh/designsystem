@@ -23,7 +23,7 @@ Skrive til Are. Fem minutt, alt skjer i nettlesaren på claude.ai/design.
    ho spør. Du skal sjå kort for Type, Colors, Spacing, Brand, Komponentar, Merkevare, og
    startpunkta for kjernemodellen.no og thecoremodel.com. Manglar korta, sjå steg 7.
 
-3. **Publiser det og set «Usable by»** til organisasjonen. I designsystem-veljaren i eit
+3. **Publiser det og set «Usable by» til organisasjonen.** I designsystem-veljaren i eit
    nytt prosjekt står i dag ein tom «Design System» som «Org default»; byt til det nye.
 
 4. **Slett dei fire Legacy-radene** frå ⋮-menyen når det nye er publisert:

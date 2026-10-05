@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="SoMe-oppslag" description="Kursoppslag 1200×628 — flatetema, stor tittel i vekt 800 og sirkel-badge med dato." -->
+<helmet><script src="./ds-base.js"></script><style>html,body{margin:0;background:#EAEAEA}</style></helmet>
+<div class="tema-gul {{ tema }}" style="width:1200px;height:628px;position:relative;overflow:hidden;box-sizing:border-box;padding:76px 96px;display:flex;flex-direction:column;justify-content:center;font-family:'Work Sans','Noto Sans',sans-serif;color:#000;background:var(--flate-side,#FFE484)">
+<div style="font-size:26px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px">Digitalt kurs</div>
+<div style="font-size:64px;font-weight:800;line-height:1.04;max-width:800px;letter-spacing:-0.01em">MASTERCLASS<br>Strategisk innhaldsdesign med kjernemodellen</div>
+<div style="font-size:26px;margin-top:30px;max-width:720px">Lær metoden direkte frå opphavsmannen. Gå til påmelding på kjernekaren.no</div>
+<div style="position:absolute;top:72px;right:80px;width:260px;height:260px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:32px;font-weight:800;line-height:1.3;padding:26px;box-sizing:border-box;background:var(--badge-flate,#AEEBFB)">OSLO<br>19.–20. juni</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:628},&quot;tema&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tema-gul&quot;,&quot;tema-groenn&quot;,&quot;tema-blaa&quot;,&quot;tema-rosa&quot;,&quot;tema-gul-lys&quot;],&quot;default&quot;:&quot;tema-gul&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Flate&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { tema: this.props.tema ?? 'tema-gul' };
+  }
+}
+</script>
+</body>
+</html>
