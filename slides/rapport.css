@@ -116,3 +116,20 @@
   font-size: var(--slide-tekst-under);
   font-weight: var(--vekt-ekstrafeit);
 }
+
+/* Forside: første slide i alle presentasjonar har Urke-biletet (assets/urke-fra-saksa.jpg)
+   heildekkande, med tittelen på ei svart tekstplate nedst til venstre.
+   Kvit tekst er lov her fordi plata er svart (design.md §2). */
+.slide.forside { padding: 0; }
+.slide .forside-bilete { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+.slide .tekstplate {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-width: 900px;
+  padding: 44px 56px;
+  background: var(--farge-svart);
+  color: var(--tekst-invers);
+}
+.slide .tekstplate .etikett, .slide .tekstplate .tittel, .slide .tekstplate .tekst { color: var(--tekst-invers); }
+.slide .tekstplate .tittel { margin-bottom: var(--rom-4); }

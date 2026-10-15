@@ -50,8 +50,8 @@
   "title": "Kjernekaren Designsystem",
   "lastChange": {
     "by": "Are",
-    "at": "2026-10-15T14:20:00Z",
+    "at": "2026-10-15T16:45:00Z",
     "via": "Claude (Designsystem kjernekaren-prosjektet)",
-    "note": "Mal for lang rapport (templates/rapport/) med HTML-presentasjon og drilldown frå slide til seksjon"
+    "note": "Sjølvhosta Work Sans (fonts/), Urke-biletet på første slide, sticky innhaldsliste avgrensa i høgda"
   }
 }

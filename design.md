@@ -58,7 +58,7 @@ suspendert for den flata. Fargekodinga gjeld då berre inne i sjølve modell-gra
 
 ## 3. Typografi
 
-Éi skrift: **Work Sans** (Google Fonts). Alternativ ved behov: Noto Sans, Open Sans.
+Éi skrift: **Work Sans**, sjølvhosta som woff2 i `fonts/` (latin, dekkjer æøå, lisens SIL OFL 1.1) via `@font-face` i `tokens/fonts.css`. Ingen kall til Google Fonts. Alternativ ved behov: Noto Sans, Open Sans.
 
 Kontrast kjem frå **vekt**, ikkje storleik:
 - **400** all mengdetekst
@@ -139,7 +139,7 @@ Lenker er alltid svarte med underline — også i footer. Hover: tjukkare underl
 - Titlar 52–110px vekt 800, punkttekst 32px vekt 400, underpunkt 26px. Aldri under 24px.
 - Bilete-malar: heildekkande foto med svart tekstplate, delt flate (foto/tekst),
   tredelt bilderad. Alle bilete er utbyttbare — dra eit nytt foto rett inn i plassen.
-- Forsida til Are sine presentasjonar brukar Sunnmørsalpane (Saksa, sett frå Urke).
+- **Første slide i alle presentasjonar har Urke-biletet** (`assets/urke-fra-saksa.jpg`, Hjørundfjorden sett frå Saksa): heildekkande, med tittelen på svart tekstplate nedst til venstre (`.slide.forside` i `slides/rapport.css`, `slides/tittel-bilete.html`).
 - Malar: `slides/tittel.html`, `tittel-bilete.html`, `seksjon.html`, `punktliste.html`,
   `nokkeltall.html`, `bio.html`, `utfordring.html`, `venn.html`,
   `bilete-heildekkande.html`, `bilete-delt.html`, `bilete-tredelt.html`.

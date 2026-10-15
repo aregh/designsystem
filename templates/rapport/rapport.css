@@ -93,7 +93,7 @@
 .rapport .side { flex: 0 1 260px; min-width: 0; }
 /* Innhaldslista følgjer med når ho står ved sida av teksten, ikkje når ho ligg over.
    Container query i staden for media query, jf. README (previewen skalerer sida). */
-@container (min-width: 780px) { .rapport .side { position: sticky; top: var(--rom-5); } }
+@container (min-width: 780px) { .rapport .side { position: sticky; top: var(--rom-5); max-height: calc(100vh - 2 * var(--rom-5)); overflow-y: auto; } }
 
 /* Innhaldsliste — gul kjerneinnhald-flate, som komponenten Innhaldsliste */
 .rapport .innhald { background: var(--farge-gul); padding: var(--rom-5); font-size: var(--tekst-liten); }

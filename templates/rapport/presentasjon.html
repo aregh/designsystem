@@ -41,15 +41,17 @@
 <!-- Mal: HTML-presentasjon med drilldown til den lange rapporten (rapport.html).
      Kvar slide har id s1, s2 … og kan lenkjast til. «Les meir i rapporten» er nivå 2-lenke
      til ein id i rapporten. Piltastar, mellomrom og Page Up/Down blar. F gir fullskjerm.
-     Slidetypane er dei same som i slides/ (funn, sitat, metode, tilrådingar,
+     Første slide har alltid Urke-biletet (assets/urke-fra-saksa.jpg). Slidetypane er dei same som i slides/ (funn, sitat, metode, tilrådingar,
      les heile rapporten, neste steg) og deler slides/rapport.css. -->
 <body>
 
-<div class="plass"><section class="slide" id="s1" style="display:flex;flex-direction:column;justify-content:center;padding-top:0">
-  <p class="etikett">Rapport &middot; oktober 2026</p>
-  <h1 class="tittel tittel-stor">Brukarinnsikt 2026: kvifor folk ringjer når svaret står på nettet</h1>
-  <p class="tekst tekst-under">Are Halland, Kjernekaren</p>
-  <div class="botn"><span>Brukarinnsikt 2026</span><span class="sidetal"></span></div>
+<div class="plass"><section class="slide forside" id="s1">
+  <img class="forside-bilete" src="../../assets/urke-fra-saksa.jpg" alt="Hjørundfjorden sett frå Saksa, med Urke nedanfor">
+  <div class="tekstplate">
+    <p class="etikett">Rapport &middot; oktober 2026</p>
+    <h1 class="tittel">Brukarinnsikt 2026: kvifor folk ringjer når svaret står på nettet</h1>
+    <p class="tekst tekst-under">Are Halland, Kjernekaren</p>
+  </div>
 </section></div>
 
 <div class="plass"><section class="slide" id="s2" style="display:flex;flex-direction:column">
@@ -158,7 +160,8 @@
   });
 
   // Kom vi frå rapporten med #s3, start der
-  if (location.hash) { var m = document.getElementById(location.hash.slice(1)); if (m && m.parentNode.classList.contains('plass')) m.parentNode.scrollIntoView({ behavior: 'auto' }); }
+  function tilHash() { var m = location.hash && document.getElementById(location.hash.slice(1)); if (m && m.parentNode.classList.contains('plass')) m.parentNode.scrollIntoView({ behavior: 'auto' }); }
+  window.addEventListener('hashchange', tilHash); tilHash();
 
   // QR-kode frå data-url (same adresse som står på sliden)
   var qs = document.querySelector('.slide[data-url]');

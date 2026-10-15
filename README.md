@@ -68,7 +68,7 @@ samanhengar der ein snakkar om forretningsmål.
   (`--hentetekst-paa-flate`) når han ligg direkte på sideflata. Når ein kjernemodell-farge er heil sideflate, er element-tydinga
   suspendert for flata — fargekodinga gjeld då berre inne i kjernemodell-grafikken.
   Sjå `tokens/flater.css` og `guidelines/flate-tema.html`.
-- **Typografi:** éi skrift — **Work Sans** (open source, Google Fonts). Kontrast gjennom vekt,
+- **Typografi:** éi skrift — **Work Sans** (open source, sjølvhosta i `fonts/`). Kontrast gjennom vekt,
   ikkje storleik: ExtraBold 800 for titlar, Regular 400 for mengdetekst. Unngå liten skrift
   ("romslig skriftstørrelse"). Alternativ: Noto Sans, Open Sans, Proxima Nova.
   Berre **to vekter** er i bruk (400/800); 600 er unntaket og berre til sperra
@@ -110,8 +110,9 @@ store typografiske sitatteikn. Kjernemodell-elementa (trekant, kvadrat, sirkel, 
 fungerer som brand-grafikk — bygde som flate CSS-former, aldri som illustrasjonar med strek.
 
 ## Skrifter
-Work Sans er lasta frå Google Fonts via `tokens/fonts.css` (ikkje lokale font-filer).
-Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
+Work Sans er sjølvhosta: woff2-filer i `fonts/` (latin-subset, dekkjer æøå) med `@font-face` i
+`tokens/fonts.css`, og lisensen (SIL OFL 1.1) i `fonts/OFL-Work-Sans.txt`. Berre vektene 400, 600, 800
+og kursiv 400 er med. Ingen kall til Google Fonts, så sidene lastar raskare og deler ikkje data med Google.
 
 ## Indeks
 - `design.md` — **overordna designmal** (start her)
@@ -119,6 +120,7 @@ Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
 - `components/bundle.js` og `components/bundle.css` — komponentane og grunnreglane deira
 - `styles.css` — importerer `tokens/` for slides, malar og UI-kit (lenk denne éi fila der)
 - `tokens/` — colors.css, typography.css, spacing.css, fonts.css, flater.css, responsiv.css
+- `fonts/` — sjølvhosta Work Sans (woff2) og lisensen
 - `guidelines/` — spesimen-kort (farger, typografi, former, spacing, responsiv, sidemalar)
 - `components/<Komponent>/` — README, typar og førehandsvising for Button, TextLink, CircleBadge,
   StarRating, Accordion, Quote, TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort,
