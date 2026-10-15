@@ -144,6 +144,25 @@ Lenker er alltid svarte med underline — også i footer. Hover: tjukkare underl
   `nokkeltall.html`, `bio.html`, `utfordring.html`, `venn.html`,
   `bilete-heildekkande.html`, `bilete-delt.html`, `bilete-tredelt.html`.
 
+### Rapportpresentasjon
+
+Seks slidetypar for å legge fram ein rapport, med felles stil i `slides/rapport.css`.
+Dei les berre CSS-variablar frå tokens (ingen hex i filene), så eit byte frå
+`tokens/*.css` til `tokens.json` krev ingen endring i slidane. Flatetema blir sett med
+`data-theme` og tema-klasse på `.slide`.
+
+| Fil | Bruk |
+|---|---|
+| `slides/funn.html` | Eitt funn per slide. Tittelen er funnet som heil setning, grunnlaget står nedst. |
+| `slides/sitat.html` | Brukarsitat, ordrett og kort. Avsendar er rolle og stad, ikkje namn. |
+| `slides/metode.html` | Kva funna byggjer på: to til fire metodar med tal. |
+| `slides/tilraadingar.html` | Tre til fem nummererte tilrådingar, kvar byrjar med verb. |
+| `slides/les-rapporten.html` | Rapporttittel, kort adresse, éin nivå 1-knapp og QR-kode teikna frå same adresse (`data-url`). |
+| `slides/neste-steg.html` | Kva, kven og når. Maks fem rader. |
+
+Kjernemodell-fargane blir ikkje brukte på rapportslidane: nummer, tal og rader er svarte.
+QR-feltet er kvitt (`--felt-flate`) og tel som flate nummer to.
+
 ## 9. Innhald og språk
 
 - **Nynorsk** på kjernekaren.no og kjernemodellen.no. **Bokmål** inne i modell-elementa

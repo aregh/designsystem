@@ -1,0 +1,108 @@
+/* Rapportslidar — felles stil for funn, sitat, metode, tilrådingar,
+   «les heile rapporten» og neste steg.
+
+   Fila les berre CSS-variablar frå tokens (tokens.css eller tokens/*.css via
+   styles.css). Ingen hex-verdiar her: byter vi seinare kjelde til tokens.json,
+   følgjer slidane med utan endring.
+
+   Flatetema: legg data-theme="groenn|gul|blaa|rosa" (tokens.css) og
+   class="tema-groenn|…" (tokens/flater.css) på .slide. Utan tema: lys gul.
+
+   Reglar (design.md §8): 1280×720, radius 0, ingen skuggar, gradientar eller
+   animasjon, svart tekst, vekt 400/800 (600 berre versal-etikettar), maks to
+   flatefargar per slide, aldri tekst under 24px utanom versal-etikettar og botnlinja. */
+
+.slide {
+  /* Slideskala — lokale storleikar, ikkje fargar */
+  --slide-tittel: 52px;
+  --slide-tittel-stor: 64px;
+  --slide-tekst: 32px;
+  --slide-tekst-under: 26px;
+  --slide-etikett: 22px;
+  --slide-botn: 15px;
+  --slide-marg: 90px;
+
+  width: 1280px;
+  height: 720px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  padding: var(--slide-marg) var(--slide-marg) 0;
+  background: var(--flate-side);
+  color: var(--tekst);
+  font-family: var(--font-sans);
+  font-weight: var(--vekt-normal);
+  border-radius: var(--radius-null);
+}
+.slide *, .slide *::before, .slide *::after { box-sizing: border-box; }
+
+/* Typografi */
+.slide .etikett {
+  margin: 0 0 var(--rom-5);
+  font-size: var(--slide-etikett);
+  font-weight: var(--vekt-halvfeit);
+  letter-spacing: var(--sperring-etikett);
+  text-transform: uppercase;
+}
+.slide .tittel {
+  margin: 0 0 var(--rom-6);
+  font-size: var(--slide-tittel);
+  font-weight: var(--vekt-ekstrafeit);
+  line-height: var(--linjehoegd-tett);
+  letter-spacing: -0.01em;
+  max-width: 1000px;
+}
+.slide .tittel-stor { font-size: var(--slide-tittel-stor); }
+.slide .tekst {
+  margin: 0;
+  font-size: var(--slide-tekst);
+  line-height: 1.45;
+  max-width: 980px;
+}
+.slide .tekst-under { font-size: var(--slide-tekst-under); line-height: 1.5; }
+.slide .feit { font-weight: var(--vekt-ekstrafeit); }
+
+/* Tynn heilsvart strek */
+.slide .strek { border: 0; border-top: 1px solid var(--strek); margin: 0; }
+
+/* Botnlinje: rapportnamn til venstre, side/stad til høgre */
+.slide .botn {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--slide-botn);
+  font-weight: var(--vekt-halvfeit);
+  letter-spacing: var(--sperring-etikett);
+  text-transform: uppercase;
+}
+
+/* Lenker: alltid svarte med underline */
+.slide a { color: var(--lenke); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+/* Nivå 1-knapp — maks éin per slide */
+.slide .knapp {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--trykkflate-min);
+  padding: 14px 32px;
+  background: var(--knapp-flate);
+  color: var(--knapp-tekst);
+  font-size: var(--slide-tekst-under);
+  font-weight: var(--vekt-ekstrafeit);
+  text-decoration: none;
+}
+
+/* Nummererte rader (tilrådingar, funn-oversikt) */
+.slide .rader { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--strek); }
+.slide .rader > li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--rom-5);
+  align-items: baseline;
+  padding: 18px 0;
+  border-top: 1px solid var(--strek);
+}
+.slide .rader .nr { font-size: var(--slide-tekst); font-weight: var(--vekt-ekstrafeit); }
