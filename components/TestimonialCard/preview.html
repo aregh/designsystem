@@ -1,0 +1,10 @@
+<!-- @dsCard group="Innhald" height=420 subtitle="Kursdeltakar med stjerner" -->
+<div id="root" style="padding:24px"></div>
+<script>
+var NS = window.KjernekarenDesignsystem_8e6518, h = React.createElement;
+ReactDOM.createRoot(document.getElementById('root')).render(
+h('div', {style:{display:'flex',gap:36,flexWrap:'wrap'}},
+  h(NS.TestimonialCard, {image:'../../assets/are-portrett.png', name:'Hedda Foss Lilleng', role:'Managing Director, Snøhetta Design', quote:'Effektiv og god innføring i eit solid og praktisk verktøy!'}),
+  h(NS.TestimonialCard, {name:'Thomas M. Olsen', role:'Senior service designer, Itera', quote:'Godt gjennomført og engasjerande kurs – anbefales!'}))
+);
+</script>

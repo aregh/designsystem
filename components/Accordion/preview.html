@@ -1,0 +1,12 @@
+<!-- @dsCard group="Innhald" height=300 subtitle="Utvidbare rader med chevron" -->
+<div id="root" style="padding:24px"></div>
+<script>
+var NS = window.KjernekarenDesignsystem_8e6518, h = React.createElement;
+ReactDOM.createRoot(document.getElementById('root')).render(
+h('div', {style:{maxWidth:560}},
+  h(NS.Accordion, null,
+    h(NS.AccordionItem, {title:'Dette lærer du', defaultOpen:true}, 'Eit intuitivt vegkart for strategisk prioritering utifrå brukarbehov, og eit praktisk rammeverk for tverrfagleg samarbeid.'),
+    h(NS.AccordionItem, {title:'Om kurshaldaren'}, 'Are Halland, opphavsmannen bak kjernemodellen.'),
+    h(NS.AccordionItem, {title:'Praktisk informasjon'}, 'Oslo, 12.–13. mars 2026.')))
+);
+</script>

@@ -10,6 +10,14 @@ Kjelde-URL: https://github.com/aregh/designsystem
 - aregh/kontekstarkitektur-no — ikkje gjennomgått
 
 ## Last sync
+date: 2026-10-15T11:30:00Z
+
+### Updated in this project
+- Synka mot designsystem-artefakten «Kjernekaren Designsystem» (https://claude.ai/artifact/2Cg2EiipAhn2BBt26q7yzE), som no er sanninga. Repoet speglar `project/` i artefakten.
+- Strukturen frå artefakt-migreringa (15.10.2026): `components/<Komponent>/` (README, .d.ts, preview.html), `components/bundle.js` (tidlegare `_ds_bundle.js`), `components/bundle.css`, `components/index.d.ts`, `tokens.json` + generert `tokens.css`, `design-system.json` er artefakt-indeksen (gammal manifest i `docs/`), `*.card.html` under `archived/`, `SKILL.md` som `assets/notes/SKILL.from-standalone.md`, `readme.md` → `README.md`
+- Behalde berre i repoet: `fonts/` og sjølvhosta `tokens/fonts.css` (artefakten lastar Work Sans frå Google Fonts), `scripts/`, rot-`support.js`/`deck-stage.js`/`image-slot.js`, `uploads/`
+
+### Tidlegare sync 2026-10-05
 date: 2026-10-05T08:40:00Z
 
 ### Updated in this project

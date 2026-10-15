@@ -1,0 +1,10 @@
+<!-- @dsCard group="Skjema" height=260 subtitle="Felt med etikett, fleirlinja" -->
+<div id="root" style="padding:24px"></div>
+<script>
+var NS = window.KjernekarenDesignsystem_8e6518, h = React.createElement;
+ReactDOM.createRoot(document.getElementById('root')).render(
+h('div', {style:{display:'grid',gap:16,maxWidth:420}},
+  h(NS.TextField, {label:'Namn'}),
+  h(NS.TextField, {label:'Melding', multiline:true}))
+);
+</script>

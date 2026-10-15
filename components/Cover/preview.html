@@ -1,0 +1,39 @@
+<!-- @dsCard height=320 -->
+<style>
+  html, body { margin: 0; }
+  .cover { position: relative; width: 960px; height: 320px; background: var(--flate-side); overflow: hidden; }
+  .band { position: absolute; left: 0; top: 0; }
+  .groenn { fill: var(--farge-groenn); }
+  .gul { fill: var(--farge-gul); }
+  .blaa { fill: var(--farge-blaa); }
+  .roed { fill: var(--farge-roed); }
+  .rosa { fill: var(--farge-rosa); }
+  .svart { fill: var(--farge-svart); }
+  .blk { rx: var(--radius-null); }
+  .namn { position: absolute; left: 48px; bottom: 64px; margin: 0; font-family: var(--font-sans); font-weight: 800; font-size: 64px; line-height: .95; color: var(--tekst); }
+  .tagline { position: absolute; left: 48px; bottom: 32px; margin: 0; max-width: 440px; font-family: var(--font-sans); font-size: 14px; color: var(--tekst); }
+</style>
+<div class="cover">
+  <!--
+    blocks: farge-groenn 336×112, farge-gul 224×112, farge-blaa 160×112, farge-roed 128×112, farge-rosa 112×112 (rom-9 + rom-4 tall), radius-null
+    arrangement: top-band skeleton, a strip of unequal bands like the kjerneark's element row; name too wide for the 440px zone
+    pattern: literal motif — six farge-svart squares (rom-5) at rom-7 pitch on the green block, the six brukaroppgåver of the kjerneark, plus one farge-blaa disc (radius-sirkel) for mål on the yellow block
+    steps/radii: rom-5, rom-7, rom-9, rom-4; radius-null, radius-sirkel
+  -->
+  <svg class="band" width="960" height="112" viewBox="0 0 960 112" aria-hidden="true">
+    <rect class="groenn blk" x="0" y="0" width="336" height="112"/>
+    <rect class="gul blk" x="336" y="0" width="224" height="112"/>
+    <rect class="blaa blk" x="560" y="0" width="160" height="112"/>
+    <rect class="roed blk" x="720" y="0" width="128" height="112"/>
+    <rect class="rosa blk" x="848" y="0" width="112" height="112"/>
+    <rect class="svart blk" x="32" y="44" width="24" height="24"/>
+    <rect class="svart blk" x="80" y="44" width="24" height="24"/>
+    <rect class="svart blk" x="128" y="44" width="24" height="24"/>
+    <rect class="svart blk" x="176" y="44" width="24" height="24"/>
+    <rect class="svart blk" x="224" y="44" width="24" height="24"/>
+    <rect class="svart blk" x="272" y="44" width="24" height="24"/>
+    <circle class="blaa" cx="448" cy="56" r="32"/>
+  </svg>
+  <h1 class="namn">Kjernekaren<br>Designsystem</h1>
+  <p class="tagline">Kjernemodellen ber identiteten: flate pastellflater, svart tekst, éi skrift.</p>
+</div>

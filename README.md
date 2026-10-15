@@ -115,12 +115,15 @@ Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
 
 ## Indeks
 - `design.md` — **overordna designmal** (start her)
-- `styles.css` — importerer alle tokens (lenk denne éi fila)
+- `tokens.json` — alle tokens (fargar per flatetema, typografi, rom, radius); `tokens.css` blir generert frå han
+- `components/bundle.js` og `components/bundle.css` — komponentane og grunnreglane deira
+- `styles.css` — importerer `tokens/` for slides, malar og UI-kit (lenk denne éi fila der)
 - `tokens/` — colors.css, typography.css, spacing.css, fonts.css, flater.css, responsiv.css
 - `guidelines/` — spesimen-kort (farger, typografi, former, spacing, responsiv, sidemalar)
-- `components/core/` — Button, TextLink, CircleBadge, StarRating, Accordion, Quote,
-  TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort, Paginering, Innhaldsliste
-- `components/navigation/` — SiteHeader, SiteFooter
+- `components/<Komponent>/` — README, typar og førehandsvising for Button, TextLink, CircleBadge,
+  StarRating, Accordion, Quote, TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort,
+  Paginering, Innhaldsliste, SiteHeader, SiteFooter
+- `components/core/`, `components/navigation/` — kjeldekoden (`.jsx`) til komponentane
 - `assets/` — kjernemodell-grafikk (kjernemodell-elementer, core-sheet-farger,
   metode-diagrammer, element-veier-inn), bøker (bok-kjernemodellen, bok-engelsk-cover,
   bok-veske), portrett og foto (`foto-*.png`, are-portrett, forside-hero-original),
@@ -141,7 +144,7 @@ Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
 - `*.dc.html` (rot) — arbeidsfiler frå kjelderepoet: flatetema-utforsking, rekonstruksjonar av
   dagens nettstader, hentetekst-alternativ, slidevariantar. Referanse, ikkje systemfiler.
 - `thumbnail.html` — prosjektmerke (grøn flate + ordmerke + fargestripe)
-- `SKILL.md` — inngang når systemet blir brukt som Agent Skill
+- `assets/notes/SKILL.from-standalone.md` — inngang då systemet vart brukt som Agent Skill (eldre versjon)
 - `github.md` — kjeldekopling og synk-logg mot aregh/designsystem
 
 ## Ryddingar i systemet (gjorde etter gjennomgang av kjernekaren.no)
