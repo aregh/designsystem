@@ -1,0 +1,38 @@
+/* Kjernekaren — grunnreglar for komponentane. Verdiane kjem frå tokens.css (tokens.json). */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--tekst);
+  background: var(--flate-side);
+  font-size: var(--tekst-broedtekst);
+  line-height: var(--linjehoegd-broedtekst);
+  letter-spacing: var(--sperring-broedtekst);
+}
+
+a { color: var(--lenke); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.kk-kol { min-width: 0; }
+.kk-tekst { max-width: var(--breidd-tekst); }
+.kk-to-kol {
+  display: grid;
+  gap: var(--rom-7);
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  align-items: start;
+}
+.kk-seksjon { margin-top: clamp(48px, 9vw, 96px); }
+
+@media (max-width: 599px) {
+  html, body { overflow-x: hidden; }
+  .kk-knapp { width: 100%; text-align: center; }
+}
+
+/* Fokusmarkering: brandet er flatt og svart, så fokus må vere eksplisitt */
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--farge-blaa);
+  outline-offset: 2px;
+}

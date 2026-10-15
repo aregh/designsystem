@@ -1,0 +1,10 @@
+<!-- @dsCard group="Innhald" height=360 subtitle="Stor og sidestilt" -->
+<div id="root" style="padding:24px"></div>
+<script>
+var NS = window.KjernekarenDesignsystem_8e6518, h = React.createElement;
+ReactDOM.createRoot(document.getElementById('root')).render(
+h('div', {style:{display:'flex',gap:48,flexWrap:'wrap',alignItems:'flex-start'}},
+  h(NS.Quote, {variant:'stor', name:'Jim Kalbach', role:'author of The Jobs To Be Done Playbook'}, 'This should be required reading for everyone who works with design.'),
+  h(NS.Quote, {variant:'sidestilt', name:'Kari Hamnes', role:'Senior UX-designer i NAV'}, 'Are har ei unik evne til å finne fram til innovative og tilsynelatande enkle løysningar på komplekse problem.'))
+);
+</script>

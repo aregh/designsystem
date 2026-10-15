@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brukarinnsikt 2026 – rapport</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="rapport.css">
+<style>html,body{margin:0}</style>
+</head>
+<!-- Mal: lang rapport. Kopier mappa templates/rapport/ og byt innhaldet.
+     Drilldown: presentasjon.html lenkjer til id-ane under (#samandrag, #metode, #funn-1 …).
+     Behald id-ane når du byter innhald, eller oppdater lenkjene i presentasjonen.
+     Flatetema: legg tema-klasse og data-theme på <body>, t.d. class="rapport tema-groenn" data-theme="groenn". -->
+<body class="rapport">
+<div class="ramme">
+
+  <header class="topp">
+    <a class="ordmerke" href="https://kjernekaren.no/">Are Halland</a>
+    <a href="presentasjon.html">Sjå presentasjonen</a>
+  </header>
+
+  <header>
+    <p class="etikett">Rapport &middot; oktober 2026</p>
+    <h1>Brukarinnsikt 2026: kvifor folk ringjer når svaret står på nettet</h1>
+    <p class="ingress">Innhaldet på nettsida er rett, men brukarane stolar ikkje på at det gjeld dei. Rapporten viser kvar tilliten glepp, og kva som skal til for at færre treng å ringje.</p>
+    <dl class="meta">
+      <div><dt>Oppdragsgjevar</dt><dd>Namn på verksemda</dd></div>
+      <div><dt>Forfattar</dt><dd>Are Halland, Kjernekaren</dd></div>
+      <div><dt>Dato</dt><dd><time datetime="2026-10-15">15. oktober 2026</time></dd></div>
+    </dl>
+    <button class="knapp" type="button" onclick="window.print()">Last ned som PDF</button>
+  </header>
+
+  <div class="oppsett">
+    <aside class="side" aria-label="Innhald">
+      <nav class="innhald" aria-labelledby="t-innhald">
+        <strong id="t-innhald">I rapporten</strong>
+        <ol>
+          <li><a href="#samandrag">Samandrag</a></li>
+          <li><a href="#metode">Metode</a></li>
+          <li><a href="#funn">Funn</a>
+            <ol>
+              <li><a href="#funn-1">Brukarane finn svaret</a></li>
+              <li><a href="#funn-2">Men stolar ikkje på det</a></li>
+              <li><a href="#funn-3">Spørsmåla er spreidde</a></li>
+              <li><a href="#funn-4">Endringar blir ikkje varsla</a></li>
+              <li><a href="#funn-5">Ingen måler effekten</a></li>
+            </ol>
+          </li>
+          <li><a href="#tilraadingar">Tilrådingar</a></li>
+          <li><a href="#neste-steg">Neste steg</a></li>
+          <li><a href="#vedlegg">Vedlegg</a></li>
+        </ol>
+      </nav>
+    </aside>
+    <main class="hovud">
+
+      <section class="seksjon" id="samandrag" aria-labelledby="t-samandrag">
+        <h2 id="t-samandrag">Samandrag</h2>
+        <p>Vi har snakka med 14 brukarar, fått 312 svar i ei spørjeundersøking og halde tre kjerneverkstader. Hovudfunnet er at folk finn svaret dei leitar etter, men ringjer likevel for å få det stadfesta.</p>
+        <div class="tal-rad">
+          <div><span class="tal">9 av 14</span>ringde for å stadfeste noko dei alt hadde lese</div>
+          <div><span class="tal">5</span>funn</div>
+          <div><span class="tal">4</span>tilrådingar</div>
+        </div>
+        <ul>
+          <li>Innhaldet manglar kven det gjeld for og frå når.</li>
+          <li>Dei mest stilte spørsmåla er spreidde over mange sider.</li>
+          <li>Ingen måler i dag om nettsida faktisk reduserer talet på samtalar.</li>
+        </ul>
+        <a class="til-slide" href="presentasjon.html#s1">Til presentasjonen</a>
+      </section>
+
+      <section class="seksjon" id="metode" aria-labelledby="t-metode">
+        <h2 id="t-metode">Metode</h2>
+        <p>Funna byggjer på tre kjelder som utfyller kvarandre: djupintervju gir forklaringane, spørjeundersøkinga viser kor utbreidd det er, og kjerneverkstadene samlar fagfolk og brukarar om kva som må stå på sidene.</p>
+        <div class="tal-rad">
+          <div><span class="tal">14</span>djupintervju, 60 minutt</div>
+          <div><span class="tal">312</span>svar i undersøkinga</div>
+          <div><span class="tal">3</span>kjerneverkstader</div>
+        </div>
+        <h3 id="metode-utval">Utval</h3>
+        <p>Informantane vart rekrutterte frå kundelista, med spreiing i storleik, region og erfaring med tenesta. Undersøkinga låg ope i fire veker i mai og juni.</p>
+        <h3 id="metode-avgrensing">Avgrensingar</h3>
+        <p>Utvalet er lite og ikkje representativt. Tala frå undersøkinga seier noko om retning, ikkje nøyaktig storleik.</p>
+        <a class="til-slide" href="presentasjon.html#s3">Til sliden</a>
+      </section>
+
+      <section class="seksjon" id="funn" aria-labelledby="t-funn">
+        <h2 id="t-funn">Funn</h2>
+        <p>Fem funn, sorterte etter kor mykje dei påverkar talet på samtalar.</p>
+
+        <article class="funn" id="funn-1" aria-labelledby="t-funn-1">
+          <h3 id="t-funn-1">1. Brukarane finn svaret</h3>
+          <p>Dei fleste fann rett side på under eitt minutt, anten via søk eller frå forsida. Navigasjonen er ikkje problemet.</p>
+          <p class="grunnlag">Grunnlag: 12 av 14 intervju, oppgåvetest i intervjua</p>
+        </article>
+
+        <article class="funn" id="funn-2" aria-labelledby="t-funn-2">
+          <h3 id="t-funn-2">2. … men stolar ikkje på at det gjeld dei</h3>
+          <p>Ni av fjorten sa at dei ringde for å få stadfesta noko dei alt hadde lese. Innhaldet er rett, men det manglar kven det gjeld for og frå når.</p>
+          <blockquote>
+            <p>Eg les det på nettet, og så ringjer eg likevel. Berre for å vere sikker på at det gjeld meg.</p>
+            <footer>Informant 7, dagleg leiar, Vestland</footer>
+          </blockquote>
+          <p>Same mønster går att i undersøkinga: 41 prosent svarte at dei «ofte» eller «alltid» tek kontakt etter å ha lese svaret på nettet.</p>
+          <p class="grunnlag">Grunnlag: 14 intervju og 312 svar i spørjeundersøkinga</p>
+          <a class="til-slide" href="presentasjon.html#s2">Til sliden</a>
+        </article>
+
+        <article class="funn" id="funn-3" aria-labelledby="t-funn-3">
+          <h3 id="t-funn-3">3. Dei vanlegaste spørsmåla er spreidde</h3>
+          <p>Svara på dei ti mest stilte spørsmåla ligg på sju ulike sider. Brukarane må setje saman svaret sjølve.</p>
+          <div class="tabell">
+            <table>
+              <thead><tr><th scope="col">Spørsmål</th><th scope="col">Sider</th><th scope="col">Del av samtalane</th></tr></thead>
+              <tbody>
+                <tr><td>Gjeld regelen for meg?</td><td>3</td><td>28 %</td></tr>
+                <tr><td>Frå når gjeld han?</td><td>2</td><td>17 %</td></tr>
+                <tr><td>Kva må eg gjere no?</td><td>4</td><td>12 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="grunnlag">Grunnlag: gjennomgang av nettsida og samtalelogg for mai</p>
+        </article>
+
+        <article class="funn" id="funn-4" aria-labelledby="t-funn-4">
+          <h3 id="t-funn-4">4. Endringar blir ikkje varsla</h3>
+          <p>Når ein regel endrar seg, blir sida oppdatert utan at det står kva som er nytt. Brukarar som har lese sida før, ser ikkje skilnaden.</p>
+          <p class="grunnlag">Grunnlag: 8 av 14 intervju, kjerneverkstad 2</p>
+        </article>
+
+        <article class="funn" id="funn-5" aria-labelledby="t-funn-5">
+          <h3 id="t-funn-5">5. Ingen måler effekten</h3>
+          <p>Kundesenteret teljer samtalar, og nettredaksjonen teljer sidevisingar, men ingen koplar dei to. Det er difor uklart om betre innhald gir færre samtalar.</p>
+          <p class="grunnlag">Grunnlag: intervju med fire tilsette</p>
+        </article>
+      </section>
+
+      <section class="seksjon" id="tilraadingar" aria-labelledby="t-tilraadingar">
+        <h2 id="t-tilraadingar">Tilrådingar</h2>
+        <ol class="rader">
+          <li id="tilraading-1"><div><strong>Skriv kven innhaldet gjeld for, øvst på kvar side</strong><p>Svarer på funn 2. Éi setning med målgruppe og eventuelle unntak.</p></div></li>
+          <li id="tilraading-2"><div><strong>Vis dato for når regelen tok til å gjelde</strong><p>Svarer på funn 2 og 4. Merk òg kva som er endra sist.</p></div></li>
+          <li id="tilraading-3"><div><strong>Samle dei ti mest stilte spørsmåla på éin stad</strong><p>Svarer på funn 3. Bruk kjernemodellen til å avgjere kva som må stå der.</p></div></li>
+          <li id="tilraading-4"><div><strong>Mål om talet på stadfestingssamtalar går ned</strong><p>Svarer på funn 5. Kople samtalelogg og sidevisingar for dei same emna.</p></div></li>
+        </ol>
+        <a class="til-slide" href="presentasjon.html#s5">Til sliden</a>
+      </section>
+
+      <section class="seksjon" id="neste-steg" aria-labelledby="t-neste-steg">
+        <h2 id="t-neste-steg">Neste steg</h2>
+        <div class="tabell">
+          <table>
+            <thead><tr><th scope="col">Kva</th><th scope="col">Kven</th><th scope="col">Når</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Gå gjennom tilrådingane i styringsgruppa</strong></td><td>Prosjektleiar</td><td>November 2026</td></tr>
+              <tr><td><strong>Prioritere dei ti viktigaste sidene</strong></td><td>Innhaldsteamet</td><td>Desember 2026</td></tr>
+              <tr><td><strong>Kjerneverkstad for dei tre første sidene</strong></td><td>Kjernekaren og teamet</td><td>Januar 2027</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a class="til-slide" href="presentasjon.html#s7">Til sliden</a>
+      </section>
+
+      <section class="seksjon" id="vedlegg" aria-labelledby="t-vedlegg">
+        <h2 id="t-vedlegg">Vedlegg</h2>
+        <div class="vedlegg">
+          <details id="vedlegg-intervjuguide"><summary>Intervjuguide</summary><div><p>Spørsmåla vi stilte i djupintervjua, i den rekkjefølgja vi stilte dei.</p></div></details>
+          <details id="vedlegg-sporjeskjema"><summary>Spørjeskjema</summary><div><p>Alle spørsmål og svaralternativ i undersøkinga.</p></div></details>
+          <details id="vedlegg-kjerneark"><summary>Kjerneark frå verkstadene</summary><div><p>Utfylte kjerneark for dei tre sidene vi arbeidde med.</p></div></details>
+        </div>
+      </section>
+
+      <footer class="botn">
+        <p>Har du spørsmål om rapporten? Ring meg på 908 70 026 eller send epost til <a href="mailto:are@kjernekaren.no">are@kjernekaren.no</a>.</p>
+        <p>Vi snakkast!<br>Are</p>
+      </footer>
+    </main>
+
+  </div>
+
+</div>
+<script>
+  // Opne vedlegg ved utskrift, og når ei lenke peikar rett på eitt.
+  window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.open = true; }); });
+  function opneMaal() { var m = location.hash && document.getElementById(location.hash.slice(1)); if (m && m.tagName === 'DETAILS') m.open = true; }
+  window.addEventListener('hashchange', opneMaal); opneMaal();
+</script>
+</body>
+</html>

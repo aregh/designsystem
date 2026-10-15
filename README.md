@@ -68,7 +68,7 @@ samanhengar der ein snakkar om forretningsmål.
   (`--hentetekst-paa-flate`) når han ligg direkte på sideflata. Når ein kjernemodell-farge er heil sideflate, er element-tydinga
   suspendert for flata — fargekodinga gjeld då berre inne i kjernemodell-grafikken.
   Sjå `tokens/flater.css` og `guidelines/flate-tema.html`.
-- **Typografi:** éi skrift — **Work Sans** (open source, Google Fonts). Kontrast gjennom vekt,
+- **Typografi:** éi skrift — **Work Sans** (open source, sjølvhosta i `fonts/`). Kontrast gjennom vekt,
   ikkje storleik: ExtraBold 800 for titlar, Regular 400 for mengdetekst. Unngå liten skrift
   ("romslig skriftstørrelse"). Alternativ: Noto Sans, Open Sans, Proxima Nova.
   Berre **to vekter** er i bruk (400/800); 600 er unntaket og berre til sperra
@@ -110,17 +110,22 @@ store typografiske sitatteikn. Kjernemodell-elementa (trekant, kvadrat, sirkel, 
 fungerer som brand-grafikk — bygde som flate CSS-former, aldri som illustrasjonar med strek.
 
 ## Skrifter
-Work Sans er lasta frå Google Fonts via `tokens/fonts.css` (ikkje lokale font-filer).
-Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
+Work Sans er sjølvhosta: woff2-filer i `fonts/` (latin-subset, dekkjer æøå) med `@font-face` i
+`tokens/fonts.css`, og lisensen (SIL OFL 1.1) i `fonts/OFL-Work-Sans.txt`. Berre vektene 400, 600, 800
+og kursiv 400 er med. Ingen kall til Google Fonts, så sidene lastar raskare og deler ikkje data med Google.
 
 ## Indeks
 - `design.md` — **overordna designmal** (start her)
-- `styles.css` — importerer alle tokens (lenk denne éi fila)
+- `tokens.json` — alle tokens (fargar per flatetema, typografi, rom, radius); `tokens.css` blir generert frå han
+- `components/bundle.js` og `components/bundle.css` — komponentane og grunnreglane deira
+- `styles.css` — importerer `tokens/` for slides, malar og UI-kit (lenk denne éi fila der)
 - `tokens/` — colors.css, typography.css, spacing.css, fonts.css, flater.css, responsiv.css
+- `fonts/` — sjølvhosta Work Sans (woff2) og lisensen
 - `guidelines/` — spesimen-kort (farger, typografi, former, spacing, responsiv, sidemalar)
-- `components/core/` — Button, TextLink, CircleBadge, StarRating, Accordion, Quote,
-  TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort, Paginering, Innhaldsliste
-- `components/navigation/` — SiteHeader, SiteFooter
+- `components/<Komponent>/` — README, typar og førehandsvising for Button, TextLink, CircleBadge,
+  StarRating, Accordion, Quote, TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort,
+  Paginering, Innhaldsliste, SiteHeader, SiteFooter
+- `components/core/`, `components/navigation/` — kjeldekoden (`.jsx`) til komponentane
 - `assets/` — kjernemodell-grafikk (kjernemodell-elementer, core-sheet-farger,
   metode-diagrammer, element-veier-inn), bøker (bok-kjernemodellen, bok-engelsk-cover,
   bok-veske), portrett og foto (`foto-*.png`, are-portrett, forside-hero-original),
@@ -137,11 +142,13 @@ Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
 - `templates/bloggartikkel/` — startpunkt: fagartikkel (lys gul flate, innhaldsliste + nyheitsbrev)
 - `templates/some-oppslag/` — startpunkt: SoMe-oppslag 1200×628 med sirkel-badge
 - `templates/presentasjon/` — startpunkt: 16:9-presentasjon (7 slide-typar)
+- `templates/rapport/` — startpunkt: lang rapport (`rapport.html`) og HTML-presentasjon (`presentasjon.html`) med drilldown frå slide til seksjon i rapporten
+- `slides/` — enkeltslidar 1280×720; rapportslidane (funn, sitat, metode, tilrådingar, les heile rapporten, neste steg) deler `slides/rapport.css` og les berre token-variablar
 - `ui_kits/kontekstarkitektur/` — kontekstarkitektur.no (blå flate): heim, metoden, kurs
 - `*.dc.html` (rot) — arbeidsfiler frå kjelderepoet: flatetema-utforsking, rekonstruksjonar av
   dagens nettstader, hentetekst-alternativ, slidevariantar. Referanse, ikkje systemfiler.
 - `thumbnail.html` — prosjektmerke (grøn flate + ordmerke + fargestripe)
-- `SKILL.md` — inngang når systemet blir brukt som Agent Skill
+- `assets/notes/SKILL.from-standalone.md` — inngang då systemet vart brukt som Agent Skill (eldre versjon)
 - `github.md` — kjeldekopling og synk-logg mot aregh/designsystem
 
 ## Ryddingar i systemet (gjorde etter gjennomgang av kjernekaren.no)

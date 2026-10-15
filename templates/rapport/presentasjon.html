@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brukarinnsikt 2026 – presentasjon</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../slides/rapport.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+  html,body{margin:0}
+  html{scroll-snap-type:y mandatory}
+  /* Rundt slidane: svart, slik at sjølve sliden er einaste flata som syner */
+  body{background:var(--farge-svart)}
+  .plass{height:100vh;display:grid;place-items:center;overflow:hidden;scroll-snap-align:start}
+  .plass > .slide{transform-origin:center center;flex:none}
+  .sitatteikn{font-size:180px;font-weight:var(--vekt-ekstrafeit);line-height:.8;margin:0 0 var(--rom-4);height:110px}
+  .sitattekst{margin:0;font-size:48px;font-weight:var(--vekt-ekstrafeit);line-height:1.22;max-width:1040px}
+  .metode{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--rom-7);margin-top:var(--rom-4)}
+  .metode > div{border-top:1px solid var(--strek);padding-top:var(--rom-5)}
+  .metode .tal{display:block;font-size:96px;font-weight:var(--vekt-ekstrafeit);line-height:1}
+  .metode .kva{display:block;margin-top:var(--rom-3);font-size:var(--slide-tekst);font-weight:var(--vekt-ekstrafeit);line-height:1.25}
+  .qr{width:400px;height:400px;flex:none;background:var(--felt-flate);color:var(--tekst);padding:var(--rom-5)}
+  .qr svg{display:block;width:100%;height:100%}
+  .adresse{font-size:40px;font-weight:var(--vekt-ekstrafeit);line-height:1.2;word-break:break-all}
+  .neste{width:100%;border-collapse:collapse;font-size:var(--slide-tekst-under);line-height:1.4}
+  .neste th{text-align:left;font-size:var(--slide-etikett);font-weight:var(--vekt-halvfeit);letter-spacing:var(--sperring-etikett);text-transform:uppercase;padding:0 var(--rom-5) var(--rom-3) 0}
+  .neste td{border-top:1px solid var(--strek);padding:18px var(--rom-5) 18px 0;vertical-align:top}
+  .neste tr:last-child td{border-bottom:1px solid var(--strek)}
+  .neste td:first-child{font-weight:var(--vekt-ekstrafeit);width:50%}
+  .neste td:last-child{white-space:nowrap;padding-right:0}
+  /* Utskrift / PDF: éin slide per side, utan skalering */
+  @page{size:1280px 720px;margin:0}
+  @media print{
+    html{scroll-snap-type:none} body{background:none}
+    .plass{height:auto;display:block;break-after:page}
+    .plass > .slide{transform:none !important}
+  }
+</style>
+</head>
+<!-- Mal: HTML-presentasjon med drilldown til den lange rapporten (rapport.html).
+     Kvar slide har id s1, s2 … og kan lenkjast til. «Les meir i rapporten» er nivå 2-lenke
+     til ein id i rapporten. Piltastar, mellomrom og Page Up/Down blar. F gir fullskjerm.
+     Første slide har alltid Urke-biletet (assets/urke-fra-saksa.jpg). Slidetypane er dei same som i slides/ (funn, sitat, metode, tilrådingar,
+     les heile rapporten, neste steg) og deler slides/rapport.css. -->
+<body>
+
+<div class="plass"><section class="slide forside" id="s1">
+  <img class="forside-bilete" src="../../assets/urke-fra-saksa.jpg" alt="Hjørundfjorden sett frå Saksa, med Urke nedanfor">
+  <div class="tekstplate">
+    <p class="etikett">Rapport &middot; oktober 2026</p>
+    <h1 class="tittel">Brukarinnsikt 2026: kvifor folk ringjer når svaret står på nettet</h1>
+    <p class="tekst tekst-under">Are Halland, Kjernekaren</p>
+  </div>
+</section></div>
+
+<div class="plass"><section class="slide" id="s2" style="display:flex;flex-direction:column">
+  <p class="etikett">Funn 2 av 5</p>
+  <h2 class="tittel">Brukarane finn svaret, men stolar ikkje på at det gjeld dei</h2>
+  <p class="tekst">Ni av fjorten sa at dei ringde for å få stadfesta noko dei alt hadde lese på nettsida.</p>
+  <div style="margin-top:auto;margin-bottom:76px">
+    <hr class="strek" style="margin-bottom:var(--rom-3)">
+    <a class="drilldown" href="rapport.html#funn-2">Les meir i rapporten</a>
+  </div>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span class="sidetal"></span></div>
+</section></div>
+
+<div class="plass"><section class="slide" id="s3">
+  <p class="etikett">Metode</p>
+  <h2 class="tittel">Slik fann vi det ut</h2>
+  <div class="metode">
+    <div><span class="tal">14</span><span class="kva">djupintervju</span></div>
+    <div><span class="tal">312</span><span class="kva">svar i undersøkinga</span></div>
+    <div><span class="tal">3</span><span class="kva">kjerneverkstader</span></div>
+  </div>
+  <p style="margin-top:var(--rom-7)"><a class="drilldown" href="rapport.html#metode">Les om utval og avgrensingar</a></p>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span class="sidetal"></span></div>
+</section></div>
+
+<div class="plass"><section class="slide tema-groenn" data-theme="groenn" id="s4" style="display:flex;flex-direction:column;justify-content:center;padding-top:0">
+  <p class="sitatteikn" aria-hidden="true">&ldquo;</p>
+  <blockquote style="margin:0">
+    <p class="sitattekst">Eg les det på nettet, og så ringjer eg likevel. Berre for å vere sikker på at det gjeld meg.</p>
+    <footer class="tekst tekst-under" style="margin-top:var(--rom-6)">Informant 7, dagleg leiar, Vestland</footer>
+  </blockquote>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span class="sidetal"></span></div>
+</section></div>
+
+<div class="plass"><section class="slide" id="s5">
+  <p class="etikett">Tilrådingar</p>
+  <h2 class="tittel" style="margin-bottom:var(--rom-5)">Dette tilrår vi</h2>
+  <ol class="rader tekst">
+    <li><span class="nr">1</span><span>Skriv kven innhaldet gjeld for, øvst på kvar side</span></li>
+    <li><span class="nr">2</span><span>Vis dato for når regelen tok til å gjelde</span></li>
+    <li><span class="nr">3</span><span>Samle dei ti mest stilte spørsmåla på éin stad</span></li>
+    <li><span class="nr">4</span><span>Mål om talet på stadfestingssamtalar går ned</span></li>
+  </ol>
+  <p style="margin-top:var(--rom-4)"><a class="drilldown" href="rapport.html#tilraadingar">Les grunngjevinga i rapporten</a></p>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span class="sidetal"></span></div>
+</section></div>
+
+<div class="plass"><section class="slide" id="s6" data-url="https://kjernekaren.no/rapport" style="display:flex;align-items:center;gap:80px;padding-top:0">
+  <div style="flex:1;min-width:0">
+    <p class="etikett">Les heile rapporten</p>
+    <h2 class="tittel" style="margin-bottom:var(--rom-5)">Alle fem funna, metoden og vedlegga</h2>
+    <p class="adresse" style="margin:0 0 var(--rom-6)"><a class="lenke-adresse" href="rapport.html">kjernekaren.no/rapport</a></p>
+    <a class="knapp" href="rapport.html">Opne rapporten</a>
+  </div>
+  <div class="qr" role="img" aria-label="QR-kode til rapporten"></div>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span class="sidetal"></span></div>
+</section></div>
+
+<div class="plass"><section class="slide" id="s7">
+  <p class="etikett">Neste steg</p>
+  <h2 class="tittel" style="margin-bottom:var(--rom-5)">Kva skjer no?</h2>
+  <table class="neste">
+    <thead><tr><th scope="col">Kva</th><th scope="col">Kven</th><th scope="col">Når</th></tr></thead>
+    <tbody>
+      <tr><td>Gå gjennom tilrådingane i styringsgruppa</td><td>Prosjektleiar</td><td>November 2026</td></tr>
+      <tr><td>Prioritere dei ti viktigaste sidene</td><td>Innhaldsteamet</td><td>Desember 2026</td></tr>
+      <tr><td>Kjerneverkstad for dei tre første sidene</td><td>Kjernekaren og teamet</td><td>Januar 2027</td></tr>
+    </tbody>
+  </table>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span>are@kjernekaren.no</span></div>
+</section></div>
+
+<script>
+(function () {
+  var slidar = Array.prototype.slice.call(document.querySelectorAll('.plass > .slide'));
+  var n = slidar.length;
+
+  // Sidetal i botnlinja
+  slidar.forEach(function (s, i) { var t = s.querySelector('.sidetal'); if (t) t.textContent = (i + 1) + ' / ' + n; });
+
+  // Skaler kvar slide til skjermen (ingen overgang, berre storleik)
+  function skaler() {
+    var f = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    slidar.forEach(function (s) { s.style.transform = 'scale(' + f + ')'; s.parentNode.style.height = window.innerHeight + 'px'; });
+  }
+  window.addEventListener('resize', skaler); skaler();
+
+  // Bla med tastatur, utan animasjon
+  function gjeldande() {
+    var midt = window.innerHeight / 2, best = 0;
+    slidar.forEach(function (s, i) { var r = s.parentNode.getBoundingClientRect(); if (r.top <= midt) best = i; });
+    return best;
+  }
+  function gaaTil(i) {
+    i = Math.max(0, Math.min(n - 1, i));
+    slidar[i].parentNode.scrollIntoView({ behavior: 'auto', block: 'start' });
+    history.replaceState(null, '', '#' + slidar[i].id);
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.target.closest && e.target.closest('a, button, input')) { if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return; }
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); gaaTil(gjeldande() + 1); }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); gaaTil(gjeldande() - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); gaaTil(0); }
+    else if (e.key === 'End') { e.preventDefault(); gaaTil(n - 1); }
+    else if (e.key === 'f' || e.key === 'F') { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+  });
+
+  // Kom vi frå rapporten med #s3, start der
+  function tilHash() { var m = location.hash && document.getElementById(location.hash.slice(1)); if (m && m.parentNode.classList.contains('plass')) m.parentNode.scrollIntoView({ behavior: 'auto' }); }
+  window.addEventListener('hashchange', tilHash); tilHash();
+
+  // QR-kode frå data-url (same adresse som står på sliden)
+  var qs = document.querySelector('.slide[data-url]');
+  var boks = qs && qs.querySelector('.qr');
+  if (boks) {
+    if (typeof qrcode !== 'function') { boks.style.display = 'none'; return; }
+    var qr = qrcode(0, 'M'); qr.addData(qs.getAttribute('data-url')); qr.make();
+    var k = qr.getModuleCount(), d = '';
+    for (var r = 0; r < k; r++) for (var c = 0; c < k; c++) if (qr.isDark(r, c)) d += 'M' + c + ' ' + r + 'h1v1h-1z';
+    boks.innerHTML = '<svg viewBox="0 0 ' + k + ' ' + k + '" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="' + d + '"/></svg>';
+  }
+})();
+</script>
+</body>
+</html>

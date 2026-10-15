@@ -58,7 +58,7 @@ suspendert for den flata. Fargekodinga gjeld då berre inne i sjølve modell-gra
 
 ## 3. Typografi
 
-Éi skrift: **Work Sans** (Google Fonts). Alternativ ved behov: Noto Sans, Open Sans.
+Éi skrift: **Work Sans**, sjølvhosta som woff2 i `fonts/` (latin, dekkjer æøå, lisens SIL OFL 1.1) via `@font-face` i `tokens/fonts.css`. Ingen kall til Google Fonts. Alternativ ved behov: Noto Sans, Open Sans.
 
 Kontrast kjem frå **vekt**, ikkje storleik:
 - **400** all mengdetekst
@@ -139,10 +139,36 @@ Lenker er alltid svarte med underline — også i footer. Hover: tjukkare underl
 - Titlar 52–110px vekt 800, punkttekst 32px vekt 400, underpunkt 26px. Aldri under 24px.
 - Bilete-malar: heildekkande foto med svart tekstplate, delt flate (foto/tekst),
   tredelt bilderad. Alle bilete er utbyttbare — dra eit nytt foto rett inn i plassen.
-- Forsida til Are sine presentasjonar brukar Sunnmørsalpane (Saksa, sett frå Urke).
+- **Første slide i alle presentasjonar har Urke-biletet** (`assets/urke-fra-saksa.jpg`, Hjørundfjorden sett frå Saksa): heildekkande, med tittelen på svart tekstplate nedst til venstre (`.slide.forside` i `slides/rapport.css`, `slides/tittel-bilete.html`).
 - Malar: `slides/tittel.html`, `tittel-bilete.html`, `seksjon.html`, `punktliste.html`,
   `nokkeltall.html`, `bio.html`, `utfordring.html`, `venn.html`,
   `bilete-heildekkande.html`, `bilete-delt.html`, `bilete-tredelt.html`.
+
+### Rapportpresentasjon
+
+Seks slidetypar for å legge fram ein rapport, med felles stil i `slides/rapport.css`.
+Dei les berre CSS-variablar frå tokens (ingen hex i filene), så eit byte frå
+`tokens/*.css` til `tokens.json` krev ingen endring i slidane. Flatetema blir sett med
+`data-theme` og tema-klasse på `.slide`.
+
+| Fil | Bruk |
+|---|---|
+| `slides/funn.html` | Eitt funn per slide. Tittelen er funnet som heil setning, grunnlaget står nedst. |
+| `slides/sitat.html` | Brukarsitat, ordrett og kort. Avsendar er rolle og stad, ikkje namn. |
+| `slides/metode.html` | Kva funna byggjer på: to til fire metodar med tal. |
+| `slides/tilraadingar.html` | Tre til fem nummererte tilrådingar, kvar byrjar med verb. |
+| `slides/les-rapporten.html` | Rapporttittel, kort adresse, éin nivå 1-knapp og QR-kode teikna frå same adresse (`data-url`). |
+| `slides/neste-steg.html` | Kva, kven og når. Maks fem rader. |
+
+Kjernemodell-fargane blir ikkje brukte på rapportslidane: nummer, tal og rader er svarte.
+QR-feltet er kvitt (`--felt-flate`) og tel som flate nummer to.
+
+### Lang rapport med drilldown
+
+`templates/rapport/` er malen for ein lengre rapport som blir lagd fram som presentasjon.
+`presentasjon.html` set saman rapportslidane, og kvar slide kan ha éi nivå 2-lenke
+(`.drilldown`) til rett seksjon i `rapport.html` (`#funn-2`, `#metode` …). Rapporten lenkjer
+tilbake med nivå 3-lenker. Begge les berre token-variablar. Sjå `templates/rapport/README.md`.
 
 ## 9. Innhald og språk
 

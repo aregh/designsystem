@@ -1,0 +1,43 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Les heile rapporten" subtitle="Rapport: kort lenke og QR-kode" -->
+<!DOCTYPE html><html lang="nn"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="rapport.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+  html,body{margin:0}
+  .qr{width:400px;height:400px;flex:none;background:var(--felt-flate);color:var(--tekst);padding:var(--rom-5)}
+  .qr svg{display:block;width:100%;height:100%}
+  .adresse{font-size:40px;font-weight:var(--vekt-ekstrafeit);line-height:1.2;word-break:break-all}
+</style></head><body>
+<!-- «Les heile rapporten»: rapporttittel, kort adresse som kan skrivast av, og QR-kode.
+     Set adressa i data-url. QR-koden blir teikna frå same adresse, så dei kan ikkje skilje lag.
+     Knappen er nivå 1 og den einaste på sliden; han verkar som lenke i PDF og nettlesar.
+     Utan nett (ingen QR-bibliotek) står adressa åleine. Kvit QR-felt er flate nummer to. -->
+<div class="slide" style="display:flex;align-items:center;gap:80px;padding-top:0" data-url="https://kjernekaren.no/rapport">
+  <div style="flex:1;min-width:0">
+    <p class="etikett">Les heile rapporten</p>
+    <h2 class="tittel" style="margin-bottom:var(--rom-5)">Brukarinnsikt 2026: kvifor folk ringjer når svaret står på nettet</h2>
+    <p class="adresse" style="margin:0 0 var(--rom-6)"><a class="lenke-adresse" href="https://kjernekaren.no/rapport">kjernekaren.no/rapport</a></p>
+    <a class="knapp lenke-knapp" href="https://kjernekaren.no/rapport">Last ned rapporten</a>
+  </div>
+  <div class="qr" role="img" aria-label="QR-kode til rapporten"></div>
+  <div class="botn"><span>Brukarinnsikt 2026</span><span>kjernekaren.no</span></div>
+</div>
+<script>
+(function () {
+  var slide = document.querySelector('.slide[data-url]');
+  var url = slide.getAttribute('data-url');
+  slide.querySelectorAll('.lenke-adresse, .lenke-knapp').forEach(function (a) { a.href = url; });
+  var adr = slide.querySelector('.lenke-adresse');
+  adr.textContent = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  var boks = slide.querySelector('.qr');
+  if (typeof qrcode !== 'function') { boks.style.display = 'none'; return; }
+  var qr = qrcode(0, 'M');
+  qr.addData(url);
+  qr.make();
+  var n = qr.getModuleCount(), d = '';
+  for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (qr.isDark(r, c)) d += 'M' + c + ' ' + r + 'h1v1h-1z';
+  boks.innerHTML = '<svg viewBox="0 0 ' + n + ' ' + n + '" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="' + d + '"/></svg>';
+})();
+</script>
+</body></html>

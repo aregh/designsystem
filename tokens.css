@@ -1,0 +1,105 @@
+/* Kjernekaren Designsystem — generated from tokens.json */
+:root, [data-theme="lys-gul"] {
+  --farge-rosa: #ffd2e7;
+  --farge-groenn: #bcf17d;
+  --farge-blaa: #aeebfb;
+  --farge-roed: #fd9f78;
+  --farge-gul: #ffe484;
+  --farge-lilla: #e6b0f9;
+  --farge-svart: #000000;
+  --farge-kvit: #ffffff;
+  --farge-graa: #eaeaea;
+  --bakgrunn-gul: #fef2ae;
+  --bakgrunn-rosa: #fec4b2;
+  --bakgrunn-groenn: var(--farge-groenn);
+  --flate-side: var(--bakgrunn-gul);
+  --tekst: var(--farge-svart);
+  --tekst-invers: var(--farge-kvit);
+  --lenke: var(--farge-svart);
+  --knapp-flate: var(--farge-roed);
+  --knapp-tekst: var(--farge-svart);
+  --badge-flate: var(--farge-blaa);
+  --hentetekst-flate: var(--farge-groenn);
+  --hentetekst-paa-flate: var(--hentetekst-flate);
+  --felt-flate: var(--farge-kvit);
+  --strek: var(--farge-svart);
+  --strek-svak: var(--strek);
+  --stjerne: #e8a33d;
+}
+[data-theme="groenn"] {
+  --flate-side: #bcf17d;
+  --knapp-flate: #fd9f78;
+  --knapp-tekst: #000000;
+  --badge-flate: #aeebfb;
+  --hentetekst-flate: #bcf17d;
+  --hentetekst-paa-flate: #ffe484;
+}
+[data-theme="gul"] {
+  --flate-side: #ffe484;
+  --knapp-flate: #fd9f78;
+  --knapp-tekst: #000000;
+  --badge-flate: #aeebfb;
+  --hentetekst-flate: #bcf17d;
+  --hentetekst-paa-flate: #bcf17d;
+}
+[data-theme="blaa"] {
+  --flate-side: #aeebfb;
+  --knapp-flate: #fd9f78;
+  --knapp-tekst: #000000;
+  --badge-flate: #ffe484;
+  --hentetekst-flate: #bcf17d;
+  --hentetekst-paa-flate: #bcf17d;
+}
+[data-theme="rosa"] {
+  --flate-side: #fec4b2;
+  --knapp-flate: #000000;
+  --knapp-tekst: #ffffff;
+  --badge-flate: #aeebfb;
+  --hentetekst-flate: #bcf17d;
+  --hentetekst-paa-flate: var(--hentetekst-flate);
+}
+:root {
+  --rom-1: 4px;
+  --rom-2: 8px;
+  --rom-3: 12px;
+  --rom-4: 16px;
+  --rom-5: 24px;
+  --rom-6: 32px;
+  --rom-7: 48px;
+  --rom-8: 64px;
+  --rom-9: 96px;
+  --breidd-tekst: 620px;
+  --breidd-innhald: 900px;
+  --breidd-side: 1100px;
+  --radius-null: 0px;
+  --radius-sirkel: 50%;
+  --tekst-display: clamp(40px, 7vw, 64px);
+  --tekst-h1: clamp(32px, 5vw, 44px);
+  --tekst-h2: clamp(24px, 3vw, 30px);
+  --tekst-h3: clamp(18px, 1.4vw, 21px);
+  --tekst-broedtekst: clamp(18px, 1.4vw, 21px);
+  --tekst-liten: 17px;
+  --tekst-etikett: 15px;
+  --vekt-normal: 400;
+  --vekt-halvfeit: 600;
+  --vekt-ekstrafeit: 800;
+  --vekt-feit: 800;
+  --linjehoegd-tett: 1.15;
+  --linjehoegd-tittel: 1.3;
+  --linjehoegd-broedtekst: 1.65;
+  --sperring-etikett: 0.08em;
+  --sperring-broedtekst: 0.01em;
+  --bp-mobil: 600px;
+  --bp-tablet: 900px;
+  --bp-desktop: 1200px;
+  --side-marg: clamp(20px, 5vw, 48px);
+  --trykkflate-min: 48px;
+  --font-sans: 'Work Sans', 'Noto Sans', 'Open Sans', sans-serif;
+}
+.display { font-family: var(--font-sans); font-size: 64px; line-height: 1.15; font-weight: 800; }
+.h1 { font-family: var(--font-sans); font-size: 44px; line-height: 1.15; font-weight: 800; }
+.h2 { font-family: var(--font-sans); font-size: 30px; line-height: 1.3; font-weight: 800; }
+.h3 { font-family: var(--font-sans); font-size: 21px; line-height: 1.3; font-weight: 800; }
+.broedtekst { font-family: var(--font-sans); font-size: 21px; line-height: 1.65; font-weight: 400; letter-spacing: 0.01em; }
+.liten { font-family: var(--font-sans); font-size: 17px; line-height: 1.65; font-weight: 400; }
+.etikett { font-family: var(--font-sans); font-size: 15px; line-height: 1.3; font-weight: 600; letter-spacing: 0.08em; }
