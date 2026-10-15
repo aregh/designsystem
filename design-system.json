@@ -50,8 +50,8 @@
   "title": "Kjernekaren Designsystem",
   "lastChange": {
     "by": "Are",
-    "at": "2026-10-15T11:40:00Z",
+    "at": "2026-10-15T14:20:00Z",
     "via": "Claude (Designsystem kjernekaren-prosjektet)",
-    "note": "Seks rapportslidar (funn, sitat, metode, tilrådingar, les heile rapporten, neste steg) og slides/rapport.css"
+    "note": "Mal for lang rapport (templates/rapport/) med HTML-presentasjon og drilldown frå slide til seksjon"
   }
 }

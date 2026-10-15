@@ -1,0 +1,165 @@
+/* Lang rapport — nettsidemal.
+
+   Les berre CSS-variablar frå tokens (styles.css → tokens/, eller tokens.css).
+   Ingen hex-verdiar her, same prinsipp som slides/rapport.css.
+
+   Oppsett: tekstkolonne (maks 620px) og sidekolonne med innhaldsliste (260px),
+   jf. design.md §6. Kvar seksjon og kvart funn har ein fast id, slik at
+   presentasjonen kan lenke rett inn (drilldown): rapport.html#funn-2.
+
+   Flater: sideflata (--flate-side) og gul innhaldsliste (--farge-gul, kjerneinnhald)
+   er dei to flatefargane. Alt anna er svart strek og svart tekst. */
+
+.rapport {
+  background: var(--flate-side);
+  color: var(--tekst);
+  font-family: var(--font-sans);
+  font-size: var(--tekst-broedtekst);
+  line-height: var(--linjehoegd-broedtekst);
+  letter-spacing: var(--sperring-broedtekst);
+  min-height: 100vh;
+  padding-bottom: var(--rom-9);
+}
+.rapport *, .rapport *::before, .rapport *::after { box-sizing: border-box; }
+.rapport a { color: var(--lenke); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.rapport a:hover { text-decoration-thickness: 3px; }
+
+/* Ramme */
+.rapport .ramme { max-width: var(--breidd-side); margin: 0 auto; padding: 0 var(--side-marg); }
+
+/* Topplinje: ordmerke til venstre (alltid lenke til forsida), presentasjonslenke til høgre */
+.rapport .topp {
+  display: flex; justify-content: space-between; align-items: center; gap: var(--rom-5); flex-wrap: wrap;
+  padding: var(--rom-5) 0 var(--rom-8);
+  font-size: var(--tekst-liten);
+}
+.rapport .ordmerke { font-size: var(--tekst-broedtekst); font-weight: var(--vekt-ekstrafeit); text-decoration: none; }
+.rapport .topp a { min-height: var(--trykkflate-min); display: inline-flex; align-items: center; }
+
+/* Typografi */
+.rapport .etikett {
+  margin: 0 0 var(--rom-4);
+  font-size: var(--tekst-etikett);
+  font-weight: var(--vekt-halvfeit);
+  letter-spacing: var(--sperring-etikett);
+  text-transform: uppercase;
+}
+.rapport h1 {
+  margin: 0 0 var(--rom-5);
+  font-size: var(--tekst-display);
+  font-weight: var(--vekt-ekstrafeit);
+  line-height: var(--linjehoegd-tett);
+  letter-spacing: -0.02em;
+  max-width: var(--breidd-innhald);
+}
+.rapport h2 {
+  margin: 0 0 var(--rom-5);
+  font-size: var(--tekst-h1);
+  font-weight: var(--vekt-ekstrafeit);
+  line-height: var(--linjehoegd-tett);
+  letter-spacing: -0.01em;
+}
+.rapport h3 {
+  margin: var(--rom-7) 0 var(--rom-3);
+  font-size: var(--tekst-h2);
+  font-weight: var(--vekt-ekstrafeit);
+  line-height: var(--linjehoegd-tittel);
+}
+.rapport h4 { margin: var(--rom-6) 0 var(--rom-2); font-size: var(--tekst-h3); font-weight: var(--vekt-ekstrafeit); }
+.rapport p, .rapport ul, .rapport ol { margin: 0 0 var(--rom-4); }
+.rapport .ingress { font-size: var(--tekst-h2); line-height: 1.45; max-width: var(--breidd-innhald); }
+.rapport .liten { font-size: var(--tekst-liten); }
+.rapport strong { font-weight: var(--vekt-ekstrafeit); }
+
+/* Forside-meta: oppdragsgjevar, forfattar, dato */
+.rapport .meta { display: flex; flex-wrap: wrap; gap: var(--rom-4) var(--rom-7); margin: var(--rom-6) 0 var(--rom-6); padding: 0; list-style: none; font-size: var(--tekst-liten); }
+.rapport .meta dt { font-size: var(--tekst-etikett); font-weight: var(--vekt-halvfeit); letter-spacing: var(--sperring-etikett); text-transform: uppercase; }
+.rapport .meta dd { margin: 0; }
+
+/* Nivå 1-knapp — maks éin per seksjon */
+.rapport .knapp {
+  display: inline-flex; align-items: center; min-height: var(--trykkflate-min);
+  padding: 12px 28px; border: 0; border-radius: var(--radius-null);
+  background: var(--knapp-flate); color: var(--knapp-tekst);
+  font: inherit; font-weight: var(--vekt-ekstrafeit); text-decoration: none; cursor: pointer;
+}
+
+/* To kolonner: tekst + sidekolonne. Ikkje auto-fit-grid (gir 50:50), jf. design.md §6.
+   Sidekolonna står først i HTML. row-reverse legg henne til høgre på brei skjerm,
+   og over teksten når kolonnane bryt på smal skjerm, utan media query. */
+.rapport .oppsett { display: flex; flex-direction: row-reverse; flex-wrap: wrap; justify-content: flex-end; gap: var(--rom-8); align-items: flex-start; margin-top: var(--rom-8); }
+.rapport .hovud { flex: 1 1 440px; min-width: 0; max-width: var(--breidd-tekst); }
+.rapport .oppsett { container-type: inline-size; }
+.rapport .side { flex: 0 1 260px; min-width: 0; }
+/* Innhaldslista følgjer med når ho står ved sida av teksten, ikkje når ho ligg over.
+   Container query i staden for media query, jf. README (previewen skalerer sida). */
+@container (min-width: 780px) { .rapport .side { position: sticky; top: var(--rom-5); } }
+
+/* Innhaldsliste — gul kjerneinnhald-flate, som komponenten Innhaldsliste */
+.rapport .innhald { background: var(--farge-gul); padding: var(--rom-5); font-size: var(--tekst-liten); }
+.rapport .innhald strong { display: block; margin-bottom: var(--rom-3); font-size: var(--tekst-h3); }
+.rapport .innhald ol { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: var(--rom-1); }
+.rapport .innhald ol ol { margin-top: var(--rom-1); }
+
+/* Seksjonar */
+.rapport section { scroll-margin-top: var(--rom-5); }
+.rapport .seksjon { margin-top: var(--rom-9); padding-top: var(--rom-6); border-top: 1px solid var(--strek); }
+.rapport .seksjon:first-child { margin-top: 0; }
+.rapport .funn { scroll-margin-top: var(--rom-5); }
+
+/* Nøkkeltal i samandrag og metode */
+.rapport .tal-rad { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: var(--rom-5); margin: var(--rom-6) 0; }
+.rapport .tal-rad div { border-top: 1px solid var(--strek); padding-top: var(--rom-3); }
+.rapport .tal { display: block; font-size: var(--tekst-display); font-weight: var(--vekt-ekstrafeit); line-height: 1; }
+
+/* Brukarsitat i løpande tekst */
+.rapport blockquote { margin: var(--rom-6) 0; }
+.rapport blockquote p { margin: 0 0 var(--rom-3); font-size: var(--tekst-h2); font-weight: var(--vekt-ekstrafeit); line-height: var(--linjehoegd-tittel); }
+.rapport blockquote p::before { content: "\201C"; }
+.rapport blockquote p::after { content: "\201D"; }
+.rapport blockquote footer { font-size: var(--tekst-liten); }
+
+/* Grunnlag under eit funn */
+.rapport .grunnlag { margin-top: var(--rom-5); padding-top: var(--rom-3); border-top: 1px solid var(--strek); font-size: var(--tekst-liten); }
+
+/* Nummererte rader (tilrådingar) */
+.rapport .rader { list-style: none; padding: 0; border-bottom: 1px solid var(--strek); counter-reset: rad; }
+.rapport .rader > li { display: grid; grid-template-columns: 48px 1fr; gap: var(--rom-4); padding: var(--rom-4) 0; border-top: 1px solid var(--strek); counter-increment: rad; }
+.rapport .rader > li::before { content: counter(rad); font-weight: var(--vekt-ekstrafeit); }
+.rapport .rader p { margin: var(--rom-1) 0 0; }
+
+/* Tabell */
+.rapport .tabell { overflow-x: auto; }
+.rapport table { width: 100%; border-collapse: collapse; font-size: var(--tekst-liten); }
+.rapport th { text-align: left; font-size: var(--tekst-etikett); font-weight: var(--vekt-halvfeit); letter-spacing: var(--sperring-etikett); text-transform: uppercase; padding: 0 var(--rom-4) var(--rom-2) 0; }
+.rapport td { border-top: 1px solid var(--strek); padding: var(--rom-3) var(--rom-4) var(--rom-3) 0; vertical-align: top; }
+.rapport tr:last-child td { border-bottom: 1px solid var(--strek); }
+
+/* Vedlegg: aksordion med <details>, ingen animasjon */
+.rapport details { border-bottom: 1px solid var(--strek); }
+.rapport .vedlegg { border-top: 1px solid var(--strek); }
+.rapport summary {
+  display: flex; justify-content: space-between; align-items: center; gap: var(--rom-4);
+  min-height: var(--trykkflate-min); padding: var(--rom-4) 2px;
+  font-weight: var(--vekt-ekstrafeit); cursor: pointer; list-style: none;
+}
+.rapport summary::-webkit-details-marker { display: none; }
+.rapport summary::after { content: "\2228"; font-size: var(--tekst-liten); }
+.rapport details[open] summary::after { content: "\2227"; }
+.rapport details > div { padding: 0 2px var(--rom-5); }
+
+/* Lenke tilbake til sliden — nivå 3, liten */
+.rapport .til-slide { display: inline-block; margin-top: var(--rom-3); font-size: var(--tekst-liten); }
+
+/* Botn */
+.rapport .botn { margin-top: var(--rom-9); padding-top: var(--rom-7); border-top: 1px solid var(--strek); max-width: var(--breidd-tekst); }
+.rapport .botn p { font-style: italic; }
+
+/* Utskrift / PDF: éin kolonne, inga sidekolonne eller knapp, sidebrot før kvar hovudseksjon */
+@media print {
+  .rapport { padding: 0; }
+  .rapport .topp a:not(.ordmerke), .rapport .side, .rapport .knapp, .rapport .til-slide { display: none; }
+  .rapport .hovud { max-width: none; }
+  .rapport .seksjon { break-before: page; border-top: 0; margin-top: 0; }
+  .rapport details > div { display: block; }
+}

@@ -106,3 +106,13 @@
   border-top: 1px solid var(--strek);
 }
 .slide .rader .nr { font-size: var(--slide-tekst); font-weight: var(--vekt-ekstrafeit); }
+
+/* Drilldown: nivå 2-lenke frå ein slide til rett stad i den lange rapporten,
+   t.d. href="../templates/rapport/rapport.html#funn-2". Éi per slide. */
+.slide .drilldown {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--trykkflate-min);
+  font-size: var(--slide-tekst-under);
+  font-weight: var(--vekt-ekstrafeit);
+}

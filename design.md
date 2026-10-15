@@ -163,6 +163,13 @@ Dei les berre CSS-variablar frå tokens (ingen hex i filene), så eit byte frå
 Kjernemodell-fargane blir ikkje brukte på rapportslidane: nummer, tal og rader er svarte.
 QR-feltet er kvitt (`--felt-flate`) og tel som flate nummer to.
 
+### Lang rapport med drilldown
+
+`templates/rapport/` er malen for ein lengre rapport som blir lagd fram som presentasjon.
+`presentasjon.html` set saman rapportslidane, og kvar slide kan ha éi nivå 2-lenke
+(`.drilldown`) til rett seksjon i `rapport.html` (`#funn-2`, `#metode` …). Rapporten lenkjer
+tilbake med nivå 3-lenker. Begge les berre token-variablar. Sjå `templates/rapport/README.md`.
+
 ## 9. Innhald og språk
 
 - **Nynorsk** på kjernekaren.no og kjernemodellen.no. **Bokmål** inne i modell-elementa

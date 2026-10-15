@@ -140,6 +140,7 @@ Manualen krev open source-fonter, så Google Fonts-varianten er korrekt kjelde.
 - `templates/bloggartikkel/` — startpunkt: fagartikkel (lys gul flate, innhaldsliste + nyheitsbrev)
 - `templates/some-oppslag/` — startpunkt: SoMe-oppslag 1200×628 med sirkel-badge
 - `templates/presentasjon/` — startpunkt: 16:9-presentasjon (7 slide-typar)
+- `templates/rapport/` — startpunkt: lang rapport (`rapport.html`) og HTML-presentasjon (`presentasjon.html`) med drilldown frå slide til seksjon i rapporten
 - `slides/` — enkeltslidar 1280×720; rapportslidane (funn, sitat, metode, tilrådingar, les heile rapporten, neste steg) deler `slides/rapport.css` og les berre token-variablar
 - `ui_kits/kontekstarkitektur/` — kontekstarkitektur.no (blå flate): heim, metoden, kurs
 - `*.dc.html` (rot) — arbeidsfiler frå kjelderepoet: flatetema-utforsking, rekonstruksjonar av
