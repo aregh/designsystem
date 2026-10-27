@@ -50,8 +50,8 @@
   "title": "Kjernekaren Designsystem",
   "lastChange": {
     "by": "Are",
-    "at": "2026-10-15T16:45:00Z",
+    "at": "2026-10-27T09:10:00Z",
     "via": "Claude (Designsystem kjernekaren-prosjektet)",
-    "note": "Sjølvhosta Work Sans (fonts/), Urke-biletet på første slide, sticky innhaldsliste avgrensa i høgda"
+    "note": "Talarpresentasjon i Are sin stil: slides/tale.css, ni slidetypar (slides/tale-*.html), mal templates/tale/, token bakgrunn-groenn-lys, design.md §8"
   }
 }

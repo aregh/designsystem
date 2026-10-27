@@ -12,6 +12,7 @@
   --bakgrunn-gul: #fef2ae;
   --bakgrunn-rosa: #fec4b2;
   --bakgrunn-groenn: var(--farge-groenn);
+  --bakgrunn-groenn-lys: #e7fada;
   --flate-side: var(--bakgrunn-gul);
   --tekst: var(--farge-svart);
   --tekst-invers: var(--farge-kvit);
