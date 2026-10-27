@@ -54,7 +54,8 @@ suspendert for den flata. Fargekodinga gjeld då berre inne i sjølve modell-gra
   med kvit tekst.
 - Grå `#EAEAEA` er ikkje ein brandfarge. Berre nøytrale plassholdarar og disabla felt.
 - Stjernefargen `#E8A33D` er sampla frå kursrangeringane og finst berre der.
-- Tekst er svart. Kvit tekst er berre lovleg på svart flate.
+- Tekst er svart. Kvit tekst er berre lovleg på svart flate. Unntak: tittelen på Urke-biletet i
+  talarpresentasjonen (§8).
 
 ## 3. Typografi
 
@@ -81,7 +82,8 @@ Setnings-casing overalt. Versalar berre i eyebrow-etikettar.
 
 ## 4. Form og element
 
-- Skarpe hjørne. Radius 0. **Einaste unntak:** sirkel-badge og karusell-prikkar.
+- Skarpe hjørne. Radius 0. **Einaste unntak:** sirkel-badge, karusell-prikkar og boblene i
+  talarpresentasjonen (§8).
 - Ingen skuggar, ingen gradientar, ingen omriss-knappar.
 - Foto alltid firkanta, aldri runda, aldri beskore til fast høgd i flyt.
 - Delelinjer: tynn heilsvart strek. Ingen halvgjennomsiktig svart — det gir ulik farge på
@@ -139,7 +141,7 @@ Lenker er alltid svarte med underline — også i footer. Hover: tjukkare underl
 - Titlar 52–110px vekt 800, punkttekst 32px vekt 400, underpunkt 26px. Aldri under 24px.
 - Bilete-malar: heildekkande foto med svart tekstplate, delt flate (foto/tekst),
   tredelt bilderad. Alle bilete er utbyttbare — dra eit nytt foto rett inn i plassen.
-- **Første slide i alle presentasjonar har Urke-biletet** (`assets/urke-fra-saksa.jpg`, Hjørundfjorden sett frå Saksa): heildekkande, med tittelen på svart tekstplate nedst til venstre (`.slide.forside` i `slides/rapport.css`, `slides/tittel-bilete.html`).
+- **Første slide i alle presentasjonar har Urke-biletet** (`assets/urke-fra-saksa.jpg`, Hjørundfjorden sett frå Saksa): heildekkande, med tittelen på svart tekstplate nedst til venstre (`.slide.forside` i `slides/rapport.css`, `slides/tittel-bilete.html`). I talarpresentasjonen står tittelen kvit rett på biletet (`slides/tale-tittel.html`).
 - Malar: `slides/tittel.html`, `tittel-bilete.html`, `seksjon.html`, `punktliste.html`,
   `nokkeltall.html`, `bio.html`, `utfordring.html`, `venn.html`,
   `bilete-heildekkande.html`, `bilete-delt.html`, `bilete-tredelt.html`.
@@ -162,6 +164,42 @@ Dei les berre CSS-variablar frå tokens (ingen hex i filene), så eit byte frå
 
 Kjernemodell-fargane blir ikkje brukte på rapportslidane: nummer, tal og rader er svarte.
 QR-feltet er kvitt (`--felt-flate`) og tel som flate nummer to.
+
+### Talarpresentasjon (Are sin stil)
+
+Når Are held presentasjonen sjølv og snakkar fritt, gjeld denne stilen i staden for
+flatetemaet (avgjort av Are 27.10.2026). Slidane gir bodskapen og viser bevisa, dei
+forklarer ikkje: éin tanke per slide, 20–30 slidar til 15 minutt. Felles stil i
+`slides/tale.css`, mal i `templates/tale/`, instruks for Claude Design i aregh/kjernekaren
+(`Innhald/Presentasjonar/Instruks-Claude-Design-presentasjon.md`).
+
+| Slidetype | Fil | Flate |
+|---|---|---|
+| Tittel | `slides/tale-tittel.html` | Urke-biletet heildekkande, gul (`--farge-gul`) under |
+| Om meg | `slides/tale-om-meg.html` | Kvit |
+| Opningsspørsmål | `slides/tale-opning.html` | Skjermbilete med boble |
+| Bodskap, overgang, «#1 …», spørsmål | `slides/tale-bodskap.html` | Lys grøn (`--bakgrunn-groenn-lys` `#E7FADA`) |
+| Sitat | `slides/tale-sitat.html` | Lys grøn |
+| Skjermbilete med boble | `slides/tale-skjermbilete.html` | Kvit, boble blå (`--farge-blaa`) |
+| Liste | `slides/tale-liste.html` | Kvit |
+| Kjernemodellen | `slides/tale-kjernemodellen.html` | Kvit, modellfargane berre i figurane |
+| Avslutning | `slides/tale-avslutning.html` | Blå |
+
+Storleikar på 1280×720: tittel 103px, bodskap og sitat 64px, slidetittel 45px, liste 36px
+med linjehøgd 1,8, boble 274px med tekst 25px.
+
+**Unntak frå resten av systemet** (berre i talarpresentasjonen):
+- **Fire flater i same presentasjon**, men kvar slide har éi flate, pluss bobla. Maks to
+  flatefargar per slide gjeld framleis.
+- **Runde bobler** på skjermbilete. Same unntak som sirkel-badgen: blå fyll, tynn lys grøn
+  kant, tekst 25px vekt 400, midtstilt.
+- **Kvit tekst direkte på Urke-biletet** på tittelsliden, utan svart tekstplate.
+- **Lys grøn `#E7FADA`** er ein eigen presentasjonsflate, ikkje ein kjernemodell-farge.
+
+Resten gjeld som før: radius 0 utanom boblene, ingen skuggar, gradientar eller animasjon,
+svart tekst, vekt 400/800 (600 berre versal-etikettar). Google Slides har ikkje vekt 800,
+så der blir «feit» 700. Sitat står ordrett på språket dei vart sagde på, med rolle eller
+kjelde, aldri namn på testdeltakarar.
 
 ### Lang rapport med drilldown
 

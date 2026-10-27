@@ -144,6 +144,7 @@ og kursiv 400 er med. Ingen kall til Google Fonts, så sidene lastar raskare og 
 - `templates/presentasjon/` — startpunkt: 16:9-presentasjon (7 slide-typar)
 - `templates/rapport/` — startpunkt: lang rapport (`rapport.html`) og HTML-presentasjon (`presentasjon.html`) med drilldown frå slide til seksjon i rapporten
 - `slides/` — enkeltslidar 1280×720; rapportslidane (funn, sitat, metode, tilrådingar, les heile rapporten, neste steg) deler `slides/rapport.css` og les berre token-variablar
+- `templates/tale/` — startpunkt: talarpresentasjon i Are sin eigen stil (gul tittel med Urke, kvite innhaldsslidar, lys grøne bodskapsslidar, skjermbilete med rund blå boble, blå avslutning). Slidetypane `slides/tale-*.html` deler `slides/tale.css`. Sjå design.md §8
 - `ui_kits/kontekstarkitektur/` — kontekstarkitektur.no (blå flate): heim, metoden, kurs
 - `*.dc.html` (rot) — arbeidsfiler frå kjelderepoet: flatetema-utforsking, rekonstruksjonar av
   dagens nettstader, hentetekst-alternativ, slidevariantar. Referanse, ikkje systemfiler.

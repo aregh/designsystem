@@ -22,6 +22,7 @@
   --bakgrunn-gul:   #FEF2AE; /* standard sideflate */
   --bakgrunn-rosa:  #FEC4B2; /* alternativ sideflate (bok-sida) */
   --bakgrunn-groenn: var(--farge-groenn); /* alternativ sideflate (training-sida) */
+  --bakgrunn-groenn-lys: #E7FADA; /* bodskap- og sitatslides i talarpresentasjonen (design.md §8) */
 
   /* == Semantiske alias == */
   --flate-side:      var(--bakgrunn-gul);

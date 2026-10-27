@@ -1,0 +1,125 @@
+/* Talarpresentasjon — Are sin eigen presentasjonsstil (design.md §8, «Talarpresentasjon»).
+
+   Éin tanke per slide, bodskapen åleine, bevis som ekte skjermbilete med rund boble.
+   Storleikane er tekne frå Are sin referansepresentasjon (Google Slides, 720 × 405 pt)
+   og gonga med 1280/720: 58 pt = 103px, 36 pt = 64px, 25 pt = 45px, 24 pt = 43px,
+   20 pt = 36px, 14 pt = 25px.
+
+   Fila les berre CSS-variablar frå tokens. Kvar slidetype har si faste flate:
+   .tale-tittel     gul (--farge-gul) bak Urke-biletet
+   .tale-kvit       kvit (--farge-kvit): om meg, liste, Kjernemodellen, skjermbilete
+   .tale-bodskap    lys grøn (--bakgrunn-groenn-lys): bodskap, sitat, spørsmål
+   .tale-slutt      blå (--farge-blaa): avslutning
+
+   Unntak frå resten av systemet, avgjort av Are 27.10.2026: runde bobler (som
+   sirkel-badgen), kvit tekst direkte på Urke-biletet, og fire ulike flater i same
+   presentasjon (men aldri meir enn to på éin slide). Elles gjeld reglane: radius 0,
+   ingen skuggar, gradientar eller animasjon, svart tekst, vekt 400/800. */
+
+.tale {
+  --tale-tittel-stor: 103px;
+  --tale-bodskap: 64px;
+  --tale-tittel: 45px;
+  --tale-dato: 43px;
+  --tale-liste: 36px;
+  --tale-boble-tekst: 25px;
+  --tale-boble: 274px;
+  --tale-marg-x: 100px;
+  --tale-marg-y: 83px;
+
+  width: 1280px;
+  height: 720px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background: var(--farge-kvit);
+  color: var(--tekst);
+  font-family: var(--font-sans);
+  font-weight: var(--vekt-normal);
+  border-radius: var(--radius-null);
+}
+.tale *, .tale *::before, .tale *::after { box-sizing: border-box; }
+.tale p, .tale h1, .tale h2, .tale ul, .tale blockquote { margin: 0; }
+
+/* Flatene */
+.tale-tittel  { background: var(--farge-gul); }
+.tale-kvit    { background: var(--farge-kvit); }
+.tale-bodskap { background: var(--bakgrunn-groenn-lys); }
+.tale-slutt   { background: var(--farge-blaa); }
+
+/* 1 Tittel: Urke-biletet heildekkande, kvit tittel rett på biletet */
+.tale-tittel .bilete { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.tale-tittel h1 {
+  position: absolute; left: 149px; top: 132px; width: 1000px;
+  color: var(--tekst-invers);
+  font-size: var(--tale-tittel-stor); font-weight: var(--vekt-ekstrafeit); line-height: 1.2;
+}
+.tale-tittel .kunde {
+  position: absolute; left: 149px; top: 520px;
+  color: var(--tekst-invers);
+  font-size: var(--tale-dato); font-weight: var(--vekt-ekstrafeit); line-height: 1.2;
+}
+
+/* 2 og 7: tittel øvst til venstre, liste under */
+.tale .tittel {
+  font-size: var(--tale-tittel); font-weight: var(--vekt-ekstrafeit); line-height: 1.2;
+  padding: var(--tale-marg-y) var(--tale-marg-x) 0;
+}
+.tale .liste {
+  list-style: none; padding: 32px var(--tale-marg-x) 0;
+  font-size: var(--tale-liste); line-height: 1.8;
+}
+.tale .liste li { position: relative; padding-left: 54px; }
+.tale .liste li::before {
+  content: ""; position: absolute; left: 4px; top: .78em;
+  width: 12px; height: 12px; background: var(--farge-svart);
+}
+
+/* Om meg: foto til høgre, frå topp til botn */
+.tale-ommeg .tittel, .tale-ommeg .liste { padding-right: 450px; }
+.tale-ommeg .foto { position: absolute; top: 0; right: 0; width: 400px; height: 100%; object-fit: cover; display: block; }
+
+/* 4 og 5: bodskap og sitat, midtstilt */
+.tale-bodskap {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 0 196px; text-align: center;
+}
+.tale-bodskap .bodskap { font-size: var(--tale-bodskap); font-weight: var(--vekt-ekstrafeit); line-height: 1.2; }
+.tale-bodskap .kven { font-size: var(--tale-bodskap); font-weight: var(--vekt-normal); line-height: 1.2; }
+
+/* 3 og 6: skjermbilete kant til kant, rund boble oppå */
+.tale-skjerm .skjermbilete { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--farge-kvit); display: block; }
+.tale-skjerm .skjermbilete.fyll { object-fit: cover; object-position: top; }
+.tale .boble {
+  position: absolute; width: var(--tale-boble); height: var(--tale-boble);
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 44px; text-align: center;
+  border-radius: var(--radius-sirkel);
+  background: var(--farge-blaa);
+  border: 2px solid var(--bakgrunn-groenn-lys);
+  font-size: var(--tale-boble-tekst); font-weight: var(--vekt-normal); line-height: 1.18;
+}
+.tale .plasshaldar {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  padding: 0 160px; text-align: center; background: var(--farge-kvit);
+  font-size: var(--tale-liste); font-weight: var(--vekt-ekstrafeit);
+}
+
+/* 8 Kjernemodellen: tre kolonnar */
+.tale-km .tittel { text-align: center; padding: 39px 0 0; }
+.tale-km .kolonnar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 72px; padding: 38px 72px 0; }
+.tale-km .kolonne { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.tale-km .etikett {
+  font-size: 21px; font-weight: var(--vekt-halvfeit); letter-spacing: var(--sperring-etikett);
+  text-transform: uppercase; margin-bottom: 38px;
+}
+.tale-km .figur { position: relative; height: 250px; display: flex; align-items: center; justify-content: center; }
+.tale-km .figur img { max-height: 250px; max-width: 100%; display: block; }
+.tale-km .figur .merke { position: absolute; top: 50%; transform: translateY(-50%); font-size: 15px; font-weight: var(--vekt-ekstrafeit); }
+.tale-km .kolonne p:last-child { margin-top: 38px; font-size: 24px; line-height: 1.3; }
+
+/* 9 Avslutning: blå flate, midtstilt */
+.tale-slutt { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.tale-slutt .takk { font-size: 92px; font-weight: var(--vekt-ekstrafeit); line-height: 1.2; }
+.tale-slutt .kontakt { margin-top: 36px; font-size: 50px; line-height: 1.2; }
+.tale-slutt .kontakt a { color: var(--lenke); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
