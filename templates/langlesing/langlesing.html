@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Langlesing — mal</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../rapport/rapport.css">
+<link rel="stylesheet" href="langlesing.css">
+<link rel="stylesheet" href="kommentar.css">
+</head>
+<body class="rapport tema-gul-lys">
+<div class="ramme">
+  <header class="topp">
+    <a class="ordmerke" href="https://kjernekaren.no/">Are Halland</a>
+    <a href="https://kjernekaren.no/bok">Boka om kjernemodellen</a>
+  </header>
+  <header>
+    <div class="chips"><span class="etikett">Kjernemodellen</span><span class="etikett">Bonuskapittel</span><span class="etikett">Utkast</span></div>
+    <h1>Tittelen på kapittelet</h1>
+    <p class="byline">Av Are Halland</p>
+    <div class="om"><p><strong>Kort merknad.</strong> Éi til tre setningar om korleis teksten er blitt til, eller kva lesaren bør vite før start.</p></div>
+  </header>
+  <div class="oppsett">
+    <aside class="side" aria-label="Innhald">
+      <nav class="innhald" aria-labelledby="t-innhald"><strong id="t-innhald">I kapittelet</strong><ol><li><a href="#forste">Første mellomtittel</a></li><li><a href="#andre">Andre mellomtittel</a></li></ol></nav>
+      <p class="kom-hint liten"><strong>Vil du kommentere?</strong> Marker tekst og trykk «Kommenter»<span class="kom-peikar">, eller trykk på plussteiknet ved eit avsnitt</span>. Kommentarane er synlege for alle som har tilgang til sida.</p>
+    </aside>
+    <main class="hovud">
+      <p>Innleiinga står før første mellomtittel, utan strek over.</p>
+      <blockquote class="lang"><p>«Eit lengre sitat på fleire setningar står i kursiv brødtekst, slik at det ikkje ropar høgare enn teksten rundt.»</p></blockquote>
+      <section class="seksjon" id="forste" aria-labelledby="t-forste">
+        <h2 id="t-forste">Første mellomtittel</h2>
+        <p>Brødtekst i 400. <strong>Utheving i 800.</strong> Lenker er svarte med understrek.</p>
+        <blockquote><p>Eit kort hentesitat.</p></blockquote>
+        <h3>Undertittel</h3>
+        <ul><li>Punkt éin</li><li>Punkt to</li></ul>
+      </section>
+      <section class="seksjon" id="andre" aria-labelledby="t-andre">
+        <h2 id="t-andre">Andre mellomtittel</h2>
+        <div class="tabell"><table><thead><tr><th>Kolonne</th><th>Kolonne</th></tr></thead><tbody><tr><td>Celle</td><td>Celle</td></tr></tbody></table></div>
+      </section>
+      <footer class="botn"><p class="liten">Lisens og status for teksten.</p></footer>
+    </main>
+  </div>
+</div>
+<button type="button" id="kom-utval" class="knapp">Kommenter</button>
+<script src="kommentar.js"></script>
+</body>
+</html>

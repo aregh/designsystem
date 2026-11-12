@@ -1,0 +1,38 @@
+/* Kommentering i teksten — tillegg til rapport.css.
+
+   Les berre CSS-variablar frå tokens. Ingen hex, ingen radius, ingen skugge, ingen animasjon.
+   Alt er skjult til kommentar.js har sett .kan-kommentere på .rapport, det vil seie når
+   sida faktisk kan opne eit kommentarfelt.
+
+   .kom         avsnitt, tittel, liste, sitat eller tabell som kan kommenterast
+   .kom-knapp   kvadratisk knapp i luftrommet mellom tekst og sidekolonne (48px trykkflate), synleg ved peikar og tastaturfokus
+   #kom-utval   nivå 1-knapp (.knapp) som dukkar opp under markert tekst
+   .kom-hint    kort forklaring i sidekolonna */
+
+.rapport .kom-hint { display: none; margin: var(--rom-5) 0 0; padding-top: var(--rom-3); border-top: 1px solid var(--strek); }
+.rapport.kan-kommentere .kom-hint { display: block; }
+
+.rapport .kom { position: relative; }
+.rapport .kom-knapp {
+  display: none; position: absolute; left: calc(100% + var(--rom-2)); top: -10px;
+  width: var(--trykkflate-min); height: var(--trykkflate-min);
+  align-items: center; justify-content: center;
+  border: 1px solid var(--strek); border-radius: var(--radius-null);
+  background: var(--felt-flate); color: var(--tekst);
+  font: inherit; font-weight: var(--vekt-ekstrafeit); line-height: 1; cursor: pointer;
+}
+.rapport.kan-kommentere .kom:hover > .kom-knapp,
+.rapport.kan-kommentere .kom-knapp:focus-visible { display: inline-flex; }
+/* Brua mellom avsnittet og knappen, så knappen ikkje forsvinn på vegen dit */
+.rapport.kan-kommentere .kom:hover::before { content: ""; position: absolute; left: 100%; top: 0; width: var(--rom-2); height: 100%; }
+.rapport .kom-knapp:hover { background: var(--knapp-flate); }
+
+#kom-utval { display: none; position: absolute; z-index: 10; font-family: var(--font-sans); }
+
+/* Utan peikar eller utan marg: berre markering av tekst */
+@media (hover: none), (max-width: 900px) {
+  .rapport.kan-kommentere .kom:hover > .kom-knapp,
+  .rapport.kan-kommentere .kom-knapp:focus-visible { display: none; }
+  .rapport .kom-peikar { display: none; }
+}
+@media print { .rapport .kom-knapp, .rapport .kom-hint, #kom-utval { display: none !important; } }

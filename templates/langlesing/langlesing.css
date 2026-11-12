@@ -1,0 +1,23 @@
+/* Langlesing — bokkapittel, essay eller lang artikkel på nett.
+
+   Tillegg til templates/rapport/rapport.css, som ber oppsettet (ordmerke, etikettar,
+   display-tittel, tekstkolonne 620px, gul innhaldsliste i sidekolonna).
+   Les berre token-variablar. Ingen hex-verdiar her.
+
+   .om               kort merknad under byline (t.d. om medforfattarskap), mellom to svarte strekar
+   blockquote        kort hentesitat (h2-storleik, vekt 800), utan hermeteikn frå CSS
+   blockquote.lang   lengre sitat, sett i kursiv brødtekst */
+html,body{margin:0;background:var(--flate-side)}
+.rapport .chips{display:flex;flex-wrap:wrap;gap:var(--rom-2) var(--rom-5);margin:0 0 var(--rom-4)}
+.rapport .chips .etikett{margin:0}
+.rapport .byline{font-size:var(--tekst-liten)}
+.rapport h1{text-wrap:balance}
+.rapport h2,.rapport h3{text-wrap:balance}
+.rapport .hovud > h3:first-child{margin-top:0}
+.rapport .om{margin:var(--rom-6) 0 0;padding:var(--rom-4) 0;border-top:1px solid var(--strek);border-bottom:1px solid var(--strek);font-size:var(--tekst-liten);max-width:var(--breidd-tekst)}
+.rapport .om p{margin:0}
+.rapport blockquote.lang p{font-size:var(--tekst-broedtekst);font-weight:var(--vekt-normal);font-style:italic;line-height:var(--linjehoegd-broedtekst)}
+.rapport blockquote p::before,.rapport blockquote p::after{content:none}
+.rapport li + li{margin-top:var(--rom-2)}
+.rapport .tabell{margin:var(--rom-5) 0}
+.rapport .seksjon:first-of-type{margin-top:0}

@@ -208,6 +208,15 @@ kjelde, aldri namn på testdeltakarar.
 (`.drilldown`) til rett seksjon i `rapport.html` (`#funn-2`, `#metode` …). Rapporten lenkjer
 tilbake med nivå 3-lenker. Begge les berre token-variablar. Sjå `templates/rapport/README.md`.
 
+### Langlesing med kommentering
+
+`templates/langlesing/` er malen for bokkapittel, essay og lange artiklar på nett. Han byggjer
+på rapportmalen (`templates/rapport/rapport.css`) med lys gul flate og gul innhaldsliste.
+Lesarar kan kommentere i teksten: eit kvitt kvadrat med svart strek og `+` ved avsnittet, og
+nivå 1-knappen «Kommenter» under markert tekst. Knappane opnar kommentarfeltet til Claude og
+er skjulte der det ikkje finst. Sida teiknar ingen eigne kommentarlister eller pins.
+Sjå `templates/langlesing/README.md`.
+
 ## 9. Innhald og språk
 
 - **Nynorsk** på kjernekaren.no og kjernemodellen.no. **Bokmål** inne i modell-elementa
@@ -234,6 +243,7 @@ tilbake med nivå 3-lenker. Begge les berre token-variablar. Sjå `templates/rap
 | `components/core/` | Button, TextLink, CircleBadge, StarRating, Accordion, Quote, TestimonialCard, TextField, NewsletterForm, KursKort, BloggKort, Paginering, Innhaldsliste |
 | `components/navigation/` | SiteHeader, SiteFooter |
 | `slides/` | presentasjonsmalar |
+| `templates/langlesing/` | bokkapittel og lang artikkel med kommentering i teksten (byggjer på `templates/rapport/`) |
 | `referanse/Referansekatalog.dc.html` | Referansekatalog – presentasjon (MAL 2025) og 51 referansebilete frå Google Drive, gruppert etter tema. |
 | `brief-nettstad-oppdatering.md` | feilliste + akseptkriterium for kjernekaren.no |
 | `brief-implementering-kjernekaren.md` | implementeringsbrief |
